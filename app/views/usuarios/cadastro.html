@@ -1,0 +1,41 @@
+{% extends 'layout.html' %} {% block content %}
+<div class="ui center aligned grid">
+    <div class="column" style="text-align: left !important;">
+        <form class="ui large form" method="POST" action="/usuarios/store">
+            <div class="ui stacked segment">
+                <h4 class="ui dividing header">Preencha os dados</h4>
+                <div class="field">
+                    <div class="ui fluid left icon input">
+                        <i class="pencil alternate icon"></i>
+                        <input type="text" placeholder="Nome" name="nome" autocomplete="off">
+                    </div>
+                    {{ showFlashMessages('nome', 'negative') | raw }}
+                </div>
+                <div class="field">
+                    <div class="ui fluid left icon input">
+                        <i class="user icon"></i>
+                        <input type="text" placeholder="Login" name="login" autocomplete="off">
+                    </div>
+                    {{ showFlashMessages('login', 'negative') | raw }}
+                </div>
+                <div class="field">
+                    <div class="ui left icon input">
+                        <i class="lock icon"></i>
+                        <input type="password" placeholder="Senha" name="senha">
+                    </div>
+                    {{ showFlashMessages('senha', 'negative') | raw }}
+                </div>
+                <div class="ui segment">
+                    <div class="inline field">
+                        <div class="ui toggle checkbox">
+                            <input type="checkbox" name="gift" tabindex="0" class="hidden">
+                            <label>Usuário Administrador?</label>
+                        </div>
+                    </div>
+                </div>
+                <button class="ui large fluid teal button" type="submit">Cadastrar</button>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,65 @@
+{% extends 'painel/index.html' %} {% block content_active %}
+
+<h2 class="ui dividing header">
+    Permissões do Usuário:
+    <div class="sub header">
+        {{ usuario.nome }}
+    </div>
+</h2>
+<table class="ui blue selectable single line table">
+    <thead>
+        <tr>
+            <th>Controllers</th>
+            <th colspan="7">Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+    	{% for controller, method in controllers %}
+        <tr>
+        	<td>{{ controller }}</td>
+        	<td>
+        		<button class="ui mini {{ method.index }} button button-permission" data-action="index,{{controller}},{{usuario.id}}">Início</button>
+        	</td>
+        	<td>
+        		<button class="ui mini {{ method.show }} button button-permission" data-action="show,{{controller}},{{usuario.id}}">Mostrar registro(s)</button>
+        	</td>
+    		<td>
+    			<button class="ui mini {{ method.edit }} button button-permission" data-action="edit,{{controller}},{{usuario.id}}">Editar</button>
+    		</td>
+        	<td>
+        		<button class="ui mini {{ method.update }} button button-permission" data-action="update,{{controller}},{{usuario.id}}">Atualizar</button>
+        	</td>
+        	<td>
+        		<button class="ui mini {{ method.create }} button button-permission" data-action="create,{{controller}},{{usuario.id}}">Adicionar</button>
+        	</td>
+        	<td>
+        		<button class="ui mini {{ method.store }} button button-permission" data-action="store,{{controller}},{{usuario.id}}">Cadastrar</button>
+        	</td>
+        	<td>
+        		<button class="ui mini {{ method.destroy }} button button-permission" data-action="destroy,{{controller}},{{usuario.id}}">Deletar</button>
+        	</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+    <tfoot class="full-width">
+    	<tr>
+    		<th><a class="ui blue ribbon label">Métodos</a></th>
+    		<th><a class="ui tag label">index</a></th>
+			<th><a class="ui tag label">show</a></th>
+			<th><a class="ui tag label">edit</a></th>
+			<th><a class="ui tag label">update</a></th>
+			<th><a class="ui tag label">create</a></th>
+			<th><a class="ui tag label">store</a></th>
+			<th><a class="ui tag label">destroy</a></th>
+    	</tr>
+        <tr>
+            <th colspan="8">
+                <div class="ui right floated small primary labeled icon button">
+                    <i class="user icon"></i> Novo Usuário
+                </div>
+            </th>
+        </tr>
+    </tfoot>
+</table>
+
+{% endblock %}

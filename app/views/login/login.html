@@ -1,0 +1,32 @@
+{% extends 'layout.html' %} {% block content %}
+<div class="ui middle aligned center aligned grid">
+    <div class="column">
+        <h2 class="ui teal image header">
+            <img src="http://semantic-ui.com/examples/assets/images/logo.png" class="image">
+            <div class="content">
+                Faça seu login
+            </div>
+        </h2>
+        <form class="ui large form" method="POST" action="\login">
+            <div class="ui stacked segment">
+                {{ showFlashMessages('auth') | raw }} {{ showFlashMessages('acesso_negado', 'info') | raw }}
+                <div class="field">
+                    <div class="ui fluid left icon input">
+                        <i class="user icon"></i>
+                        <input type="text" placeholder="Login" name="login" autocomplete="off">
+                    </div>
+                    {{ showFlashMessages('login', 'negative') | raw }}
+                </div>
+                <div class="field">
+                    <div class="ui left icon input">
+                        <i class="lock icon"></i>
+                        <input type="password" placeholder="Senha" name="senha">
+                    </div>
+                    {{ showFlashMessages('senha', 'negative') | raw }}
+                </div>
+                <button class="ui large fluid teal button" type="submit">Entrar</button>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,39 @@
+{% extends 'painel/index.html' %} {% block content_active %}
+
+<table class="ui selectable single line table">
+    <thead>
+        <tr>
+            <th>
+                <div class="ui ribbon label">ID</div>
+            </th>
+            <th>Usuário</th>
+            <th>Permissões</th>
+            <th>Master</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for usuario in usuarios %}
+        <tr>
+            <td>{{ usuario.id }}</td>
+            <td>{{ usuario.nome }}</td>
+            <td>
+                <a href="/permissoes/show/{{ usuario.id }}" class="ui labeled icon mini button">
+                    <i class="lock icon"></i> Ver permissões
+                </a>
+            </td>
+            <td>{{ usuario.master }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+    <tfoot class="full-width">
+        <tr>
+            <th></th>
+            <th colspan="4">
+                <div class="ui right floated small primary labeled icon button">
+                    <i class="user icon"></i> Novo Usuário
+                </div>
+            </th>
+        </tr>
+    </tfoot>
+</table>
+{% endblock %}
