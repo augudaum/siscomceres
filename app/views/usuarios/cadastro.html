@@ -1,7 +1,8 @@
-{% extends 'layout.html' %} {% block content %}
-<div class="ui center aligned grid">
-    <div class="column" style="text-align: left !important;">
-        <form class="ui large form" method="POST" action="/usuarios/store">
+<div id="addUsuarioModal" class="ui modal">
+    <i class="close icon"></i>
+    <div class="header">Cadastrar usuário</div>
+    <div class="content">
+        <form id="form-adduser" class="ui large form">
             <div class="ui stacked segment">
                 <h4 class="ui dividing header">Preencha os dados</h4>
                 <div class="field">
@@ -28,14 +29,17 @@
                 <div class="ui segment">
                     <div class="inline field">
                         <div class="ui toggle checkbox">
-                            <input type="checkbox" name="gift" tabindex="0" class="hidden">
+                            <input type="checkbox" name="master" value="1" tabindex="0" class="hidden">
                             <label>Usuário Administrador?</label>
                         </div>
                     </div>
                 </div>
-                <button class="ui large fluid teal button" type="submit">Cadastrar</button>
+                <!-- <button class="ui large fluid teal button" type="submit">Cadastrar</button> -->
             </div>
         </form>
     </div>
+    <div class="actions">
+        <div class="ui negative button">Cancelar</div>
+        <div id="button-saveuser" class="ui positive button">Salvar</div>
+    </div>
 </div>
-{% endblock %}

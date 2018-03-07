@@ -5,10 +5,10 @@
     use app\validate\Validate;
     use app\models\admin\Admin;
 
-    class Cadastro extends Validate {
+    class UserCadastro extends Validate {
 
         public function validate() {
-            $this->required([]);
+            $this->required(['nome', 'login', 'senha']);
             $this->unique(['login' => (new Admin)]);
         }
     }

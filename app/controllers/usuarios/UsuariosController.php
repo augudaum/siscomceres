@@ -3,7 +3,7 @@
     namespace app\controllers\usuarios;
 
     use app\controllers\ContainerController;
-    use app\validate\usuarios\Cadastro;
+    use app\validate\usuarios\UserCadastro;
     use app\models\admin\Admin;
     use app\classes\Password;
 
@@ -37,19 +37,21 @@
         }
 
         public function store() {
-            $user = validate((new Cadastro));
+            $_POST['master'] = $_POST['master'] ?? "0";
+            $user = validate((new UserCadastro));
             
             if ($user->hasErrors()) {
-                flash($user->getErrors());
+                //flash($user->getErrors());
+                return toJson($user->getErrors());
 
-                return back();
+                //return back();
             }
             
             $newUser = new Admin();
 
-            $newUser->create((array) request()->hash());
+            return toJson($newUser->create((array) request()->hash()));
 
-            redirect("/painel");
+            // redirect("/painel");
 
         }
 

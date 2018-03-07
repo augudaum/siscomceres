@@ -29,11 +29,11 @@
         <tr>
             <th></th>
             <th colspan="4">
-                <div class="ui right floated small primary labeled icon button">
+                <button id="button-adduser" class="ui right floated small primary labeled icon button">
                     <i class="user icon"></i> Novo Usuário
-                </div>
+                </button>
             </th>
         </tr>
     </tfoot>
 </table>
-{% endblock %}
+{% include 'usuarios/cadastro.html' %} {% endblock %}
