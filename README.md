@@ -2,11 +2,16 @@
 ## app
    - ### classes
          Contém classes com características de utilidade
+        - #### ControllersPermissions
    - ### controllers
-         Contém os classes _controllers_ da aplicação
+         Contém os classes *controllers* da aplicação
    - ### exceptions
+        Contém as classes de exceções
    - ### functions
+        Contém arquivos com funções que podem ser utilizadas em qualquer parte do sistema
    - ### interfaces
+    - #### IModel.php
+        Contém as interfaces
    - ### models
    - ### traits
    - ### validate
