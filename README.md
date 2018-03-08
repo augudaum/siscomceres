@@ -13,11 +13,29 @@
          Contém as interfaces
         - #### IModel.php
    - ### models
+         Contém os models
    - ### traits
+         Contém as classes que possuem características a serem usadas (herdadas) por outras
    - ### validate
+         Contém as classes que possuem validações específicas para cada formulário
    - ### views
+         Contém os arquivos html
 ## core
+         Contém as classes que fazem funcionar a arquitetura MVC
+   - #### Controller.php
+   - #### Method.php
+   - #### Parameters.php
+   - #### Twig.php
 ## public
+         Contém os arquivos de recursos
+   - ### assets
+         - ### css
+         - ### fonts
+         - ### images
+         - ### js
+         - ### themes
+## vendor
+         Contém os arquivos gerenciados pelo composer
 
 ## Sintaxe do PostgreSQL
 ###### Mostra informações da tabela
