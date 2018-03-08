@@ -1,6 +1,6 @@
 <?php
 
-    require "../bootstrap.php";
+    require "../requires.php";
 
     use core\Controller;
     use core\Method;
