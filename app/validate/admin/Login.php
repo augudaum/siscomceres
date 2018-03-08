@@ -6,7 +6,7 @@
     namespace app\validate\admin;
 
     use app\validate\Validate;
-    use app\models\admin\Admin;
+    use app\models\usuarios\Usuario;
 
     class Login extends Validate {
         

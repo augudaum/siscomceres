@@ -2,8 +2,8 @@
 	
 	namespace app\classes;
 
-	use app\models\admin\Permission;
-	use app\models\admin\Admin;
+	use app\models\usuarios\Permission;
+	use app\models\usuarios\Usuario;
 
 	class Permissions {
 
@@ -20,7 +20,7 @@
 		public function __construct($controller, $method) {
 			$this->controller = $controller;
 			$this->method = $method;
-			$this->user = getUser(new Admin());
+			$this->user = getUser(new Usuario());
 		}
 
 		public function checkPermissions() {

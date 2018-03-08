@@ -2,7 +2,7 @@
 	
 	namespace app\classes;
 
-	use app\models\admin\Permission;
+	use app\models\usuarios\Permission;
 
 	class ControllersPermissions {
 

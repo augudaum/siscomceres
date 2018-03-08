@@ -6,7 +6,7 @@
     use app\classes\Password;
     use app\classes\Login as LoginUtil;
     use app\validate\admin\Login;
-    use app\models\admin\Admin;
+    use app\models\usuarios\Usuario;
 
     class LoginController extends ContainerController {
 
@@ -18,7 +18,7 @@
                 return redirect('/');
             }
             
-            $logado = authenticate(new Admin());
+            $logado = authenticate(new Usuario());
 
             if ($logado) {
                 redirect('/painel');
