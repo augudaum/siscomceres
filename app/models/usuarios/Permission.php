@@ -1,6 +1,6 @@
 <?php
 	
-	namespace app\models\admin;
+	namespace app\models\usuarios;
 
 	use app\models\database\DefaultModel;
 
