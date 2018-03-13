@@ -60,7 +60,17 @@
         }
 
         public function update() {
-
+            $user = new Usuario();
+            if ($_POST['ativo'] == 1) {
+                $userUpdated = $user->ativarUsuario($_POST['id']);
+                $msg = "Usuário ativado.";
+            } else {
+                $userUpdated = $user->inativarUsuario($_POST['id']);
+                $msg = "Usuário inativado.";
+            }
+            if ($userUpdated > 0) {
+                echo json_encode(array("success" => true, "msg" => $msg));
+            }
         }
 
         public function destroy() {
