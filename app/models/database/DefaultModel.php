@@ -89,6 +89,20 @@
         }
 
         /**
+         * Retorna somente dados ativos
+         */
+        public function findByActives($name, $value) {
+            $query = "SELECT * FROM {$this->table} WHERE {$name} = '{$value}' AND ativo = 1";
+            $pdo = $this->database->prepare($query);
+            try {
+                $pdo->execute();
+                return $pdo->fetch();
+            } catch (PDOException $e) {
+                return toJson($e->getMessage());
+            }
+        }
+
+        /**
          * Retorna todos os dados
          */
         public function all() {
