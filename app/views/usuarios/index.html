@@ -26,10 +26,10 @@
             <td>
                 <div class="ui toggle checkbox">
                     {% if usuario.ativo == 1 %}
-                    <input type="checkbox" name="master" value="1" tabindex="0" checked class="hidden">
+                    <input type="checkbox" name="ativo" value="0" data-usuario-id="{{usuario.id}}" tabindex="0" checked class="hidden">
                     <label>Ativo</label>
                     {% else %}
-                    <input type="checkbox" name="master" value="1" tabindex="0" class="hidden">
+                    <input type="checkbox" name="ativo" value="1" data-usuario-id="{{usuario.id}}" tabindex="0" class="hidden">
                     <label>Inativo</label>
                     {% endif %}
                 </div>
