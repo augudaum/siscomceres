@@ -17,7 +17,7 @@
         public function login(DefaultModel $model) {
             $this->model = $model;
 
-            $this->user = $this->model->findBy('login', request()->get()->login);
+            $this->user = $this->model->findByActives('login', request()->get()->login);
             
             if (!$this->user) {
                 return $this->isNotLoggedIn();
