@@ -5,6 +5,36 @@ $(document).ready(function () {
     var button_saveuser = $('#button-saveuser');
     // Formulário para adicionar um novo usuário
     var form_adduser = $('#form-adduser');
+    // Checkbox de ativação do usuário
+    var checkbox_activeuser = $('.checkbox input[name=ativo]');
+
+    // Evento chamado quando o usuário clicar para inativar um outro usuário
+    checkbox_activeuser.on('change', function () {
+        var id = $(this).attr('data-usuario-id');
+        $.ajax({
+            url: '/usuarios/update',
+            data: {
+                id: id,
+                ativo: $(this).val()
+            },
+            type: 'post',
+            dataType: 'json',
+            success: function (response, status, request) {
+                if (response.success) {
+                    swal({
+                        title: 'Atualização realizada!',
+                        text: response.msg,
+                        type: 'success',
+                        confirmButtonText: 'OK'
+                    }, function () {
+                        location.reload();
+                    });
+                } else {
+                    swal('Falha ao atualizar', 'Você não tem permissões para executar essa ação', 'warning');
+                }
+            }
+        });
+    });
 
     // Evento chamado quando o usuário clicar para adicionar um novo usuário
     button_adduser.on('click', function (event) {
