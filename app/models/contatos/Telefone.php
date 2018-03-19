@@ -5,4 +5,6 @@
     use app\models\database\DefaultModel;
 
     class Telefone extends DefaultModel {
+        private $id;
+        private $descricao;
     }
