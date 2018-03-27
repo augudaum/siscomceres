@@ -1,7 +1,7 @@
 <?php
 
     /**
-     * Classe responsável por modela a Inscrição Estadual (IE) da Empresa
+     * Classe responsável por modelar a Inscrição Estadual (IE) da Empresa
      * @author Marcelo Augusto
      */
 

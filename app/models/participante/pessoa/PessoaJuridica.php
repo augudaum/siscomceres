@@ -1,5 +1,10 @@
 <?php
 
+    /**
+     * Classe responsável por modelar uma Pessoa Jurídica
+     * @author Marcelo Augusto
+     */
+
     namespace app\models\participante\pessoa;
 
     use app\models\participante\pessoa\IE;
