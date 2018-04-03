@@ -5,10 +5,11 @@
     <div class="content">
         <form id="form-addfuncionario" class="ui large form">
             <div class="ui stacked segment">
-                <h4 class="ui dividing header">Preencha os dados</h4>
+                <h4 class="ui dividing header">Dados pessoais</h4>
                 <div class="field">
-                    <!-- Nome do Funcionário -->
-                    <input type="text" placeholder="Informe o nome" name="nome">
+                    <!-- CPF do Funcionário -->
+                    <label>CPF:</label>
+                    <input type="number" placeholder="Informe o número do CPF" name="cpf">
                 </div>
                 <div class="two fields">
                     <div class="field">
@@ -17,9 +18,9 @@
                         <input type="date" name="data_nascimento">
                     </div>
                     <div class="field">
-                        <!-- CPF do Funcionário -->
-                        <label>CPF:</label>
-                        <input type="number" placeholder="Informe o número do CPF" name="cpf">
+                        <!-- Nome do Funcionário -->
+                        <label>Nome:</label>
+                        <input type="text" placeholder="Informe o nome do funcionário" name="nome">
                     </div>
                 </div>
                 <div class="two fields">
@@ -53,12 +54,14 @@
                 <h4 class="ui dividing header">Informações do Funcionário na Empresa</h4>
                 <div class="two fields">
                     <div class="field">
+                        <label>Matrícula:</label>
                         <div class="ui fluid left icon input">
                             <i class="pencil alternate icon"></i>
                             <input type="text" placeholder="Digite o número da matrícula" name="matricula" autocomplete="off">
                         </div>
                     </div>
                     <div class="field">
+                        <label>Cargo:</label>
                         <div class="ui fluid left icon input">
                             <i class="user icon"></i>
                             <input type="text" placeholder="Informe o cargo do funcionário" name="cargo" autocomplete="off">
@@ -67,14 +70,16 @@
                 </div>
                 <div class="two fields">
                     <div class="field">
+                        <label>Função:</label>
                         <div class="ui left icon input">
-                            <i class="lock icon"></i>
+                            <i class="tasks icon"></i>
                             <input type="text" placeholder="Informe a função do funcionário" name="funcao">
                         </div>
                     </div>
                     <div class="field">
+                        <label>Salário:</label>
                         <div class="ui left icon input">
-                            <i class="lock icon"></i>
+                            <i class="money bill alternate icon"></i>
                             <input type="number" placeholder="Informe o salário" name="salario">
                         </div>
                     </div>
@@ -95,24 +100,27 @@
             <div class="ui stacked segment">
                 <div class="two fields">
                     <div class="field">
+                        <label>CEP:</label>
                         <input type="number" name="cep" placeholder="Informe o CEP">
                     </div>
                     <div class="field">
+                        <label>País:</label>
                         <div class="ui fluid search selection dropdown" id="dropdown-pais">
                             <input type="hidden" name="pais">
                             <i class="dropdown icon"></i>
                             <div class="default text">Selecione o País</div>
                             <div class="menu">
-                                <div class="item" data-value="1">Brasil</div>
-                                <div class="item" data-value="2">China</div>
-                                <div class="item" data-value="3">Sérvia</div>
-                                <div class="item" data-value="4">Rússa</div>
+                                <div class="item" data-value="1058">Brasil</div>
+                                <div class="item" data-value="2453">Espanha</div>
+                                <div class="item" data-value="2496">Estados Unidos</div>
+                                <div class="item" data-value="0639">Argentina</div>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="two fields">
                     <div class="field">
+                        <label>Estado:</label>
                         <div class="ui fluid search selection dropdown" id="dropdown-estado">
                             <input type="hidden" name="estado">
                             <i class="dropdown icon"></i>
@@ -126,6 +134,7 @@
                         </div>
                     </div>
                     <div class="field">
+                        <label>Cidade:</label>
                         <div class="ui fluid search selection dropdown" id="dropdown-cidade">
                             <input type="hidden" name="cidade">
                             <i class="dropdown icon"></i>
@@ -139,6 +148,7 @@
                 </div>
                 <div class="two fields">
                     <div class="field">
+                        <label>Bairro:</label>
                         <div class="ui fluid search selection dropdown" id="dropdown-bairro">
                             <input type="hidden" name="bairro">
                             <i class="dropdown icon"></i>
@@ -152,17 +162,21 @@
                         </div>
                     </div>
                     <div class="field">
+                        <label>Logradouro:</label>
                         <input type="text" name="logradouro" placeholder="Informe o endereço">
                     </div>
                 </div>
                 <div class="three fields">
                     <div class="field">
+                        <label>Número:</label>
                         <input type="number" name="numero" placeholder="Informe o número">
                     </div>
                     <div class="field">
+                        <label>Complemento:</label>
                         <input type="text" name="complemento" placeholder="Complemento">
                     </div>
                     <div class="field">
+                        <label>Ponto de referência:</label>
                         <input type="text" name="referencia" placeholder="Informe um ponto de referência">
                     </div>
                 </div>
@@ -170,16 +184,9 @@
             <!-- CAMPOS RELACIONADOS AO ENDEREÇO -->
             <h4 class="ui dividing header">Informações de Contato</h4>
             <div class="ui stacked segment">
-                <div class="three fields">
-                    <div class="field">
-                        <input type="number" name="ddi" placeholder="Código do País">
-                    </div>
-                    <div class="field">
-                        <input type="number" name="ddd" placeholder="Código do Estado">
-                    </div>
-                    <div class="field">
-                        <input type="tel" name="telefone" placeholder="Informe um número para contato">
-                    </div>
+                <div class="field">
+                    <label>Telefone (informar ddd e ddi):</label>
+                    <input type="tel" name="telefone" placeholder="Informe um número para contato. Ex.: 55 84 9 98765432">
                 </div>
                 <div class="two fields">
                     <div class="field">
