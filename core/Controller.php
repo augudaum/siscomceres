@@ -11,6 +11,7 @@
         private $namespace;
         private $folders = [
             //'app\controllers\portal',
+            'app\controllers',
             'app\controllers\painel',
             'app\controllers\usuarios',
             'app\controllers\login'
