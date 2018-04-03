@@ -1,0 +1,29 @@
+{% extends 'painel/index.html' %} {% block content_active %}
+
+<table class="ui selectable single line table">
+    <thead>
+        <tr>
+            <th>
+                <div class="ui ribbon label">ID</div>
+            </th>
+            <th>Funcionário</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td></td>
+            <td></td>
+        </tr>
+    </tbody>
+    <tfoot class="full-width">
+        <tr>
+            <th></th>
+            <th colspan="2">
+                <button id="button-addfuncionario" class="ui right floated small primary labeled icon button">
+                    <i class="id card icon"></i> Novo Funcionário
+                </button>
+            </th>
+        </tr>
+    </tfoot>
+</table>
+{% include 'funcionarios/cadastro.html' %} {% endblock %}

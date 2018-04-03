@@ -1,0 +1,201 @@
+<div id="addFuncionarioModal" class="ui modal">
+    <i class="close icon"></i>
+    <div class="header">
+        <i class="id card icon"></i> Cadastrar funcionário</div>
+    <div class="content">
+        <form id="form-addfuncionario" class="ui large form">
+            <div class="ui stacked segment">
+                <h4 class="ui dividing header">Preencha os dados</h4>
+                <div class="field">
+                    <!-- Nome do Funcionário -->
+                    <input type="text" placeholder="Informe o nome" name="nome">
+                </div>
+                <div class="two fields">
+                    <div class="field">
+                        <!-- Data de Nascimento do Funcionário -->
+                        <label>Data de Nascimento:</label>
+                        <input type="date" name="data_nascimento">
+                    </div>
+                    <div class="field">
+                        <!-- CPF do Funcionário -->
+                        <label>CPF:</label>
+                        <input type="number" placeholder="Informe o número do CPF" name="cpf">
+                    </div>
+                </div>
+                <div class="two fields">
+                    <div class="field">
+                        <label>RG:</label>
+                        <input type="number" placeholder="Informe o número do RG" name="numero_rg">
+                    </div>
+                    <div class="field">
+                        <label>Data de Expedição:</label>
+                        <input type="date" name="data_expedicao_rg">
+                    </div>
+                </div>
+                <div class="two fields">
+                    <div class="field">
+                        <label>Orgão emissor:</label>
+                        <input type="text" placeholder="Digite o orgão emissor do RG" name="orgao_rg">
+                    </div>
+                    <div class="field">
+                        <label>UF do RG:</label>
+                        <div class="ui selection dropdown" id="dropdown_rg">
+                            <input type="hidden" name="uf_rg">
+                            <div class="default text">Selecione a UF</div>
+                            <i class="dropdown icon"></i>
+                            <div class="menu">
+                                <div class="item" data-value="1">RN</div>
+                                <div class="item" data-value="2">PE</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <h4 class="ui dividing header">Informações do Funcionário na Empresa</h4>
+                <div class="two fields">
+                    <div class="field">
+                        <div class="ui fluid left icon input">
+                            <i class="pencil alternate icon"></i>
+                            <input type="text" placeholder="Digite o número da matrícula" name="matricula" autocomplete="off">
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui fluid left icon input">
+                            <i class="user icon"></i>
+                            <input type="text" placeholder="Informe o cargo do funcionário" name="cargo" autocomplete="off">
+                        </div>
+                    </div>
+                </div>
+                <div class="two fields">
+                    <div class="field">
+                        <div class="ui left icon input">
+                            <i class="lock icon"></i>
+                            <input type="text" placeholder="Informe a função do funcionário" name="funcao">
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui left icon input">
+                            <i class="lock icon"></i>
+                            <input type="number" placeholder="Informe o salário" name="salario">
+                        </div>
+                    </div>
+                </div>
+                <div class="two fields">
+                    <div class="field">
+                        <label>Data de Admissão:</label>
+                        <input type="date" placeholder="Data de admissão" name="data_admissao">
+                    </div>
+                    <div class="field">
+                        <label>Carteira de trabalho:</label>
+                        <input type="text" placeholder="Digite o número da carteira de trabalho" name="ctps">
+                    </div>
+                </div>
+            </div>
+            <!-- CAMPOS RELACINADOS AO ENDEREÇO -->
+            <h4 class="ui dividing header">Informações de Endereço</h4>
+            <div class="ui stacked segment">
+                <div class="two fields">
+                    <div class="field">
+                        <input type="number" name="cep" placeholder="Informe o CEP">
+                    </div>
+                    <div class="field">
+                        <div class="ui fluid search selection dropdown" id="dropdown-pais">
+                            <input type="hidden" name="pais">
+                            <i class="dropdown icon"></i>
+                            <div class="default text">Selecione o País</div>
+                            <div class="menu">
+                                <div class="item" data-value="1">Brasil</div>
+                                <div class="item" data-value="2">China</div>
+                                <div class="item" data-value="3">Sérvia</div>
+                                <div class="item" data-value="4">Rússa</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="two fields">
+                    <div class="field">
+                        <div class="ui fluid search selection dropdown" id="dropdown-estado">
+                            <input type="hidden" name="estado">
+                            <i class="dropdown icon"></i>
+                            <div class="default text">Selecione o Estado</div>
+                            <div class="menu">
+                                <div class="item" data-value="1">RN</div>
+                                <div class="item" data-value="2">PE</div>
+                                <div class="item" data-value="3">SP</div>
+                                <div class="item" data-value="4">RJ</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui fluid search selection dropdown" id="dropdown-cidade">
+                            <input type="hidden" name="cidade">
+                            <i class="dropdown icon"></i>
+                            <div class="default text">Selecione a cidade</div>
+                            <div class="menu">
+                                <div class="item" data-value="1">Caicó</div>
+                                <div class="item" data-value="2">Parelhas</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="two fields">
+                    <div class="field">
+                        <div class="ui fluid search selection dropdown" id="dropdown-bairro">
+                            <input type="hidden" name="bairro">
+                            <i class="dropdown icon"></i>
+                            <div class="default text">Selecione o bairro</div>
+                            <div class="menu">
+                                <div class="item" data-value="1">Centro</div>
+                                <div class="item" data-value="2">Paraíba</div>
+                                <div class="item" data-value="3">Recreio</div>
+                                <div class="item" data-value="4">Maynard</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <input type="text" name="logradouro" placeholder="Informe o endereço">
+                    </div>
+                </div>
+                <div class="three fields">
+                    <div class="field">
+                        <input type="number" name="numero" placeholder="Informe o número">
+                    </div>
+                    <div class="field">
+                        <input type="text" name="complemento" placeholder="Complemento">
+                    </div>
+                    <div class="field">
+                        <input type="text" name="referencia" placeholder="Informe um ponto de referência">
+                    </div>
+                </div>
+            </div>
+            <!-- CAMPOS RELACIONADOS AO ENDEREÇO -->
+            <h4 class="ui dividing header">Informações de Contato</h4>
+            <div class="ui stacked segment">
+                <div class="three fields">
+                    <div class="field">
+                        <input type="number" name="ddi" placeholder="Código do País">
+                    </div>
+                    <div class="field">
+                        <input type="number" name="ddd" placeholder="Código do Estado">
+                    </div>
+                    <div class="field">
+                        <input type="tel" name="telefone" placeholder="Informe um número para contato">
+                    </div>
+                </div>
+                <div class="two fields">
+                    <div class="field">
+                        <label>E-mail:</label>
+                        <input type="email" name="email" placeholder="Informe um e-mail para contato">
+                    </div>
+                    <div class="field">
+                        <label>Informe o tipo do contato:</label>
+                        <input type="text" name="tipo_contato" placeholder="Residencial, comercial, celular, whatsapp..">
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="actions">
+        <div class="ui negative button">Cancelar</div>
+        <div id="button-saveuser" class="ui positive button">Salvar</div>
+    </div>
+</div>
