@@ -12,6 +12,7 @@
     
     class PessoaFisica extends Pessoa {
         private $nome;
+        private $apelido;
         private $cpf;
         private $rg;
         private $dataNascimento;
