@@ -13,6 +13,8 @@
         private $id;
         private $endereco;
         private $descricao;
+        private $table = 'tb_emails';
+        const SEQUENCE = 'tb_emails_seq';
 
         /**
          * GET and SET methods

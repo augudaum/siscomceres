@@ -15,7 +15,13 @@
         private $id;
         private $telefone;
         private $email;
-        private $tipo_contato;
+        private $tipoContato;
+        private $table = 'tb_contatos';
+        const SEQUENCE = 'tb_contatos_seq';
+
+        public function __construct($telefone = null, $email = null, $tipoContato) {
+            
+        }
 
         /**
          * GET and SET methods
@@ -33,8 +39,8 @@
             return $this->email;
         }
 
-        public function getTipo_contato(){
-            return $this->tipo_contato;
+        public function getTipoContato(){
+            return $this->tipoContato;
         }
 
         public function setId($id){
@@ -49,7 +55,7 @@
             $this->email = $email;
         }
 
-        public function setTipo_contato($tipo_contato){
-            $this->tipo_contato = $tipo_contato;
+        public function setTipoContato($tipoContato){
+            $this->tipoContato = $tipoContato;
         }
     }

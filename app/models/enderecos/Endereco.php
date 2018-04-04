@@ -16,6 +16,13 @@
         private $logradouro;
         private $complemento;
         private $referencia;
+
+        public function __construct($numero, $logradouro, $complemento, $referencia) {
+            $this->numero = $numero;
+            $this->logradouro = $logradouro;
+            $this->complemento = $complemento;
+            $this->referencia = $referencia;
+        }
      
         /**
          * GET and SET methods

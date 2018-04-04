@@ -13,6 +13,15 @@
         private $codigo;
         private $nome;
         private $sigla;
+        private $table = 'tb_paises';
+        const SEQUENCE = 'tb_paises_seq';
+
+        // public function __construct($codigo) {
+        //     $pais = $this->findBy('codigo', $codigo);
+        //     $this->codigo = $codigo;
+        //     $this->nome = $pais->nome;
+        //     return $this;
+        // }
 
         /**
          * GET and SET methods

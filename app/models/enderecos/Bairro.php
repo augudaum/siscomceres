@@ -15,6 +15,14 @@
         private $cidade;
         private $nome;
 
+        public function __construct($codigo) {
+            $bairro = $this->findBy('codigo', $codigo)->fetch();
+            $this->codigo = $codigo;
+            $this->nome = $bairro->nome;
+            $this->cidade = new Cidade($bairro->cidade_codigo);
+            return $this;
+        }
+
         /**
          * GET and SET methods
          */ 

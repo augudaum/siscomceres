@@ -17,6 +17,8 @@
         private $ddd;
         private $numero;
         private $descricao;
+        private $table = 'tb_telefones';
+        const SEQUENCE = 'tb_telefones_seq';
 
         /**
          * GET and SET methods

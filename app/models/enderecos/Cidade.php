@@ -15,6 +15,14 @@
         private $estado;
         private $nome;
 
+        public function __construct($codigo) {
+            $cidade = $this->findBy('codigo', $codigo);
+            $this->codigo = $codigo;
+            $this->nome = $cidade->nome;
+            $this->estado = new Estado($codigo);
+            return $this;
+        }
+
         /**
          * GET and SET methods
          */ 

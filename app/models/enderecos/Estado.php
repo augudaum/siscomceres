@@ -16,6 +16,15 @@
         private $sigla;
         private $pais;
 
+        public function __construct($codigo) {
+            $estado = $this->findBy('codigo', $codigo);
+            $this->codigo = $codigo;
+            $this->nome = $estado->nome;
+            $this->sigla = $estado->sigla;
+            $this->pais = new Pais($estado->pais_codigo);
+            return $this;
+        }
+
         /**
          * GET and SET methods
          */ 

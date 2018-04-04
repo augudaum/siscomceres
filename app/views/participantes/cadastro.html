@@ -1,15 +1,40 @@
-<div id="addFuncionarioModal" class="ui modal">
+<div id="addParticipanteModal" class="ui modal">
     <i class="close icon"></i>
     <div class="header">
-        <i class="id card icon"></i> Cadastrar funcionário</div>
+        <i class="id card icon"></i> Cadastrar participante
+    </div>
     <div class="content">
-        <form id="form-addfuncionario" class="ui large form">
+        <form id="addParticipanteForm" class="ui large form">
             <div class="ui stacked segment">
-                <h4 class="ui dividing header">Dados pessoais</h4>
-                <div class="field">
-                    <!-- CPF do Funcionário -->
-                    <label>CPF:</label>
-                    <input type="number" placeholder="Informe o número do CPF" name="cpf">
+                <h5 class="ui dividing header">Tipo de Participante</h5>
+                <div class="inline two fields">
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <label>Pessoa física</label>
+                            <input type="radio" name="tipo_pessoa" checked>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <label>Pessoa jurídica</label>
+                            <input type="radio" name="tipo_pessoa">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="ui stacked segment">
+                <h4 class="ui dividing header">Dados de Pessoa Física</h4>
+                <div class="two fields">
+                    <div class="field">
+                        <!-- CPF do Participante -->
+                        <label>CPF:</label>
+                        <input type="number" placeholder="Informe o número do CPF" name="cpf">
+                    </div>
+                    <div class="field">
+                        <!-- Nome do Funcionário -->
+                        <label>Nome:</label>
+                        <input type="text" placeholder="Informe o nome do participante" name="nome">
+                    </div>
                 </div>
                 <div class="two fields">
                     <div class="field">
@@ -19,8 +44,8 @@
                     </div>
                     <div class="field">
                         <!-- Nome do Funcionário -->
-                        <label>Nome:</label>
-                        <input type="text" placeholder="Informe o nome do funcionário" name="nome">
+                        <label>Apelido:</label>
+                        <input type="text" placeholder="Informe um apelido" name="apelido">
                     </div>
                 </div>
                 <div class="two fields">
@@ -45,12 +70,14 @@
                             <div class="default text">Selecione a UF</div>
                             <i class="dropdown icon"></i>
                             <div class="menu">
-                                <div class="item" data-value="1">RN</div>
+                                <div class="item" data-value="24">RN</div>
                                 <div class="item" data-value="2">PE</div>
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
+            <!-- <div class="ui stacked segment">
                 <h4 class="ui dividing header">Informações do Funcionário na Empresa</h4>
                 <div class="two fields">
                     <div class="field">
@@ -94,10 +121,74 @@
                         <input type="text" placeholder="Digite o número da carteira de trabalho" name="ctps">
                     </div>
                 </div>
-            </div>
-            <!-- CAMPOS RELACINADOS AO ENDEREÇO -->
-            <h4 class="ui dividing header">Informações de Endereço</h4>
+            </div> -->
+            <!-- CAMPOS RELACIONADOS A PESSOA JURÍDICA -->
             <div class="ui stacked segment">
+                <h4 class="ui dividing header">Informações de Pessoa Jurídica</h4>
+                <div class="two fields">
+                    <div class="field">
+                        <label>Razão Social:</label>
+                        <input type="text" name="razao_social" placeholder="Razão social">
+                    </div>
+                    <div class="field">
+                        <label>Nome Fantasia:</label>
+                        <input type="text" name="nome_fantasia" placeholder="Informe o nome fantasia">
+                    </div>
+                </div>
+                <div class="fields">
+                    <div class="field">
+                        <label>CNPJ:</label>
+                        <input type="number" name="cnpj" placeholder="Informe o cnpj">
+                    </div>
+                    <div class="field">
+                        <label>IE:</label>
+                        <input type="number" name="ie" placeholder="Inscrição Estadual">
+                    </div>
+                    <div class="field">
+                        <label>UF da IE:</label>
+                        <div class="ui selection dropdown" id="dropdown_ie">
+                            <input type="hidden" name="uf_ie">
+                            <div class="default text">Selecione a UF</div>
+                            <i class="dropdown icon"></i>
+                            <div class="menu">
+                                <div class="item" data-value="24">RN</div>
+                                <div class="item" data-value="2">PE</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label>IM:</label>
+                        <input type="number" name="im" placeholder="Inscrição Municipal">
+                    </div>
+                </div>
+                <div class="three fields">
+                    <div class="field">
+                        <label>CNAE:</label>
+                        <input type="number" name="cnae" placeholder="Informe o cnae">
+                    </div>
+                    <div class="field">
+                        <label>Código de Regime Tributário (CRT):</label>
+                        <div class="ui fluid search selection dropdown" id="dropdown-crt">
+                            <input type="hidden" name="crt">
+                            <i class="dropdown icon"></i>
+                            <div class="default text">Selecione uma opção</div>
+                            <div class="menu">
+                                <div class="item" data-value="1">Simples Nacional</div>
+                                <div class="item" data-value="2">Simples Nacional (Excesso)</div>
+                                <div class="item" data-value="3">Regime Normal</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label>Data de fundação</label>
+                        <input type="date" name="data_fundacao">
+                    </div>
+                </div>
+            </div>
+
+            <!-- CAMPOS RELACINADOS AO ENDEREÇO -->
+            <div class="ui stacked segment">
+                <h4 class="ui dividing header">Informações de Endereço</h4>
                 <div class="two fields">
                     <div class="field">
                         <label>CEP:</label>
@@ -126,7 +217,7 @@
                             <i class="dropdown icon"></i>
                             <div class="default text">Selecione o Estado</div>
                             <div class="menu">
-                                <div class="item" data-value="1">RN</div>
+                                <div class="item" data-value="24">RN</div>
                                 <div class="item" data-value="2">PE</div>
                                 <div class="item" data-value="3">SP</div>
                                 <div class="item" data-value="4">RJ</div>
@@ -199,10 +290,16 @@
                     </div>
                 </div>
             </div>
+            <div class="actions">
+                <button id="button-deletefuncionario" type="button" class="ui negative button right floated disabled">
+                    <i class="trash alternate icon"></i> Remover
+                </button>
+                <div class="ui buttons">
+                    <button type="button" class="ui cancel button">Cancelar</button>
+                    <div class="or" data-text="ou"></div>
+                    <button id="button-saveparticipante" type="button" class="ui primary button">Salvar</button>
+                </div>
+            </div>
         </form>
-    </div>
-    <div class="actions">
-        <div class="ui negative button">Cancelar</div>
-        <div id="button-saveuser" class="ui positive button">Salvar</div>
     </div>
 </div>

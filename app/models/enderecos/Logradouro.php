@@ -16,6 +16,12 @@
         private $bairro;
         private $cep;
 
+        public function __construct($nome, $bairro, $cep) {
+            $this->nome = $nome;
+            $this->bairro = $bairro;
+            $this->cep = $cep;
+        }
+
         /**
          * GET and SET methods
          */ 

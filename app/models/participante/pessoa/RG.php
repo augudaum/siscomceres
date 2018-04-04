@@ -8,10 +8,33 @@
     namespace app\models\participante\pessoa;
 
     class RG {
-        private $dataExpedicao;
         private $numero;
         private $orgao;
-        private $UF;
+        private $uf;
+        private $dataExpedicao;
+
+        public function __construct($numero = null, $orgao = null, $uf = null, $dataExpedicao = null) {
+            $this->numero = $numero;
+            $this->orgao = $orgao;
+            $this->uf = $uf;
+            $this->dataExpedicao = $dataExpedicao;
+        }
+
+        public function setDataExpedicao($dataExpedicao) {
+            $this->dataExpedicao = $dataExpedicao;
+        }
+
+        public function setNumero($numero) {
+            $this->numero = $numero;
+        }
+
+        public function setOrgao($orgao) {
+            $this->orgao = $orgao;
+        }
+
+        public function setUF($uf) {
+            $this->uf = $uf;
+        }
     }
 
 ?>

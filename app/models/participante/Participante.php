@@ -4,14 +4,15 @@
     
     use app\models\enderecos\Endereco;
     use app\models\contatos\Contato;
-    use app\models\participante\Pessoa;
+    use app\models\participante\pessoa\Pessoa;
+    use app\models\database\DefaultModel;
 
-    class Participante {
-        private $id;
-        private $endereco;
-        private $contato;
-        private $pessoa;
-        private $politicaPagamento;
+    class Participante extends DefaultModel {
+        protected $id;
+        protected $endereco;
+        protected $contato;
+        protected $pessoa;
+        protected $politicaPagamento;
 
         public function __constructor() {
 

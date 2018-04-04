@@ -17,12 +17,27 @@
         private $rg;
         private $dataNascimento;
 
-
         /****************************************
         ********** GET and SET methods **********
         ****************************************/
 
+        public function setNome($nome) {
+            $this->nome = $nome;
+        }
+
+        public function setApelido($apelido) {
+            $this->apelido = $apelido;
+        }
+
+        public function setCPF($cpf) {
+            $this->cpf = $cpf;
+        }
+
         public function setRG (RG $rg) {
             $this->rg = $rg;
+        }
+
+        public function setDataNascimento($dataNascimento) {
+            $this->dataNascimento = $dataNascimento;
         }
     }
