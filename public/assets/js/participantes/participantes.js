@@ -3,6 +3,18 @@ $(document).ready(function () {
     var button_saveparticipante = $('#button-saveparticipante');
     var form_addparticipante = $('#addParticipanteForm');
     setFormValidation();
+    $('.menu .item').tab();
+    $('.ui.checkbox').checkbox({
+        onChange: function (event) {
+            if ($(this)[0].id == 'f') {
+                $('a[data-tab=pessoa-juridica]').css('display', 'none');
+                $('a[data-tab=pessoa-fisica]').css('display', '');
+            } else {
+                $('a[data-tab=pessoa-fisica]').css('display', 'none');
+                $('a[data-tab=pessoa-juridica]').css('display', '');
+            }
+        }
+    });
 
     button_saveparticipante.on('click', function (event) {
         if (form_addparticipante.form('is valid')) {

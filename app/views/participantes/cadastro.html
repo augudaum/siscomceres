@@ -5,73 +5,82 @@
     </div>
     <div class="content">
         <form id="addParticipanteForm" class="ui large form">
-            <div class="ui stacked segment">
-                <h5 class="ui dividing header">Tipo de Participante</h5>
-                <div class="inline two fields">
-                    <div class="field">
-                        <div class="ui radio checkbox">
-                            <label>Pessoa física</label>
-                            <input type="radio" name="tipo_pessoa" checked>
+            <div class="ui top attached tabular menu" id="menu-tabs-participante">
+                <a class="item active" data-tab="tipo-participante">Tipo de Participante</a>
+                <a class="item" style="display: none;" data-tab="pessoa-fisica">Pessoa Física</a>
+                <a class="item" style="display: none;" data-tab="pessoa-juridica">Pessoa Jurídica</a>
+                <a class="item" data-tab="endereco">Endereço</a>
+                <a class="item" data-tab="contato">Contato</a>
+            </div>
+            <div class="ui bottom attached tab segment active" data-tab="tipo-participante">
+                <div style="padding: 10px 10px 0px;">
+                    <div class="inline two fields">
+                        <div class="field">
+                            <div class="ui radio checkbox">
+                                <label>Pessoa física</label>
+                                <input type="radio" name="tipo_pessoa" id="f">
+                            </div>
                         </div>
-                    </div>
-                    <div class="field">
-                        <div class="ui radio checkbox">
-                            <label>Pessoa jurídica</label>
-                            <input type="radio" name="tipo_pessoa">
+                        <div class="field">
+                            <div class="ui radio checkbox">
+                                <label>Pessoa jurídica</label>
+                                <input type="radio" name="tipo_pessoa" id="j">
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="ui stacked segment">
-                <h4 class="ui dividing header">Dados de Pessoa Física</h4>
-                <div class="two fields">
-                    <div class="field">
-                        <!-- CPF do Participante -->
-                        <label>CPF:</label>
-                        <input type="number" placeholder="Informe o número do CPF" name="cpf">
+            <div class="ui bottom attached tab segment" data-tab="pessoa-fisica">
+                <div style="padding: 10px">
+                    <div class="two fields">
+                        <div class="field">
+                            <!-- CPF do Participante -->
+                            <label>CPF:</label>
+                            <input type="number" placeholder="Informe o número do CPF" name="cpf">
+                        </div>
+                        <div class="field">
+                            <!-- Nome do Funcionário -->
+                            <label>Nome:</label>
+                            <input type="text" placeholder="Informe o nome do participante" name="nome">
+                        </div>
                     </div>
-                    <div class="field">
-                        <!-- Nome do Funcionário -->
-                        <label>Nome:</label>
-                        <input type="text" placeholder="Informe o nome do participante" name="nome">
+                    <div class="two fields">
+                        <div class="field">
+                            <!-- Data de Nascimento do Funcionário -->
+                            <label>Data de Nascimento:</label>
+                            <input type="date" name="data_nascimento">
+                        </div>
+                        <div class="field">
+                            <!-- Nome do Funcionário -->
+                            <label>Apelido:</label>
+                            <input type="text" placeholder="Informe um apelido" name="apelido">
+                        </div>
                     </div>
-                </div>
-                <div class="two fields">
-                    <div class="field">
-                        <!-- Data de Nascimento do Funcionário -->
-                        <label>Data de Nascimento:</label>
-                        <input type="date" name="data_nascimento">
+                    <div class="two fields">
+                        <div class="field">
+                            <label>RG:</label>
+                            <input type="number" placeholder="Informe o número do RG" name="numero_rg">
+                        </div>
+                        <div class="field">
+                            <label>Data de Expedição:</label>
+                            <input type="date" name="data_expedicao_rg">
+                        </div>
                     </div>
-                    <div class="field">
-                        <!-- Nome do Funcionário -->
-                        <label>Apelido:</label>
-                        <input type="text" placeholder="Informe um apelido" name="apelido">
-                    </div>
-                </div>
-                <div class="two fields">
-                    <div class="field">
-                        <label>RG:</label>
-                        <input type="number" placeholder="Informe o número do RG" name="numero_rg">
-                    </div>
-                    <div class="field">
-                        <label>Data de Expedição:</label>
-                        <input type="date" name="data_expedicao_rg">
-                    </div>
-                </div>
-                <div class="two fields">
-                    <div class="field">
-                        <label>Orgão emissor:</label>
-                        <input type="text" placeholder="Digite o orgão emissor do RG" name="orgao_rg">
-                    </div>
-                    <div class="field">
-                        <label>UF do RG:</label>
-                        <div class="ui selection dropdown" id="dropdown_rg">
-                            <input type="hidden" name="uf_rg">
-                            <div class="default text">Selecione a UF</div>
-                            <i class="dropdown icon"></i>
-                            <div class="menu">
-                                <div class="item" data-value="24">RN</div>
-                                <div class="item" data-value="2">PE</div>
+                    <div class="two fields">
+                        <div class="field">
+                            <label>Orgão emissor:</label>
+                            <input type="text" placeholder="Digite o orgão emissor do RG" name="orgao_rg">
+                        </div>
+                        <div class="field">
+                            <label>UF do RG:</label>
+                            <div class="ui selection dropdown" id="dropdown_rg">
+                                <input type="hidden" name="uf_rg">
+                                <div class="default text">Selecione a UF</div>
+                                <i class="dropdown icon"></i>
+                                <div class="menu">
+                                    <div class="item" data-value="24">RN</div>
+                                    <div class="item" data-value="2">PE</div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -123,177 +132,181 @@
                 </div>
             </div> -->
             <!-- CAMPOS RELACIONADOS A PESSOA JURÍDICA -->
-            <div class="ui stacked segment">
-                <h4 class="ui dividing header">Informações de Pessoa Jurídica</h4>
-                <div class="two fields">
-                    <div class="field">
-                        <label>Razão Social:</label>
-                        <input type="text" name="razao_social" placeholder="Razão social">
-                    </div>
-                    <div class="field">
-                        <label>Nome Fantasia:</label>
-                        <input type="text" name="nome_fantasia" placeholder="Informe o nome fantasia">
-                    </div>
-                </div>
-                <div class="fields">
-                    <div class="field">
-                        <label>CNPJ:</label>
-                        <input type="number" name="cnpj" placeholder="Informe o cnpj">
-                    </div>
-                    <div class="field">
-                        <label>IE:</label>
-                        <input type="number" name="ie" placeholder="Inscrição Estadual">
-                    </div>
-                    <div class="field">
-                        <label>UF da IE:</label>
-                        <div class="ui selection dropdown" id="dropdown_ie">
-                            <input type="hidden" name="uf_ie">
-                            <div class="default text">Selecione a UF</div>
-                            <i class="dropdown icon"></i>
-                            <div class="menu">
-                                <div class="item" data-value="24">RN</div>
-                                <div class="item" data-value="2">PE</div>
-                            </div>
+            <div class="ui bottom attached tab segment" data-tab="pessoa-juridica">
+                <div style="padding: 10px">
+                    <div class="two fields">
+                        <div class="field">
+                            <label>Razão Social:</label>
+                            <input type="text" name="razao_social" placeholder="Razão social">
+                        </div>
+                        <div class="field">
+                            <label>Nome Fantasia:</label>
+                            <input type="text" name="nome_fantasia" placeholder="Informe o nome fantasia">
                         </div>
                     </div>
-                    <div class="field">
-                        <label>IM:</label>
-                        <input type="number" name="im" placeholder="Inscrição Municipal">
-                    </div>
-                </div>
-                <div class="three fields">
-                    <div class="field">
-                        <label>CNAE:</label>
-                        <input type="number" name="cnae" placeholder="Informe o cnae">
-                    </div>
-                    <div class="field">
-                        <label>Código de Regime Tributário (CRT):</label>
-                        <div class="ui fluid search selection dropdown" id="dropdown-crt">
-                            <input type="hidden" name="crt">
-                            <i class="dropdown icon"></i>
-                            <div class="default text">Selecione uma opção</div>
-                            <div class="menu">
-                                <div class="item" data-value="1">Simples Nacional</div>
-                                <div class="item" data-value="2">Simples Nacional (Excesso)</div>
-                                <div class="item" data-value="3">Regime Normal</div>
+                    <div class="fields">
+                        <div class="field">
+                            <label>CNPJ:</label>
+                            <input type="number" name="cnpj" placeholder="Informe o cnpj">
+                        </div>
+                        <div class="field">
+                            <label>IE:</label>
+                            <input type="number" name="ie" placeholder="Inscrição Estadual">
+                        </div>
+                        <div class="field">
+                            <label>UF da IE:</label>
+                            <div class="ui selection dropdown" id="dropdown_ie">
+                                <input type="hidden" name="uf_ie">
+                                <div class="default text">Selecione a UF</div>
+                                <i class="dropdown icon"></i>
+                                <div class="menu">
+                                    <div class="item" data-value="24">RN</div>
+                                    <div class="item" data-value="2">PE</div>
+                                </div>
                             </div>
                         </div>
+                        <div class="field">
+                            <label>IM:</label>
+                            <input type="number" name="im" placeholder="Inscrição Municipal">
+                        </div>
                     </div>
-                    <div class="field">
-                        <label>Data de fundação</label>
-                        <input type="date" name="data_fundacao">
+                    <div class="three fields">
+                        <div class="field">
+                            <label>CNAE:</label>
+                            <input type="number" name="cnae" placeholder="Informe o cnae">
+                        </div>
+                        <div class="field">
+                            <label>Código de Regime Tributário (CRT):</label>
+                            <div class="ui fluid search selection dropdown" id="dropdown-crt">
+                                <input type="hidden" name="crt">
+                                <i class="dropdown icon"></i>
+                                <div class="default text">Selecione uma opção</div>
+                                <div class="menu">
+                                    <div class="item" data-value="1">Simples Nacional</div>
+                                    <div class="item" data-value="2">Simples Nacional (Excesso)</div>
+                                    <div class="item" data-value="3">Regime Normal</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label>Data de fundação</label>
+                            <input type="date" name="data_fundacao">
+                        </div>
                     </div>
                 </div>
             </div>
 
             <!-- CAMPOS RELACINADOS AO ENDEREÇO -->
-            <div class="ui stacked segment">
-                <h4 class="ui dividing header">Informações de Endereço</h4>
-                <div class="two fields">
-                    <div class="field">
-                        <label>CEP:</label>
-                        <input type="number" name="cep" placeholder="Informe o CEP">
-                    </div>
-                    <div class="field">
-                        <label>País:</label>
-                        <div class="ui fluid search selection dropdown" id="dropdown-pais">
-                            <input type="hidden" name="pais">
-                            <i class="dropdown icon"></i>
-                            <div class="default text">Selecione o País</div>
-                            <div class="menu">
-                                <div class="item" data-value="1058">Brasil</div>
-                                <div class="item" data-value="2453">Espanha</div>
-                                <div class="item" data-value="2496">Estados Unidos</div>
-                                <div class="item" data-value="0639">Argentina</div>
+            <div class="ui bottom attached tab segment" data-tab="endereco">
+                <div style="padding: 10px">
+                    <div class="two fields">
+                        <div class="field">
+                            <label>CEP:</label>
+                            <input type="number" name="cep" placeholder="Informe o CEP">
+                        </div>
+                        <div class="field">
+                            <label>País:</label>
+                            <div class="ui fluid search selection dropdown" id="dropdown-pais">
+                                <input type="hidden" name="pais">
+                                <i class="dropdown icon"></i>
+                                <div class="default text">Selecione o País</div>
+                                <div class="menu">
+                                    <div class="item" data-value="1058">Brasil</div>
+                                    <div class="item" data-value="2453">Espanha</div>
+                                    <div class="item" data-value="2496">Estados Unidos</div>
+                                    <div class="item" data-value="0639">Argentina</div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="two fields">
-                    <div class="field">
-                        <label>Estado:</label>
-                        <div class="ui fluid search selection dropdown" id="dropdown-estado">
-                            <input type="hidden" name="estado">
-                            <i class="dropdown icon"></i>
-                            <div class="default text">Selecione o Estado</div>
-                            <div class="menu">
-                                <div class="item" data-value="24">RN</div>
-                                <div class="item" data-value="2">PE</div>
-                                <div class="item" data-value="3">SP</div>
-                                <div class="item" data-value="4">RJ</div>
+                    <div class="two fields">
+                        <div class="field">
+                            <label>Estado:</label>
+                            <div class="ui fluid search selection dropdown" id="dropdown-estado">
+                                <input type="hidden" name="estado">
+                                <i class="dropdown icon"></i>
+                                <div class="default text">Selecione o Estado</div>
+                                <div class="menu">
+                                    <div class="item" data-value="24">RN</div>
+                                    <div class="item" data-value="2">PE</div>
+                                    <div class="item" data-value="3">SP</div>
+                                    <div class="item" data-value="4">RJ</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label>Cidade:</label>
+                            <div class="ui fluid search selection dropdown" id="dropdown-cidade">
+                                <input type="hidden" name="cidade">
+                                <i class="dropdown icon"></i>
+                                <div class="default text">Selecione a cidade</div>
+                                <div class="menu">
+                                    <div class="item" data-value="1">Caicó</div>
+                                    <div class="item" data-value="2">Parelhas</div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="field">
-                        <label>Cidade:</label>
-                        <div class="ui fluid search selection dropdown" id="dropdown-cidade">
-                            <input type="hidden" name="cidade">
-                            <i class="dropdown icon"></i>
-                            <div class="default text">Selecione a cidade</div>
-                            <div class="menu">
-                                <div class="item" data-value="1">Caicó</div>
-                                <div class="item" data-value="2">Parelhas</div>
+                    <div class="two fields">
+                        <div class="field">
+                            <label>Bairro:</label>
+                            <div class="ui fluid search selection dropdown" id="dropdown-bairro">
+                                <input type="hidden" name="bairro">
+                                <i class="dropdown icon"></i>
+                                <div class="default text">Selecione o bairro</div>
+                                <div class="menu">
+                                    <div class="item" data-value="1">Centro</div>
+                                    <div class="item" data-value="2">Paraíba</div>
+                                    <div class="item" data-value="3">Recreio</div>
+                                    <div class="item" data-value="4">Maynard</div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-                <div class="two fields">
-                    <div class="field">
-                        <label>Bairro:</label>
-                        <div class="ui fluid search selection dropdown" id="dropdown-bairro">
-                            <input type="hidden" name="bairro">
-                            <i class="dropdown icon"></i>
-                            <div class="default text">Selecione o bairro</div>
-                            <div class="menu">
-                                <div class="item" data-value="1">Centro</div>
-                                <div class="item" data-value="2">Paraíba</div>
-                                <div class="item" data-value="3">Recreio</div>
-                                <div class="item" data-value="4">Maynard</div>
-                            </div>
+                        <div class="field">
+                            <label>Logradouro:</label>
+                            <input type="text" name="logradouro" placeholder="Informe o endereço">
                         </div>
                     </div>
-                    <div class="field">
-                        <label>Logradouro:</label>
-                        <input type="text" name="logradouro" placeholder="Informe o endereço">
-                    </div>
-                </div>
-                <div class="three fields">
-                    <div class="field">
-                        <label>Número:</label>
-                        <input type="number" name="numero" placeholder="Informe o número">
-                    </div>
-                    <div class="field">
-                        <label>Complemento:</label>
-                        <input type="text" name="complemento" placeholder="Complemento">
-                    </div>
-                    <div class="field">
-                        <label>Ponto de referência:</label>
-                        <input type="text" name="referencia" placeholder="Informe um ponto de referência">
+                    <div class="three fields">
+                        <div class="field">
+                            <label>Número:</label>
+                            <input type="number" name="numero" placeholder="Informe o número">
+                        </div>
+                        <div class="field">
+                            <label>Complemento:</label>
+                            <input type="text" name="complemento" placeholder="Complemento">
+                        </div>
+                        <div class="field">
+                            <label>Ponto de referência:</label>
+                            <input type="text" name="referencia" placeholder="Informe um ponto de referência">
+                        </div>
                     </div>
                 </div>
             </div>
             <!-- CAMPOS RELACIONADOS AO ENDEREÇO -->
-            <h4 class="ui dividing header">Informações de Contato</h4>
-            <div class="ui stacked segment">
-                <div class="field">
-                    <label>Telefone (informar ddd e ddi):</label>
-                    <input type="tel" name="telefone" placeholder="Informe um número para contato. Ex.: 55 84 9 98765432">
-                </div>
-                <div class="two fields">
+
+            <div class="ui bottom attached tab segment" data-tab="contato">
+                <div style="padding: 10px">
                     <div class="field">
-                        <label>E-mail:</label>
-                        <input type="email" name="email" placeholder="Informe um e-mail para contato">
+                        <label>Telefone (informar ddd e ddi):</label>
+                        <input type="tel" name="telefone" placeholder="Informe um número para contato. Ex.: 55 84 9 98765432">
                     </div>
-                    <div class="field">
-                        <label>Informe o tipo do contato:</label>
-                        <input type="text" name="tipo_contato" placeholder="Residencial, comercial, celular, whatsapp..">
+                    <div class="two fields">
+                        <div class="field">
+                            <label>E-mail:</label>
+                            <input type="email" name="email" placeholder="Informe um e-mail para contato">
+                        </div>
+                        <div class="field">
+                            <label>Informe o tipo do contato:</label>
+                            <input type="text" name="tipo_contato" placeholder="Residencial, comercial, celular, whatsapp..">
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="actions">
-                <button id="button-deletefuncionario" type="button" class="ui negative button right floated disabled">
+                <!-- <button id="button-deletefuncionario" type="button" class="ui negative button right floated disabled">
                     <i class="trash alternate icon"></i> Remover
-                </button>
+                </button> -->
                 <div class="ui buttons">
                     <button type="button" class="ui cancel button">Cancelar</button>
                     <div class="or" data-text="ou"></div>
