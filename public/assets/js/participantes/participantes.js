@@ -9,15 +9,20 @@ $(document).ready(function () {
             if ($(this)[0].id == 'f') {
                 $('a[data-tab=pessoa-juridica]').css('display', 'none');
                 $('a[data-tab=pessoa-fisica]').css('display', '');
+                form_addparticipante.form('clear');
+                $(this).click();
             } else {
                 $('a[data-tab=pessoa-fisica]').css('display', 'none');
                 $('a[data-tab=pessoa-juridica]').css('display', '');
+                form_addparticipante.form('clear');
+                $(this).click();
             }
         }
     });
 
     button_saveparticipante.on('click', function (event) {
         if (form_addparticipante.form('is valid')) {
+            console.log(form_addparticipante.serialize());
             // $.ajax({
             //     url: '/participantes/store',
             //     type: 'POST',
