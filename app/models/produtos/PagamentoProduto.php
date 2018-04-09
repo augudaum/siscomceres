@@ -18,4 +18,27 @@
          * GET and SET methods
          */ 
         
+        public function getCodigoProduto(){
+            return $this->codigoProduto;
+        }
+    
+        public function getCodigoPlano(){
+            return $this->codigoPlano;
+        }
+   
+        public function getPreco(){
+            return $this->preco;
+        }
+     
+        public function setCodigoProduto($codigoProduto){
+            $this->codigoProduto = $codigoProduto;
+        }
+    
+        public function setCodigoPlano($codigoPlano){
+            $this->codigoPlano = $codigoPlano;
+        }
+    
+        public function setPreco($preco){
+            $this->preco = $preco;
+        }
     }

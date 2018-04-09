@@ -17,4 +17,19 @@
          * GET and SET methods
          */ 
         
+        public function getId(){
+            return $this->id;
+        }
+    
+        public function getFormaPagamento(){
+            return $this->formaPagamento;
+        }
+    
+        public function setId($id){
+            $this->id = $id;
+        }
+    
+        public function setFormaPagamento($formaPagamento){
+            $this->formaPagamento = $formaPagamento;
+        }
     }
