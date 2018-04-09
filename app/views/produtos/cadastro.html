@@ -1,7 +1,7 @@
 <div id="addProdutoModal" class="ui modal">
     <i class="close icon"></i>
     <div class="header">
-        <i class="id card icon"></i> Cadastrar produto</div>
+        <i class="archive icon"></i> Cadastrar produto</div>
     <div class="content">
         <form id="form-addproduto" class="ui large form">
             <div class="ui stacked segment">
@@ -9,28 +9,59 @@
                 <div class="two fields">
                     <!--Dados do produto-->
                     <div class="field">
-                        <label>Campo:</label>
-                        <input type="text" placeholder="Informe o campo" name="campo">
-                    </div>
-                    <div class="field">
-                        <label>Campo:</label>
-                        <input type="text" placeholder="Informe o campo" name="campo">
+                        <label>cEAN:</label>
+                        <input type="text" placeholder="Informe o cEAN" name="cean">
                     </div>
                 </div>
                 <div class="two fields">
-                        <!--Dados do produto-->
-                        <div class="field">
-                            <label>Campo:</label>
-                            <input type="text" placeholder="Informe o campo" name="campo">
-                        </div>
-                        <div class="field">
-                            <label>Campo:</label>
-                            <input type="text" placeholder="Informe o campo" name="campo">
-                        </div>
+                    <div class="field">
+                        <label>Marca:</label>
+                        <input type="text" placeholder="Informe a marca" name="marca">
                     </div>
+                    <div class="field">
+                        <label>Fabricante:</label>
+                        <input type="text" placeholder="Informe o fabricante" name="fabricante">
+                    </div>
+                </div>
+                <div class="field">
+                    <label>Descrição:</label>
+                    <input type="text" placeholder="Informe o descrição" name="descricao">
+                </div>
+                <div class="two fields">
+                    <div class="field">
+                        <label>Ncm:</label>
+                        <input type="text" placeholder="Informe o NCM" name="ncm">
+                    </div>
+                    <div class="field">
+                        <label>Unidade:</label>
+                        <input type="text" placeholder="Informe o unidade" name="unidade">
+                    </div>
+                </div>
+                <div class="three fields">
+                    <div class="field">
+                        <label>Preço de compra:</label>
+                        <input type="text" placeholder="Informe o preço de compra" name="pc_compra">
+                    </div>
+                    <div class="field">
+                        <label>Preço de custo:</label>
+                        <input type="text" placeholder="Informe o preço de custo" name="pc_custo">
+                    </div>
+                    <div class="field">
+                        <label>Preço de venda:</label>
+                        <input type="text" placeholder="Informe o preço de venda" name="pc_venda">
+                    </div>
+                </div>
             </div>
-        <div class="actions">
-            <div class="ui negative button">Cancelar</div>
-            <div id="button-saveuser" class="ui positive button">Salvar</div>
-        </div>
+            <div class="actions">
+                <!-- <button id="button-deletefuncionario" type="button" class="ui negative button right floated disabled">
+                    <i class="trash alternate icon"></i> Remover
+                </button> -->
+                <div class="ui buttons">
+                    <button type="button" class="ui cancel button">Cancelar</button>
+                    <div class="or" data-text="ou"></div>
+                    <button id="button-saveparticipante" type="button" class="ui primary button">Salvar</button>
+                </div>
+            </div>
+        </form>
+    </div>
 </div>
