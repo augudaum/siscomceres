@@ -12,6 +12,7 @@ CREATE TABLE IF NOT EXISTS tb_estados (
     nome VARCHAR(25) NOT NULL,
     sigla VARCHAR(2) NOT NULL,
     pais_codigo VARCHAR(4) NOT NULL,
+    CONSTRAINT tb_estados_pk PRIMARY KEY (codigo),
     CONSTRAINT pais_fk FOREIGN KEY (pais_codigo) REFERENCES tb_paises (codigo) 
 );
 
@@ -20,6 +21,7 @@ CREATE TABLE IF NOT EXISTS tb_cidades (
     codigo VARCHAR(7) NOT NULL,
     nome VARCHAR(60) NOT NULL,
     estado_codigo VARCHAR(2) NOT NULL,
+    CONSTRAINT tb_cidades_pk PRIMARY KEY (codigo),
     CONSTRAINT estado_fk FOREIGN KEY (estado_codigo) REFERENCES tb_estados (codigo)
 );
 
