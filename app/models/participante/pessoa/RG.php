@@ -20,20 +20,20 @@
             $this->dataExpedicao = $dataExpedicao;
         }
 
-        public function setDataExpedicao($dataExpedicao) {
-            $this->dataExpedicao = $dataExpedicao;
-        }
-
         public function setNumero($numero) {
             $this->numero = $numero;
         }
-
+        
         public function setOrgao($orgao) {
             $this->orgao = $orgao;
         }
 
         public function setUF($uf) {
             $this->uf = $uf;
+        }
+
+        public function setDataExpedicao($dataExpedicao) {
+            $this->dataExpedicao = $dataExpedicao;
         }
     }
 
