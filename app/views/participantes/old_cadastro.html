@@ -1,0 +1,348 @@
+<div id="addParticipanteModal" class="ui modal">
+    <i class="close icon"></i>
+    <div class="header">
+        <i class="id card icon"></i> Cadastrar participante
+    </div>
+    <div class="content">
+        <form id="addParticipanteForm" class="ui large form">
+            <div class="ui top attached tabular menu" id="menu-tabs-participante">
+                <a class="item active" data-tab="tipo-participante">Tipo de Participante</a>
+                <a class="item" style="display: none;" data-tab="pessoa-fisica">Pessoa Física</a>
+                <a class="item" style="display: none;" data-tab="pessoa-juridica">Pessoa Jurídica</a>
+                <a class="item" data-tab="endereco">Endereço</a>
+                <a class="item" data-tab="contato">Contato</a>
+            </div>
+            <div class="ui bottom attached tab segment active" data-tab="tipo-participante">
+                <div style="padding: 10px 10px 0px;">
+                    <input type="hidden" name="id">
+                    <div class="inline two fields">
+                        <div class="field">
+                            <div class="ui radio checkbox">
+                                <label>Pessoa física</label>
+                                <input type="radio" name="tipo_pessoa" id="f" value="f">
+                            </div>
+                        </div>
+                        <div class="field">
+                            <div class="ui radio checkbox">
+                                <label>Pessoa jurídica</label>
+                                <input type="radio" name="tipo_pessoa" id="j" value="j">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="ui bottom attached tab segment" data-tab="pessoa-fisica" style="min-height: 317px;">
+                <div style="padding: 10px">
+                    <div class="two fields">
+                        <div class="field">
+                            <!-- CPF do Participante -->
+                            <label>CPF:</label>
+                            <input type="number" placeholder="Informe o número do CPF" name="cpf">
+                        </div>
+                        <div class="field">
+                            <!-- Nome do Funcionário -->
+                            <label>Nome:</label>
+                            <input type="text" placeholder="Informe o nome do participante" name="nome_pessoa">
+                        </div>
+                    </div>
+                    <div class="two fields">
+                        <div class="field">
+                            <!-- Data de Nascimento do Funcionário -->
+                            <label>Data de Nascimento:</label>
+                            <input type="date" name="data_nascimento">
+                        </div>
+                        <div class="field">
+                            <!-- Nome do Funcionário -->
+                            <label>Apelido:</label>
+                            <input type="text" placeholder="Informe um apelido" name="apelido">
+                        </div>
+                    </div>
+                    <div class="two fields">
+                        <div class="field">
+                            <label>RG:</label>
+                            <input type="number" placeholder="Informe o número do RG" name="numero_rg">
+                        </div>
+                        <div class="field">
+                            <label>Data de Expedição:</label>
+                            <input type="date" name="data_expedicao_rg">
+                        </div>
+                    </div>
+                    <div class="two fields">
+                        <div class="field">
+                            <label>Orgão emissor:</label>
+                            <input type="text" placeholder="Digite o orgão emissor do RG" name="orgao_rg">
+                        </div>
+                        <div class="field">
+                            <label>UF do RG:</label>
+                            <div class="ui search selection dropdown" id="dropdown-rg">
+                                <input type="hidden" name="uf_rg">
+                                <div class="default text">Selecione a UF</div>
+                                <i class="dropdown icon"></i>
+                                <div class="menu">
+                                    <!-- Os estados serão listados aqui através do JS -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="ui stacked segment">
+                <h4 class="ui dividing header">Informações do Funcionário na Empresa</h4>
+                <div class="two fields">
+                    <div class="field">
+                        <label>Matrícula:</label>
+                        <div class="ui fluid left icon input">
+                            <i class="pencil alternate icon"></i>
+                            <input type="text" placeholder="Digite o número da matrícula" name="matricula" autocomplete="off">
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label>Cargo:</label>
+                        <div class="ui fluid left icon input">
+                            <i class="user icon"></i>
+                            <input type="text" placeholder="Informe o cargo do funcionário" name="cargo" autocomplete="off">
+                        </div>
+                    </div>
+                </div>
+                <div class="two fields">
+                    <div class="field">
+                        <label>Função:</label>
+                        <div class="ui left icon input">
+                            <i class="tasks icon"></i>
+                            <input type="text" placeholder="Informe a função do funcionário" name="funcao">
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label>Salário:</label>
+                        <div class="ui left icon input">
+                            <i class="money bill alternate icon"></i>
+                            <input type="number" placeholder="Informe o salário" name="salario">
+                        </div>
+                    </div>
+                </div>
+                <div class="two fields">
+                    <div class="field">
+                        <label>Data de Admissão:</label>
+                        <input type="date" placeholder="Data de admissão" name="data_admissao">
+                    </div>
+                    <div class="field">
+                        <label>Carteira de trabalho:</label>
+                        <input type="text" placeholder="Digite o número da carteira de trabalho" name="ctps">
+                    </div>
+                </div>
+            </div> -->
+            <!-- CAMPOS RELACIONADOS A PESSOA JURÍDICA -->
+            <div class="ui bottom attached tab segment" data-tab="pessoa-juridica" style="min-height: 317px;">
+                <div style="padding: 10px">
+                    <div class="two fields">
+                        <div class="field">
+                            <label>Razão Social:</label>
+                            <input type="text" name="razao_social" placeholder="Razão social">
+                        </div>
+                        <div class="field">
+                            <label>Nome Fantasia:</label>
+                            <input type="text" name="nome_fantasia" placeholder="Informe o nome fantasia">
+                        </div>
+                    </div>
+                    <div class="four fields">
+                        <div class="field">
+                            <label>CNPJ:</label>
+                            <input type="number" name="cnpj" placeholder="Informe o cnpj">
+                        </div>
+                        <div class="field">
+                            <label>IE:</label>
+                            <input type="number" name="ie" placeholder="Inscrição Estadual">
+                        </div>
+                        <div class="field">
+                            <label>UF da IE:</label>
+                            <div class="ui selection dropdown search" id="dropdown-ie">
+                                <input type="hidden" name="uf_ie">
+                                <div class="default text">Selecione a UF</div>
+                                <i class="dropdown icon"></i>
+                                <div class="menu">
+                                    <!-- Os estados serão listados aqui, através do JS -->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label>IM:</label>
+                            <input type="number" name="im" placeholder="Inscrição Municipal">
+                        </div>
+                    </div>
+                    <div class="three fields">
+                        <div class="field">
+                            <label>CNAE:</label>
+                            <input type="number" name="cnae" placeholder="Informe o cnae">
+                        </div>
+                        <div class="field">
+                            <label>Código de Regime Tributário (CRT):</label>
+                            <div class="ui fluid search selection dropdown" id="dropdown-crt">
+                                <input type="hidden" name="crt">
+                                <i class="dropdown icon"></i>
+                                <div class="default text">Selecione uma opção</div>
+                                <div class="menu">
+                                    <div class="item" data-value="1">Simples Nacional</div>
+                                    <div class="item" data-value="2">Simples Nacional (Excesso)</div>
+                                    <div class="item" data-value="3">Regime Normal</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label>Data de fundação</label>
+                            <input type="date" name="data_fundacao">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CAMPOS RELACINADOS AO ENDEREÇO -->
+            <div class="ui bottom attached tab segment" data-tab="endereco">
+                <div style="padding: 10px">
+                    <div class="two fields">
+                        <div class="field">
+                            <label>CEP:</label>
+                            <input type="number" name="cep" placeholder="Informe o CEP">
+                        </div>
+                        <div class="field">
+                            <label>País:</label>
+                            <div class="ui fluid search selection dropdown" id="dropdown-pais">
+                                <input type="hidden" name="pais">
+                                <i class="dropdown icon"></i>
+                                <div class="default text">Selecione o País</div>
+                                <div class="menu">
+                                    <div class="item" data-value="1058">Brasil</div>
+                                    <div class="item" data-value="2453">Espanha</div>
+                                    <div class="item" data-value="2496">Estados Unidos</div>
+                                    <div class="item" data-value="0639">Argentina</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="two fields">
+                        <div class="field">
+                            <label>Estado:</label>
+                            <div class="ui fluid search selection dropdown" id="dropdown-estado">
+                                <input type="hidden" name="estado">
+                                <i class="dropdown icon"></i>
+                                <div class="default text">Selecione o Estado</div>
+                                <div class="menu">
+                                    <!-- Os estados serão listados aqui através do JS -->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label>Cidade:</label>
+                            <div class="ui fluid search selection dropdown" id="dropdown-cidade">
+                                <input type="hidden" name="cidade">
+                                <i class="dropdown icon"></i>
+                                <div class="default text">Selecione a cidade</div>
+                                <div class="menu">
+                                    <!-- As cidades serão listadas aqui através do JS -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="two fields">
+                        <div class="field">
+                            <label>Bairro:</label>
+                            <div class="ui fluid search" id="select-bairro">
+                                <input class="prompt" type="text" name="nome_bairro" placeholder="Informe o bairro">
+                            </div>
+                            <div class="results"></div>
+                        </div>
+                        <div class="field">
+                            <label>Logradouro:</label>
+                            <input type="text" name="nome_rua" placeholder="Informe o endereço">
+                        </div>
+                    </div>
+                    <div class="three fields">
+                        <div class="field">
+                            <label>Número:</label>
+                            <input type="number" name="numero_casa" placeholder="Informe o número">
+                        </div>
+                        <div class="field">
+                            <label>Complemento:</label>
+                            <input type="text" name="complemento" placeholder="Complemento">
+                        </div>
+                        <div class="field">
+                            <label>Ponto de referência:</label>
+                            <input type="text" name="referencia" placeholder="Informe um ponto de referência">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- CAMPOS RELACIONADOS AO ENDEREÇO -->
+
+            <div class="ui bottom attached tab segment" data-tab="contato" style="min-height: 317px;">
+                <div style="padding: 10px">
+                    <div class="three fields">
+                        <div class="field">
+                            <label>Tipo de contato:</label>
+                            <div class="ui search selection dropdown" id="dropdown-tipo-contato">
+                                <input type="hidden" name="tipo_contato">
+                                <i class="dropdown icon"></i>
+                                <div class="default text">Selecione o tipo de contato</div>
+                                <div class="menu">
+                                    <div class="item" data-value="E-mail">
+                                        <i class="envelope icon"></i>E-mail</div>
+                                    <div class="item" data-value="Fax">
+                                        <i class="fax icon"></i>Fax</div>
+                                    <div class="item" data-value="Rede Social">
+                                        <i class="globe icon"></i>Rede Social</div>
+                                    <div class="item" data-value="Telefone Celular">
+                                        <i class="mobile alternate icon"></i>Telefone Celular</div>
+                                    <div class="item" data-value="Telefone Fixo">
+                                        <i class="phone icon"></i>Telefone Fixo</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label>Categoria:</label>
+                            <div class="ui search selection dropdown" id="dropdown-categoria-contato">
+                                <input type="hidden" name="categoria">
+                                <i class="dropdown icon"></i>
+                                <div class="default text">Selecione uma categoria</div>
+                                <div class="menu">
+                                    <div class="item" data-value="Comercial">
+                                        <i class="briefcase icon"></i>Comercial</div>
+                                    <div class="item" data-value="Facebook">
+                                        <i class="facebook f icon"></i>Facebook</div>
+                                    <div class="item" data-value="Instagram">
+                                        <i class="instagram icon"></i>Instagram</div>
+                                    <div class="item" data-value="Pessoal">
+                                        <i class="id card outline icon"></i>Pessoal</div>
+                                    <div class="item" data-value="Profissional">
+                                        <i class="building icon"></i>Profissional</div>
+                                    <div class="item" data-value="Residencial">
+                                        <i class="home icon"></i>Residencial</div>
+                                    <div class="item" data-value="Twitter">
+                                        <i class="twitter icon"></i>Twitter</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label>Celular:
+                                <i class="whatsapp icon green"></i>
+                            </label>
+                            <input type="tel">
+                        </div>
+                    </div>
+                    <div class="field" id="field-valor">
+                        <label>Observação:</label>
+                        <input type="text">
+                    </div>
+                </div>
+            </div>
+            <div class="actions">
+                <button id="button-deleteparticipante" type="button" class="ui negative button right floated disabled">
+                    <i class="trash alternate icon"></i> Remover
+                </button>
+                <div class="ui buttons">
+                    <button type="button" class="ui cancel button">Cancelar</button>
+                    <div class="or" data-text="ou"></div>
+                    <button id="button-saveparticipante" type="button" class="ui primary button">Salvar</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
