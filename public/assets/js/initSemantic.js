@@ -1,6 +1,6 @@
 $('.ui.sidebar').sidebar({
     context: $('.bottom.segment')
-}).sidebar('attach events', '.menu .item:first-child');
+}).sidebar('attach events', '.menu .item#sidebar-trigger');
 
 // Fechar as mensagens ao clicar no close
 $('.message .close').on('click', function () {
