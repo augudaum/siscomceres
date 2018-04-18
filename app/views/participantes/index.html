@@ -1,26 +1,40 @@
 {% extends 'painel/index.html' %} {% block content_active %}
 
-<table class="ui selectable single line table">
+<table class="ui selectable single line table" id="table-participantes">
     <thead>
         <tr>
             <th>
                 <div class="ui ribbon label">ID</div>
             </th>
             <th>Participante</th>
+            <th>Apelido/Nome fantasia</th>
+            <th>CPF/CNPJ</th>
+            <th>Cidade</th>
         </tr>
     </thead>
     <tbody>
-        <tr>
-            <td></td>
-            <td></td>
+        {% for participante in participantes %}
+        <tr style="cursor: pointer;" data-id="{{participante.getId()}}">
+            <td>{{participante.getId()}}</td>
+            {% if (participante.getPessoa().getTipo() == 'f') %}
+            <td>{{participante.getPessoa().getNome()}}</td>
+            <td>{{participante.getPessoa().getApelido()}}</td>
+            <td>{{participante.getPessoa().getCPF()}}</td>
+            {% else %}
+            <td>{{participante.getPessoa().getRazaoSocial()}}</td>
+            <td>{{participante.getPessoa().getNomeFantasia()}}</td>
+            <td>{{participante.getPessoa().getCNPJ()}}</td>
+            {% endif %}
+            <td>{{participante.getEndereco().getLogradouro().getBairro().getCidade().getNomeUF()}}</td>
         </tr>
+        {% endfor %}
     </tbody>
     <tfoot class="full-width">
         <tr>
             <th></th>
-            <th colspan="2">
+            <th colspan="4">
                 <button id="button-addparticipante" class="ui right floated small primary labeled icon button">
-                    <i class="id card icon"></i> Novo participante
+                    <i class="plus icon"></i> Novo participante
                 </button>
             </th>
         </tr>
