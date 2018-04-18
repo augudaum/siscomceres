@@ -16,7 +16,13 @@
         private $bairro;
         private $cep;
 
-        public function __construct($nome, $bairro, $cep) {
+        /**
+         * Inicializa os campos de um logradouro
+         * @param $nome = Nome da rua
+         * @param $bairro = Nome do bairro
+         * @param $cep = Número do CEP
+         */
+        public function __construct($nome = null, $bairro = null, $cep = null) {
             $this->nome = $nome;
             $this->bairro = $bairro;
             $this->cep = $cep;

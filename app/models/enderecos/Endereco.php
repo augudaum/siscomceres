@@ -17,7 +17,7 @@
         private $complemento;
         private $referencia;
 
-        public function __construct($numero, $logradouro, $complemento, $referencia) {
+        public function __construct($numero = null, $logradouro = null, $complemento = null, $referencia = null) {
             $this->numero = $numero;
             $this->logradouro = $logradouro;
             $this->complemento = $complemento;
