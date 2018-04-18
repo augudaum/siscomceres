@@ -6,57 +6,58 @@
     <div class="content">
         <form id="addParticipanteForm" class="ui large form">
             <div class="ui top attached tabular menu" id="menu-tabs-participante">
-                <a class="item active" data-tab="tipo-participante">Tipo de Participante</a>
-                <a class="item" style="display: none;" data-tab="pessoa-fisica">Pessoa Física</a>
-                <a class="item" style="display: none;" data-tab="pessoa-juridica">Pessoa Jurídica</a>
+                <a class="item active" data-tab="tipo-participante">Dados Gerais</a>
                 <a class="item" data-tab="endereco">Endereço</a>
                 <a class="item" data-tab="contato">Contato</a>
             </div>
-            <div class="ui bottom attached tab segment active" data-tab="tipo-participante">
-                <div style="padding: 10px 10px 0px;">
+            <div class="ui bottom attached tab segment active p-10" data-tab="tipo-participante">
+                <div class="ui segment" style="padding: 10px 10px 0px;">
+                    <input type="hidden" name="id">
                     <div class="inline two fields">
                         <div class="field">
                             <div class="ui radio checkbox">
                                 <label>Pessoa física</label>
-                                <input type="radio" name="tipo_pessoa" id="f">
+                                <input type="radio" name="tipo_pessoa" id="f" value="f" checked>
                             </div>
                         </div>
                         <div class="field">
                             <div class="ui radio checkbox">
                                 <label>Pessoa jurídica</label>
-                                <input type="radio" name="tipo_pessoa" id="j">
+                                <input type="radio" name="tipo_pessoa" id="j" value="j">
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="ui bottom attached tab segment" data-tab="pessoa-fisica">
-                <div style="padding: 10px">
-                    <div class="two fields">
-                        <div class="field">
-                            <!-- CPF do Participante -->
-                            <label>CPF:</label>
-                            <input type="number" placeholder="Informe o número do CPF" name="cpf_cnpj">
-                        </div>
-                        <div class="field">
-                            <!-- Nome do Funcionário -->
-                            <label>Nome:</label>
-                            <input type="text" placeholder="Informe o nome do participante" name="nome">
+                <!-- Dados da Pessoa Física -->
+                <fieldset id="fieldset-fisica" class="custom-fieldset">
+                    <legend>Pessoa Física</legend>
+                    <div class="field">
+                        <div class="fields">
+                            <div class="five wide field">
+                                <!-- CPF do Participante -->
+                                <label>CPF:</label>
+                                <input type="number" placeholder="Informe o número do CPF" name="cpf">
+                            </div>
+                            <div class="eleven wide field">
+                                <!-- Nome do Funcionário -->
+                                <label>Nome:</label>
+                                <input type="text" placeholder="Informe o nome do participante" name="nome_pessoa">
+                            </div>
                         </div>
                     </div>
                     <div class="two fields">
-                        <div class="field">
-                            <!-- Data de Nascimento do Funcionário -->
-                            <label>Data de Nascimento:</label>
-                            <input type="date" name="data_nascimento">
-                        </div>
                         <div class="field">
                             <!-- Nome do Funcionário -->
                             <label>Apelido:</label>
                             <input type="text" placeholder="Informe um apelido" name="apelido">
                         </div>
+                        <div class="field">
+                            <!-- Data de Nascimento do Funcionário -->
+                            <label>Data de Nascimento:</label>
+                            <input type="date" name="data_nascimento">
+                        </div>
                     </div>
-                    <div class="two fields">
+                    <div class="four fields">
                         <div class="field">
                             <label>RG:</label>
                             <input type="number" placeholder="Informe o número do RG" name="numero_rg">
@@ -65,75 +66,26 @@
                             <label>Data de Expedição:</label>
                             <input type="date" name="data_expedicao_rg">
                         </div>
-                    </div>
-                    <div class="two fields">
                         <div class="field">
                             <label>Orgão emissor:</label>
                             <input type="text" placeholder="Digite o orgão emissor do RG" name="orgao_rg">
                         </div>
                         <div class="field">
                             <label>UF do RG:</label>
-                            <div class="ui selection dropdown" id="dropdown_rg">
+                            <div class="ui search selection dropdown" id="dropdown-rg">
                                 <input type="hidden" name="uf_rg">
                                 <div class="default text">Selecione a UF</div>
                                 <i class="dropdown icon"></i>
                                 <div class="menu">
-                                    <div class="item" data-value="24">RN</div>
-                                    <div class="item" data-value="2">PE</div>
+                                    <!-- Os estados serão listados aqui através do JS -->
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-            <!-- <div class="ui stacked segment">
-                <h4 class="ui dividing header">Informações do Funcionário na Empresa</h4>
-                <div class="two fields">
-                    <div class="field">
-                        <label>Matrícula:</label>
-                        <div class="ui fluid left icon input">
-                            <i class="pencil alternate icon"></i>
-                            <input type="text" placeholder="Digite o número da matrícula" name="matricula" autocomplete="off">
-                        </div>
-                    </div>
-                    <div class="field">
-                        <label>Cargo:</label>
-                        <div class="ui fluid left icon input">
-                            <i class="user icon"></i>
-                            <input type="text" placeholder="Informe o cargo do funcionário" name="cargo" autocomplete="off">
-                        </div>
-                    </div>
-                </div>
-                <div class="two fields">
-                    <div class="field">
-                        <label>Função:</label>
-                        <div class="ui left icon input">
-                            <i class="tasks icon"></i>
-                            <input type="text" placeholder="Informe a função do funcionário" name="funcao">
-                        </div>
-                    </div>
-                    <div class="field">
-                        <label>Salário:</label>
-                        <div class="ui left icon input">
-                            <i class="money bill alternate icon"></i>
-                            <input type="number" placeholder="Informe o salário" name="salario">
-                        </div>
-                    </div>
-                </div>
-                <div class="two fields">
-                    <div class="field">
-                        <label>Data de Admissão:</label>
-                        <input type="date" placeholder="Data de admissão" name="data_admissao">
-                    </div>
-                    <div class="field">
-                        <label>Carteira de trabalho:</label>
-                        <input type="text" placeholder="Digite o número da carteira de trabalho" name="ctps">
-                    </div>
-                </div>
-            </div> -->
-            <!-- CAMPOS RELACIONADOS A PESSOA JURÍDICA -->
-            <div class="ui bottom attached tab segment" data-tab="pessoa-juridica">
-                <div style="padding: 10px">
+                </fieldset>
+                <!-- CAMPOS RELACIONADOS A PESSOA JURÍDICA -->
+                <fieldset id="fieldset-juridica" class="custom-fieldset" style="display: none">
+                    <legend>Pessoa Jurídica</legend>
                     <div class="two fields">
                         <div class="field">
                             <label>Razão Social:</label>
@@ -144,10 +96,10 @@
                             <input type="text" name="nome_fantasia" placeholder="Informe o nome fantasia">
                         </div>
                     </div>
-                    <div class="fields">
+                    <div class="four fields">
                         <div class="field">
                             <label>CNPJ:</label>
-                            <input type="number" name="cpf_cnpj" placeholder="Informe o cnpj">
+                            <input type="number" name="cnpj" placeholder="Informe o cnpj">
                         </div>
                         <div class="field">
                             <label>IE:</label>
@@ -155,13 +107,12 @@
                         </div>
                         <div class="field">
                             <label>UF da IE:</label>
-                            <div class="ui selection dropdown" id="dropdown_ie">
+                            <div class="ui selection dropdown search" id="dropdown-ie">
                                 <input type="hidden" name="uf_ie">
                                 <div class="default text">Selecione a UF</div>
                                 <i class="dropdown icon"></i>
                                 <div class="menu">
-                                    <div class="item" data-value="24">RN</div>
-                                    <div class="item" data-value="2">PE</div>
+                                    <!-- Os estados serão listados aqui, através do JS -->
                                 </div>
                             </div>
                         </div>
@@ -193,12 +144,12 @@
                             <input type="date" name="data_fundacao">
                         </div>
                     </div>
-                </div>
+                </fieldset>
             </div>
 
             <!-- CAMPOS RELACINADOS AO ENDEREÇO -->
-            <div class="ui bottom attached tab segment" data-tab="endereco">
-                <div style="padding: 10px">
+            <div class="ui bottom attached tab segment" data-tab="endereco" style="min-height: 410px;">
+                <div class="p-10">
                     <div class="two fields">
                         <div class="field">
                             <label>CEP:</label>
@@ -227,10 +178,7 @@
                                 <i class="dropdown icon"></i>
                                 <div class="default text">Selecione o Estado</div>
                                 <div class="menu">
-                                    <div class="item" data-value="24">RN</div>
-                                    <div class="item" data-value="2">PE</div>
-                                    <div class="item" data-value="3">SP</div>
-                                    <div class="item" data-value="4">RJ</div>
+                                    <!-- Os estados serão listados aqui através do JS -->
                                 </div>
                             </div>
                         </div>
@@ -241,8 +189,7 @@
                                 <i class="dropdown icon"></i>
                                 <div class="default text">Selecione a cidade</div>
                                 <div class="menu">
-                                    <div class="item" data-value="1">Caicó</div>
-                                    <div class="item" data-value="2">Parelhas</div>
+                                    <!-- As cidades serão listadas aqui através do JS -->
                                 </div>
                             </div>
                         </div>
@@ -250,27 +197,20 @@
                     <div class="two fields">
                         <div class="field">
                             <label>Bairro:</label>
-                            <div class="ui fluid search selection dropdown" id="dropdown-bairro">
-                                <input type="hidden" name="bairro">
-                                <i class="dropdown icon"></i>
-                                <div class="default text">Selecione o bairro</div>
-                                <div class="menu">
-                                    <div class="item" data-value="1">Centro</div>
-                                    <div class="item" data-value="2">Paraíba</div>
-                                    <div class="item" data-value="3">Recreio</div>
-                                    <div class="item" data-value="4">Maynard</div>
-                                </div>
+                            <div class="ui fluid search" id="select-bairro">
+                                <input class="prompt" type="text" name="nome_bairro" placeholder="Informe o bairro">
                             </div>
+                            <div class="results"></div>
                         </div>
                         <div class="field">
                             <label>Logradouro:</label>
-                            <input type="text" name="logradouro" placeholder="Informe o endereço">
+                            <input type="text" name="nome_rua" placeholder="Informe o endereço">
                         </div>
                     </div>
                     <div class="three fields">
                         <div class="field">
                             <label>Número:</label>
-                            <input type="number" name="numero" placeholder="Informe o número">
+                            <input type="number" name="numero_casa" placeholder="Informe o número">
                         </div>
                         <div class="field">
                             <label>Complemento:</label>
@@ -283,30 +223,86 @@
                     </div>
                 </div>
             </div>
-            <!-- CAMPOS RELACIONADOS AO ENDEREÇO -->
-
-            <div class="ui bottom attached tab segment" data-tab="contato">
-                <div style="padding: 10px">
+            <!-- CAMPOS RELACIONADOS AO CONTATO -->
+            <div class="ui bottom attached tab segment" data-tab="contato" style="min-height: 410px; max-height: 410px;">
+                <div class="p-10">
+                    <div id="field-container" class="three fields">
+                        <div class="field">
+                            <label>Tipo de contato:</label>
+                            <div class="ui search selection dropdown" id="dropdown-tipo-contato">
+                                <input type="hidden" name="tipo_contato">
+                                <i class="dropdown icon"></i>
+                                <div class="default text">Selecione o tipo de contato</div>
+                                <div class="menu">
+                                    <div class="item" data-value="E-mail">
+                                        <i class="envelope icon"></i>E-mail</div>
+                                    <div class="item" data-value="Fax">
+                                        <i class="fax icon"></i>Fax</div>
+                                    <div class="item" data-value="Rede Social">
+                                        <i class="globe icon"></i>Rede Social</div>
+                                    <div class="item" data-value="Telefone Celular">
+                                        <i class="mobile alternate icon"></i>Telefone Celular</div>
+                                    <div class="item" data-value="Telefone Fixo">
+                                        <i class="phone icon"></i>Telefone Fixo</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label>Categoria:</label>
+                            <div class="ui search selection dropdown" id="dropdown-categoria-contato">
+                                <input type="hidden" name="categoria">
+                                <i class="dropdown icon"></i>
+                                <div class="default text">Selecione uma categoria</div>
+                                <div class="menu">
+                                    <div class="item" data-value="Comercial">
+                                        <i class="briefcase icon"></i>Comercial</div>
+                                    <div class="item" data-value="Facebook">
+                                        <i class="facebook f icon"></i>Facebook</div>
+                                    <div class="item" data-value="Instagram">
+                                        <i class="instagram icon"></i>Instagram</div>
+                                    <div class="item" data-value="Pessoal">
+                                        <i class="id card outline icon"></i>Pessoal</div>
+                                    <div class="item" data-value="Profissional">
+                                        <i class="building icon"></i>Profissional</div>
+                                    <div class="item" data-value="Residencial">
+                                        <i class="home icon"></i>Residencial</div>
+                                    <div class="item" data-value="Twitter">
+                                        <i class="twitter icon"></i>Twitter</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     <div class="field">
-                        <label>Telefone (informar ddd e ddi):</label>
-                        <input type="tel" name="telefone" placeholder="Informe um número para contato. Ex.: 55 84 9 98765432">
-                    </div>
-                    <div class="two fields">
-                        <div class="field">
-                            <label>E-mail:</label>
-                            <input type="email" name="email" placeholder="Informe um e-mail para contato">
-                        </div>
-                        <div class="field">
-                            <label>Informe o tipo do contato:</label>
-                            <input type="text" name="tipo_contato" placeholder="Residencial, comercial, celular, whatsapp..">
+                        <div class="fields">
+                            <div class="twelve wide field">
+                                <label>Observação:</label>
+                                <input type="text" name="observacao">
+                            </div>
+                            <div style="margin-top: 23px">
+                                <button class="ui right floated button primary" id="button-addcontato">Adicionar contato</button>
+                            </div>
                         </div>
                     </div>
+                    <h5 class="ui left floated header">Contatos</h5>
+                    <div class="ui clearing divider"></div>
+                    <table class="ui blue selectable single line table small compact" id="table-contatos">
+                        <thead>
+                            <tr>
+                                <th>Tipo</th>
+                                <th>Valor</th>
+                                <th>Categoria</th>
+                                <th>Observações</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
                 </div>
             </div>
             <div class="actions">
-                <!-- <button id="button-deletefuncionario" type="button" class="ui negative button right floated disabled">
+                <button id="button-deleteparticipante" type="button" class="ui negative button right floated disabled">
                     <i class="trash alternate icon"></i> Remover
-                </button> -->
+                </button>
                 <div class="ui buttons">
                     <button type="button" class="ui cancel button">Cancelar</button>
                     <div class="or" data-text="ou"></div>
