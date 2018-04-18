@@ -13,19 +13,25 @@
         private $codigo;
         private $nome;
         private $sigla;
-        private $table = 'tb_paises';
+        protected $table = 'tb_paises';
         const SEQUENCE = 'tb_paises_seq';
-
-        // public function __construct($codigo) {
-        //     $pais = $this->findBy('codigo', $codigo);
-        //     $this->codigo = $codigo;
-        //     $this->nome = $pais->nome;
-        //     return $this;
-        // }
 
         /**
          * GET and SET methods
          */ 
+        public function paises() {
+            return $this->all();
+        }
+
+        public function getPais($codigo) {
+            $pais = $this->findBy('codigo', $codigo);
+            $p = new Pais();
+            $p->codigo = $codigo;
+            $p->nome = $pais->nome;
+            $p->sigla = $pais->sigla;
+            return $p;
+        }
+        
         public function getCodigo(){
             return $this->codigo;
         }
@@ -48,5 +54,13 @@
 
         public function setSigla($sigla){
             $this->sigla = $sigla;
+        }
+
+        public function get($field, $value) {
+            $pais = $this->findBy($field, $value);
+            $this->codigo = $pais->codigo;
+            $this->nome = $pais->nome;
+            $this->sigla = $pais->sigla;
+            return $pais;
         }
     }

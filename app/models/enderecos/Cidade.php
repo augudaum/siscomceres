@@ -14,13 +14,22 @@
         private $codigo;
         private $estado;
         private $nome;
+        protected $table = 'tb_cidades';
 
-        public function __construct($codigo) {
+        public function getCidades($codigoEstado = null) {
+            if (isset($codigoEstado)) {
+                return $this->findBy('estado_codigo', $codigoEstado); 
+            }
+            return $this->all();
+        }
+
+        public function getCidade($codigo) {
             $cidade = $this->findBy('codigo', $codigo);
-            $this->codigo = $codigo;
-            $this->nome = $cidade->nome;
-            $this->estado = new Estado($codigo);
-            return $this;
+            $c = new Cidade();
+            $c->codigo = $codigo;
+            $c->estado = (new Estado())->getEstado($cidade->estado_codigo);
+            $c->nome = $cidade->nome;
+            return $c;
         }
 
         /**
@@ -36,6 +45,10 @@
 
         public function getNome(){
             return $this->nome;
+        }
+
+        public function getNomeUF() {
+            return "{$this->nome}/{$this->getEstado()->getSigla()}";
         }
 
         public function setCodigo($codigo){
