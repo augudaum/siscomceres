@@ -15,14 +15,21 @@
         private $nome;
         private $sigla;
         private $pais;
+        
+        protected $table = 'tb_estados';
 
-        public function __construct($codigo) {
+        public function getEstados() {
+            return $this->all();
+        }
+
+        public function getEstado($codigo) {
             $estado = $this->findBy('codigo', $codigo);
-            $this->codigo = $codigo;
-            $this->nome = $estado->nome;
-            $this->sigla = $estado->sigla;
-            $this->pais = new Pais($estado->pais_codigo);
-            return $this;
+            $e = new Estado();
+            $e->codigo = $codigo;
+            $e->nome = $estado->nome;
+            $e->sigla = $estado->sigla;
+            $e->pais = (new Pais())->getPais($estado->pais_codigo);
+            return $e;
         }
 
         /**

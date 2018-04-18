@@ -9,6 +9,19 @@
 
     class IE {
         private $numero;
-        private $UF;
+        private $uf;
+
+        public function __construct($numero = null, $uf = null) {
+            $this->numero = $numero;
+            $this->uf = $uf;
+        }
+
+        public function setNumero($numero) {
+            $this->numero = $numero;
+        }
+
+        public function setUF($uf) {
+            $this->uf = $uf;
+        }
     }
 ?>
