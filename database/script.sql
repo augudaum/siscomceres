@@ -1,7 +1,7 @@
 -- CRIANDO A TABELA DE PAÍSES
 CREATE TABLE IF NOT EXISTS tb_paises (
     codigo VARCHAR(4) NOT NULL,
-    nome VARCHAR(25) NOT NULL,
+    nome VARCHAR(100) NOT NULL,
     sigla VARCHAR(5),
     CONSTRAINT tb_paises_pk PRIMARY KEY (codigo)
 );
@@ -9,7 +9,7 @@ CREATE TABLE IF NOT EXISTS tb_paises (
 -- CRIANDO A TABELA DE ESTADOS
 CREATE TABLE IF NOT EXISTS tb_estados (
     codigo VARCHAR(2) NOT NULL,
-    nome VARCHAR(25) NOT NULL,
+    nome VARCHAR(100) NOT NULL,
     sigla VARCHAR(2) NOT NULL,
     pais_codigo VARCHAR(4) NOT NULL,
     CONSTRAINT tb_estados_pk PRIMARY KEY (codigo),
@@ -19,7 +19,7 @@ CREATE TABLE IF NOT EXISTS tb_estados (
 -- CRIANDO A TABELA DE CIDADES
 CREATE TABLE IF NOT EXISTS tb_cidades (
     codigo VARCHAR(7) NOT NULL,
-    nome VARCHAR(60) NOT NULL,
+    nome VARCHAR(100) NOT NULL,
     estado_codigo VARCHAR(2) NOT NULL,
     CONSTRAINT tb_cidades_pk PRIMARY KEY (codigo),
     CONSTRAINT estado_fk FOREIGN KEY (estado_codigo) REFERENCES tb_estados (codigo)
