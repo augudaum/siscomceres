@@ -16,9 +16,6 @@
         // código do estado DDD
         private $ddd;
         private $numero;
-        private $descricao;
-        private $table = 'tb_telefones';
-        const SEQUENCE = 'tb_telefones_seq';
 
         /**
          * GET and SET methods
@@ -58,9 +55,5 @@
 
         public function setNumero($numero){
             $this->numero = $numero;
-        }
-
-        public function setDescricao($descricao){
-            $this->descricao = $descricao;
         }
     }
