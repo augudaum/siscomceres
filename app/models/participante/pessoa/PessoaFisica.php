@@ -40,4 +40,16 @@
         public function setDataNascimento($dataNascimento) {
             $this->dataNascimento = $dataNascimento;
         }
+
+        public function getNome() {
+            return $this->nome;
+        }
+
+        public function getApelido() {
+            return $this->apelido;
+        }
+
+        public function getCPF() {
+            return $this->cpf;
+        }
     }
