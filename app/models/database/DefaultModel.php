@@ -28,7 +28,10 @@
             try {
                 $pdo->execute($bindParameters);
                 // O postgres requisita a sequência da tabela cujo ID deve ser retornado
-                return $this->database->lastInsertId(static::SEQUENCE);
+                if (defined('static::SEQUENCE')) {
+                    return $this->database->lastInsertId(static::SEQUENCE);
+                }
+                return $pdo->rowCount();
             } catch (PDOException $e) {
                 /**
                  * @todo criar classe de log para salvar a mensagem
@@ -50,10 +53,11 @@
             }
         }
         
-        public function update($id, $attributes) {
+        public function update($id, $attributes, $otherColumn = null) {
+            $column = $otherColumn ?? 'id';
             $attributesUpdate = new AttributesUpdate;
             $fields = $attributesUpdate->updateFields($attributes);
-            $query = "UPDATE $this->table SET $fields WHERE id = :id";
+            $query = "UPDATE $this->table SET $fields WHERE {$column} = :id";
             $pdo = $this->database->prepare($query);
             $bindUpdateParameters = $attributesUpdate->bindUpdateParameters($attributes);
             $bindUpdateParameters['id'] = $id;
@@ -61,7 +65,7 @@
                 $pdo->execute($bindUpdateParameters);
                 return $pdo->rowCount();
             } catch (PDOException $e) {
-                dump($e->getMessage());
+                dd($e->getMessage());
             }
         
         }
@@ -82,6 +86,9 @@
             $pdo = $this->database->prepare($query);
             try {
                 $pdo->execute();
+                if ($pdo->rowCount() > 1) {
+                    return $pdo->fetchAll();
+                }
                 return $pdo->fetch();
             } catch (PDOException $e) {
                 return toJson($e->getMessage());
