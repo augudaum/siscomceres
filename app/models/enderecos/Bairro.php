@@ -10,17 +10,22 @@
     use app\models\database\DefaultModel;
     use app\models\enderecos\Cidade;
 
-    class Bairro extends DefaultModel {
+    class Bairro {
         private $codigo;
         private $cidade;
         private $nome;
 
-        public function __construct($codigo) {
-            $bairro = $this->findBy('codigo', $codigo)->fetch();
+        // public function __construct($codigo) {
+        //     $bairro = $this->findBy('codigo', $codigo)->fetch();
+        //     $this->codigo = $codigo;
+        //     $this->nome = $bairro->nome;
+        //     $this->cidade = new Cidade($bairro->cidade_codigo);
+        //     return $this;
+        // }
+        public function __construct ($codigo = null, $cidade = null, $nome = null) {
             $this->codigo = $codigo;
-            $this->nome = $bairro->nome;
-            $this->cidade = new Cidade($bairro->cidade_codigo);
-            return $this;
+            $this->cidade = (new Cidade())->getCidade($cidade);
+            $this->nome = $nome;
         }
 
         /**
