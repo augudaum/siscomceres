@@ -1,256 +1,256 @@
-INSERT INTO tb_paises (nome,,sigla, codigo) VALUES
-('Brasil', 'BR', 1058)
-('Afeganistão', 'AF', 132)
-('Albânia. Republica da', 'AL', 175)
-('Argélia', 'DZ', 590)
-('Samoa Americana', 'AS', 6912)
-('Andorra', 'AD', 370)
-('Angola', 'AO', 400)
-('Anguilla', 'AI', 418)
-('Antártida', 'AQ', 3596)
-('Antigua e Barbuda', 'AG', 434)
-('Argentina', 'AR', 639)
-('Armênia. Republica da', 'AM', 647)
-('Aruba', 'AW', 655)
-('Austrália', 'AU', 698)
-('Áustria', 'AT', 728)
-('Azerbaijão. Republica do', 'AZ', 736)
-('Bahamas. Ilhas', 'BS', 779)
-('Bahrein. Ilhas', 'BH', 809)
-('Bangladesh', 'BD', 817)
-('Barbados', 'BB', 833)
-('Belarus. Republica da', 'BY', 850)
-('Bélgica', 'BE', 876)
-('Belize', 'BZ', 884)
-('Benin', 'BJ', 2291)
-('Bermudas', 'BM', 906)
-('Butão', 'BT', 1198)
-('Bolívia', 'BO', 973)
-('Bósnia-herzegovina (Republica da)', 'BA', 981)
-('Botsuana', 'BW', 1015)
-('Ilha Bouvet', 'BV', 3600)
-('Território Britânico do Oceano Indico', 'IO', 7820)
-('Brunei', 'BN', 1082)
-('Bulgária. Republica da', 'BG', 1112)
-('Burkina Faso', 'BF', 310)
-('Burundi', 'BI', 1155)
-('Camboja', 'KH', 1414)
-('Camarões', 'CM', 1457)
-('Canada', 'CA', 1490)
-('Cabo Verde. Republica de', 'CV', 1279)
-('Cayman. Ilhas', 'KY', 1376)
-('Republica Centro-Africana', 'CF', 6408)
-('Chade', 'TD', 7889)
-('Chile', 'CL', 1589)
-('China. Republica Popular', 'CN', 1600)
-('Christmas. Ilha (Navidad)', 'CX', 5118)
-('Cocos (Keeling). Ilhas', 'CC', 1651)
-('Colômbia', 'CO', 1694)
-('Comores. Ilhas', 'KM', 1732)
-('Congo', 'CG', 1775)
-('Congo. Republica Democrática do', 'CD', 8885)
-('Cook. Ilhas', 'CK', 1830)
-('Costa Rica', 'CR', 1961)
-('Costa do Marfim', 'CI', 1937)
-('Croácia (Republica da)', 'HR', 1953)
-('Cuba', 'CU', 1996)
-('Chipre', 'CY', 1635)
-('Tcheca. Republica', 'CZ', 7919)
-('Dinamarca', 'DK', 2321)
-('Djibuti', 'DJ', 7838)
-('Dominica. Ilha', 'DM', 2356)
-('Republica Dominicana', 'DO', 6475)
-('Timor Leste', 'TL', 7951)
-('Equador', 'EC', 2399)
-('Egito', 'EG', 2402)
-('El Salvador', 'SV', 6874)
-('Guine-Equatorial', 'GQ', 3310)
-('Eritreia', 'ER', 2437)
-('Estônia. Republica da', 'EE', 2518)
-('Etiópia', 'ET', 2534)
-('Falkland (Ilhas Malvinas)', 'FK', 2550)
-('Feroe. Ilhas', 'FO', 2593)
-('Fiji', 'FJ', 8702)
-('Finlândia', 'FI', 2712)
-('Franca', 'FR', 2755)
-('Guiana francesa', 'GF', 3255)
-('Polinésia Francesa', 'PF', 5991)
-('Terras Austrais e Antárticas Francesas', 'TF', 3607)
-('Gabão', 'GA', 2810)
-('Gambia', 'GM', 2852)
-('Georgia. Republica da', 'GE', 2917)
-('Alemanha', 'DE', 230)
-('Gana', 'GH', 2895)
-('Gibraltar', 'GI', 2933)
-('Grécia', 'GR', 3018)
-('Groenlândia', 'GL', 3050)
-('Granada', 'GD', 2976)
-('Guadalupe', 'GP', 3093)
-('Guam', 'GU', 3131)
-('Guatemala', 'GT', 3174)
-('Guine', 'GN', 3298)
-('Guine-Bissau', 'GW', 3344)
-('Guiana', 'GY', 3379)
-('Haiti', 'HT', 3417)
-('Ilha Heard e Ilhas McDonald', 'HM', 3603)
-('Vaticano', 'VA', 8486)
-('Honduras', 'HN', 3450)
-('Hong Kong', 'HK', 3514)
-('Hungria. Republica da', 'HU', 3557)
-('Islândia', 'IS', 3794)
-('Índia', 'IN', 3611)
-('Indonésia', 'ID', 3654)
-('Ira. Republica Islâmica do', 'IR', 3727)
-('Iraque', 'IQ', 3697)
-('Irlanda', 'IE', 3751)
-('Israel', 'IL', 3832)
-('Itália', 'IT', 3867)
-('Jamaica', 'JM', 3913)
-('Japão', 'JP', 3999)
-('Jordânia', 'JO', 4030)
-('Cazaquistão. Republica do', 'KZ', 1538)
-('Quênia', 'KE', 6238)
-('Kiribati', 'KI', 4111)
-('Coreia. Republica Popular Democrática da', 'KP', 1872)
-('Coreia. Republica da', 'KR', 1902)
-('Coveite', 'KW', 1988)
-('Quirguiz. Republica', 'KG', 6254)
-('Laos. Republica Popular Democrática do', 'LA', 4200)
-('Letônia. Republica da', 'LV', 4278)
-('Líbano', 'LB', 4316)
-('Lesoto', 'LS', 4260)
-('Libéria', 'LR', 4340)
-('Líbia', 'LY', 4383)
-('Liechtenstein', 'LI', 4405)
-('Lituânia. Republica da', 'LT', 4421)
-('Luxemburgo', 'LU', 4456)
-('Macau', 'MO', 4472)
-('Macedônia', 'MK', 4499)
-('Madagascar', 'MG', 4502)
-('Malavi', 'MW', 4588)
-('Malásia', 'MY', 4553)
-('Maldivas', 'MV', 4618)
-('Mali', 'ML', 4642)
-('Malta', 'MT', 4677)
-('Marshall. Ilhas', 'MH', 4766)
-('Martinica', 'MQ', 4774)
-('Mauritânia', 'MR', 4880)
-('Mauricio', 'MU', 4855)
-('Mayotte (Ilhas Francesas)', 'YT', 4885)
-('México', 'MX', 4936)
-('Micronesia', 'FM', 4995)
-('Moldávia. Republica da', 'MD', 4944)
-('Mônaco', 'MC', 4952)
-('Mongólia', 'MN', 4979)
-('Montserrat. Ilhas', 'MS', 5010)
-('Marrocos', 'MA', 4740)
-('Moçambique', 'MZ', 5053)
-('Mianmar (Birmânia)', 'MM', 930)
-('Namíbia', 'NA', 5070)
-('Nauru', 'NR', 5088)
-('Nepal', 'NP', 5177)
-('Países Baixos (Holanda)', 'NL', 5738)
-('Antilhas Holandesas', 'AN', 477)
-('Nova Caledonia', 'NC', 5428)
-('Nova Zelândia', 'NZ', 5487)
-('Nicarágua', 'NI', 5215)
-('Níger', 'NE', 5258)
-('Nigéria', 'NG', 5282)
-('Niue. Ilha', 'NU', 5312)
-('Norfolk. Ilha', 'NF', 5355)
-('Marianas do Norte', 'MP', 4723)
-('Noruega', 'NO', 5380)
-('Oma', 'OM', 5568)
-('Paquistão', 'PK', 5762)
-('Palau', 'PW', 5754)
-('Panamá', 'PA', 5800)
-('Papua Nova Guine', 'PG', 5452)
-('Paraguai', 'PY', 5860)
-('Peru', 'PE', 5894)
-('Filipinas', 'PH', 2674)
-('Pitcairn. Ilha', 'PN', 5932)
-('Polônia. Republica da', 'PL', 6033)
-('Portugal', 'PT', 6076)
-('Porto Rico', 'PR', 6114)
-('Catar', 'QA', 1546)
-('Reunião. Ilha', 'RE', 6602)
-('Romênia', 'RO', 6700)
-('Rússia', 'RU', 6769)
-('Ruanda', 'RW', 6750)
-('São Cristovão e Neves. Ilhas', 'KN', 6955)
-('Santa Lucia', 'LC', 7153)
-('São Vicente e Granadinas', 'VC', 7056)
-('Samoa', 'WS', 6904)
-('San Marino', 'SM', 6971)
-('São Tome e Príncipe. Ilhas', 'ST', 7200)
-('Arábia Saudita', 'SA', 531)
-('Senegal', 'SN', 7285)
-('Seychelles', 'SC', 7315)
-('Serra Leoa', 'SL', 7358)
-('Cingapura', 'SG', 7412)
-('Eslovaca. Republica', 'SK', 2470)
-('Eslovênia. Republica da', 'SI', 2461)
-('Salomão. Ilhas', 'SB', 6777)
-('Somalia', 'SO', 7480)
-('África do Sul', 'ZA', 7560)
-('Ilhas Geórgia do Sul e Sandwich do Sul', 'GS', 3602)
-('Espanha', 'ES', 2453)
-('Sri Lanka', 'LK', 7501)
-('Santa Helena', 'SH', 7102)
-('São Pedro e Miquelon', 'PM', 7005)
-('Sudão', 'SD', 7595)
-('Suriname', 'SR', 7706)
-('Svalbard e Jan Mayen', 'SJ', 3605)
-('Suazilândia', 'SZ', 7544)
-('Suécia', 'SE', 7641)
-('Suíça', 'CH', 7676)
-('Síria. Republica Árabe da', 'SY', 7447)
-('Formosa (Taiwan)', 'TW', 1619)
-('Tadjiquistao. Republica do', 'TJ', 7722)
-('Tanzânia. Republica Unida da', 'TZ', 7803)
-('Tailândia', 'TH', 7765)
-('Togo', 'TG', 8001)
-('Toquelau. Ilhas', 'TK', 8052)
-('Tonga', 'TO', 8109)
-('Trinidad e Tobago', 'TT', 8150)
-('Tunísia', 'TN', 8206)
-('Turquia', 'TR', 8273)
-('Turcomenistão. Republica do', 'TM', 8249)
-('Turcas e Caicos. Ilhas', 'TC', 8230)
-('Tuvalu', 'TV', 8281)
-('Uganda', 'UG', 8338)
-('Ucrânia', 'UA', 8311)
-('Emirados Árabes Unidos', 'AE', 2445)
-('Reino Unido', 'GB', 6289)
-('Estados Unidos', 'US', 2496)
-('Uruguai', 'UY', 8451)
-('Uzbequistão. Republica do', 'UZ', 8478)
-('Vanuatu', 'VU', 5517)
-('Venezuela', 'VE', 8508)
-('Vietnã', 'VN', 8583)
-('Virgens. Ilhas (Britânicas)', 'VG', 8630)
-('Virgens. Ilhas (E.U.A.)', 'VI', 8664)
-('Wallis e Futuna. Ilhas', 'WF', 8753)
-('Saara Ocidental', 'EH', 6858)
-('Iémen', 'YE', 3573)
-('Iugoslávia. República Fed. da', 'YU', 3883)
-('Zâmbia', 'ZM', 8907)
-('Zimbabue', 'ZW', 6653)
-('Guernsey. Ilha do Canal (Inclui Alderney e Sark)', 'GG', 1504)
-('Jersey. Ilha do Canal', 'JE', 1508)
-('Canarias. Ilhas', NULL, 1511)
-('Man. Ilha de', 'IM', 3595)
-('Johnston. Ilhas', NULL, 3964)
-('Madeira. Ilha da', NULL, 4525)
-('Montenegro', 'ME', 4985)
-('Republika Srbija', 'RS', 7370)
-('Sudao do Sul', 'SS', 7600)
-('Zona do Canal do Panamá', NULL, 8958)
-('Wake. Ilha', NULL, 8737)
-('Lebuan. Ilhas', NULL, 4235)
-('Palestina', 'PS', 5780)
-('Ilhas de Aland', 'AX', 3597)
-('Coletividade de São Bartolomeu', 'BL', 3598)
-('Curaçao', 'CW', 3601)
-('Ilha de São Martinho (França)', 'MF', 3604)
-('São Martinho (Países Baixos)', 'SX', 3606);
+﻿INSERT INTO tb_paises (nome,sigla, codigo) VALUES
+('Brasil', 'BR', 1058),
+('Afeganistão', 'AF', 132),
+('Albânia. Republica da', 'AL', 175),
+('Argélia', 'DZ', 590),
+('Samoa Americana', 'AS', 6912),
+('Andorra', 'AD', 370),
+('Angola', 'AO', 400),
+('Anguilla', 'AI', 418),
+('Antártida', 'AQ', 3596),
+('Antigua e Barbuda', 'AG', 434),
+('Argentina', 'AR', 639),
+('Armênia. Republica da', 'AM', 647),
+('Aruba', 'AW', 655),
+('Austrália', 'AU', 698),
+('Áustria', 'AT', 728),
+('Azerbaijão. Republica do', 'AZ', 736),
+('Bahamas. Ilhas', 'BS', 779),
+('Bahrein. Ilhas', 'BH', 809),
+('Bangladesh', 'BD', 817),
+('Barbados', 'BB', 833),
+('Belarus. Republica da', 'BY', 850),
+('Bélgica', 'BE', 876),
+('Belize', 'BZ', 884),
+('Benin', 'BJ', 2291),
+('Bermudas', 'BM', 906),
+('Butão', 'BT', 1198),
+('Bolívia', 'BO', 973),
+('Bósnia-herzegovina (Republica da),', 'BA', 981),
+('Botsuana', 'BW', 1015),
+('Ilha Bouvet', 'BV', 3600),
+('Território Britânico do Oceano Indico', 'IO', 7820),
+('Brunei', 'BN', 1082),
+('Bulgária. Republica da', 'BG', 1112),
+('Burkina Faso', 'BF', 310),
+('Burundi', 'BI', 1155),
+('Camboja', 'KH', 1414),
+('Camarões', 'CM', 1457),
+('Canada', 'CA', 1490),
+('Cabo Verde. Republica de', 'CV', 1279),
+('Cayman. Ilhas', 'KY', 1376),
+('Republica Centro-Africana', 'CF', 6408),
+('Chade', 'TD', 7889),
+('Chile', 'CL', 1589),
+('China. Republica Popular', 'CN', 1600),
+('Christmas. Ilha (Navidad),', 'CX', 5118),
+('Cocos (Keeling),. Ilhas', 'CC', 1651),
+('Colômbia', 'CO', 1694),
+('Comores. Ilhas', 'KM', 1732),
+('Congo', 'CG', 1775),
+('Congo. Republica Democrática do', 'CD', 8885),
+('Cook. Ilhas', 'CK', 1830),
+('Costa Rica', 'CR', 1961),
+('Costa do Marfim', 'CI', 1937),
+('Croácia (Republica da),', 'HR', 1953),
+('Cuba', 'CU', 1996),
+('Chipre', 'CY', 1635),
+('Tcheca. Republica', 'CZ', 7919),
+('Dinamarca', 'DK', 2321),
+('Djibuti', 'DJ', 7838),
+('Dominica. Ilha', 'DM', 2356),
+('Republica Dominicana', 'DO', 6475),
+('Timor Leste', 'TL', 7951),
+('Equador', 'EC', 2399),
+('Egito', 'EG', 2402),
+('El Salvador', 'SV', 6874),
+('Guine-Equatorial', 'GQ', 3310),
+('Eritreia', 'ER', 2437),
+('Estônia. Republica da', 'EE', 2518),
+('Etiópia', 'ET', 2534),
+('Falkland (Ilhas Malvinas),', 'FK', 2550),
+('Feroe. Ilhas', 'FO', 2593),
+('Fiji', 'FJ', 8702),
+('Finlândia', 'FI', 2712),
+('Franca', 'FR', 2755),
+('Guiana francesa', 'GF', 3255),
+('Polinésia Francesa', 'PF', 5991),
+('Terras Austrais e Antárticas Francesas', 'TF', 3607),
+('Gabão', 'GA', 2810),
+('Gambia', 'GM', 2852),
+('Georgia. Republica da', 'GE', 2917),
+('Alemanha', 'DE', 230),
+('Gana', 'GH', 2895),
+('Gibraltar', 'GI', 2933),
+('Grécia', 'GR', 3018),
+('Groenlândia', 'GL', 3050),
+('Granada', 'GD', 2976),
+('Guadalupe', 'GP', 3093),
+('Guam', 'GU', 3131),
+('Guatemala', 'GT', 3174),
+('Guine', 'GN', 3298),
+('Guine-Bissau', 'GW', 3344),
+('Guiana', 'GY', 3379),
+('Haiti', 'HT', 3417),
+('Ilha Heard e Ilhas McDonald', 'HM', 3603),
+('Vaticano', 'VA', 8486),
+('Honduras', 'HN', 3450),
+('Hong Kong', 'HK', 3514),
+('Hungria. Republica da', 'HU', 3557),
+('Islândia', 'IS', 3794),
+('Índia', 'IN', 3611),
+('Indonésia', 'ID', 3654),
+('Ira. Republica Islâmica do', 'IR', 3727),
+('Iraque', 'IQ', 3697),
+('Irlanda', 'IE', 3751),
+('Israel', 'IL', 3832),
+('Itália', 'IT', 3867),
+('Jamaica', 'JM', 3913),
+('Japão', 'JP', 3999),
+('Jordânia', 'JO', 4030),
+('Cazaquistão. Republica do', 'KZ', 1538),
+('Quênia', 'KE', 6238),
+('Kiribati', 'KI', 4111),
+('Coreia. Republica Popular Democrática da', 'KP', 1872),
+('Coreia. Republica da', 'KR', 1902),
+('Coveite', 'KW', 1988),
+('Quirguiz. Republica', 'KG', 6254),
+('Laos. Republica Popular Democrática do', 'LA', 4200),
+('Letônia. Republica da', 'LV', 4278),
+('Líbano', 'LB', 4316),
+('Lesoto', 'LS', 4260),
+('Libéria', 'LR', 4340),
+('Líbia', 'LY', 4383),
+('Liechtenstein', 'LI', 4405),
+('Lituânia. Republica da', 'LT', 4421),
+('Luxemburgo', 'LU', 4456),
+('Macau', 'MO', 4472),
+('Macedônia', 'MK', 4499),
+('Madagascar', 'MG', 4502),
+('Malavi', 'MW', 4588),
+('Malásia', 'MY', 4553),
+('Maldivas', 'MV', 4618),
+('Mali', 'ML', 4642),
+('Malta', 'MT', 4677),
+('Marshall. Ilhas', 'MH', 4766),
+('Martinica', 'MQ', 4774),
+('Mauritânia', 'MR', 4880),
+('Mauricio', 'MU', 4855),
+('Mayotte (Ilhas Francesas),', 'YT', 4885),
+('México', 'MX', 4936),
+('Micronesia', 'FM', 4995),
+('Moldávia. Republica da', 'MD', 4944),
+('Mônaco', 'MC', 4952),
+('Mongólia', 'MN', 4979),
+('Montserrat. Ilhas', 'MS', 5010),
+('Marrocos', 'MA', 4740),
+('Moçambique', 'MZ', 5053),
+('Mianmar (Birmânia),', 'MM', 930),
+('Namíbia', 'NA', 5070),
+('Nauru', 'NR', 5088),
+('Nepal', 'NP', 5177),
+('Países Baixos (Holanda),', 'NL', 5738),
+('Antilhas Holandesas', 'AN', 477),
+('Nova Caledonia', 'NC', 5428),
+('Nova Zelândia', 'NZ', 5487),
+('Nicarágua', 'NI', 5215),
+('Níger', 'NE', 5258),
+('Nigéria', 'NG', 5282),
+('Niue. Ilha', 'NU', 5312),
+('Norfolk. Ilha', 'NF', 5355),
+('Marianas do Norte', 'MP', 4723),
+('Noruega', 'NO', 5380),
+('Oma', 'OM', 5568),
+('Paquistão', 'PK', 5762),
+('Palau', 'PW', 5754),
+('Panamá', 'PA', 5800),
+('Papua Nova Guine', 'PG', 5452),
+('Paraguai', 'PY', 5860),
+('Peru', 'PE', 5894),
+('Filipinas', 'PH', 2674),
+('Pitcairn. Ilha', 'PN', 5932),
+('Polônia. Republica da', 'PL', 6033),
+('Portugal', 'PT', 6076),
+('Porto Rico', 'PR', 6114),
+('Catar', 'QA', 1546),
+('Reunião. Ilha', 'RE', 6602),
+('Romênia', 'RO', 6700),
+('Rússia', 'RU', 6769),
+('Ruanda', 'RW', 6750),
+('São Cristovão e Neves. Ilhas', 'KN', 6955),
+('Santa Lucia', 'LC', 7153),
+('São Vicente e Granadinas', 'VC', 7056),
+('Samoa', 'WS', 6904),
+('San Marino', 'SM', 6971),
+('São Tome e Príncipe. Ilhas', 'ST', 7200),
+('Arábia Saudita', 'SA', 531),
+('Senegal', 'SN', 7285),
+('Seychelles', 'SC', 7315),
+('Serra Leoa', 'SL', 7358),
+('Cingapura', 'SG', 7412),
+('Eslovaca. Republica', 'SK', 2470),
+('Eslovênia. Republica da', 'SI', 2461),
+('Salomão. Ilhas', 'SB', 6777),
+('Somalia', 'SO', 7480),
+('África do Sul', 'ZA', 7560),
+('Ilhas Geórgia do Sul e Sandwich do Sul', 'GS', 3602),
+('Espanha', 'ES', 2453),
+('Sri Lanka', 'LK', 7501),
+('Santa Helena', 'SH', 7102),
+('São Pedro e Miquelon', 'PM', 7005),
+('Sudão', 'SD', 7595),
+('Suriname', 'SR', 7706),
+('Svalbard e Jan Mayen', 'SJ', 3605),
+('Suazilândia', 'SZ', 7544),
+('Suécia', 'SE', 7641),
+('Suíça', 'CH', 7676),
+('Síria. Republica Árabe da', 'SY', 7447),
+('Formosa (Taiwan),', 'TW', 1619),
+('Tadjiquistao. Republica do', 'TJ', 7722),
+('Tanzânia. Republica Unida da', 'TZ', 7803),
+('Tailândia', 'TH', 7765),
+('Togo', 'TG', 8001),
+('Toquelau. Ilhas', 'TK', 8052),
+('Tonga', 'TO', 8109),
+('Trinidad e Tobago', 'TT', 8150),
+('Tunísia', 'TN', 8206),
+('Turquia', 'TR', 8273),
+('Turcomenistão. Republica do', 'TM', 8249),
+('Turcas e Caicos. Ilhas', 'TC', 8230),
+('Tuvalu', 'TV', 8281),
+('Uganda', 'UG', 8338),
+('Ucrânia', 'UA', 8311),
+('Emirados Árabes Unidos', 'AE', 2445),
+('Reino Unido', 'GB', 6289),
+('Estados Unidos', 'US', 2496),
+('Uruguai', 'UY', 8451),
+('Uzbequistão. Republica do', 'UZ', 8478),
+('Vanuatu', 'VU', 5517),
+('Venezuela', 'VE', 8508),
+('Vietnã', 'VN', 8583),
+('Virgens. Ilhas (Britânicas),', 'VG', 8630),
+('Virgens. Ilhas (E.U.A.),', 'VI', 8664),
+('Wallis e Futuna. Ilhas', 'WF', 8753),
+('Saara Ocidental', 'EH', 6858),
+('Iémen', 'YE', 3573),
+('Iugoslávia. República Fed. da', 'YU', 3883),
+('Zâmbia', 'ZM', 8907),
+('Zimbabue', 'ZW', 6653),
+('Guernsey. Ilha do Canal (Inclui Alderney e Sark),', 'GG', 1504),
+('Jersey. Ilha do Canal', 'JE', 1508),
+('Canarias. Ilhas', NULL, 1511),
+('Man. Ilha de', 'IM', 3595),
+('Johnston. Ilhas', NULL, 3964),
+('Madeira. Ilha da', NULL, 4525),
+('Montenegro', 'ME', 4985),
+('Republika Srbija', 'RS', 7370),
+('Sudao do Sul', 'SS', 7600),
+('Zona do Canal do Panamá', NULL, 8958),
+('Wake. Ilha', NULL, 8737),
+('Lebuan. Ilhas', NULL, 4235),
+('Palestina', 'PS', 5780),
+('Ilhas de Aland', 'AX', 3597),
+('Coletividade de São Bartolomeu', 'BL', 3598),
+('Curaçao', 'CW', 3601),
+('Ilha de São Martinho (França),', 'MF', 3604),
+('São Martinho (Países Baixos),', 'SX', 3606);
