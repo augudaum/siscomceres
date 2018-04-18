@@ -16,12 +16,8 @@
         private $telefone;
         private $email;
         private $tipoContato;
-        private $table = 'tb_contatos';
-        const SEQUENCE = 'tb_contatos_seq';
-
-        public function __construct($telefone = null, $email = null, $tipoContato) {
-            
-        }
+        private $observacao;
+        protected $table = 'tb_contatos';
 
         /**
          * GET and SET methods
