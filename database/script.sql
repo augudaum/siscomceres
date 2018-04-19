@@ -25,6 +25,19 @@ CREATE TABLE IF NOT EXISTS tb_cidades (
     CONSTRAINT estado_fk FOREIGN KEY (estado_codigo) REFERENCES tb_estados (codigo)
 );
 
+-- CRIANDO A TABELA DE CONTATOS
+CREATE TABLE tb_contatos
+(
+  participante_id integer NOT NULL,
+  tipo_contato character varying(25) NOT NULL, 
+  valor character varying(50), 
+  categoria character varying(50), 
+  observacao character varying(50), 
+  whatsapp character varying(1), 
+  CONSTRAINT tb_contatos_pk PRIMARY KEY (participante_id, valor),
+  CONSTRAINT tb_contatos_fk FOREIGN KEY (participante_id) REFERENCES tb_participantes(id)
+)
+
 CREATE SEQUENCE tb_participantes_seq;
 CREATE TABLE IF NOT EXISTS tb_participantes(
     id INTEGER NOT NULL DEFAULT NEXTVAL('tb_participantes_seq'),
