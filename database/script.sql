@@ -38,6 +38,7 @@ CREATE TABLE tb_contatos
   CONSTRAINT tb_contatos_fk FOREIGN KEY (participante_id) REFERENCES tb_participantes(id)
 )
 
+-- CRIANDO A TABELA DE PARTICIPANTES
 CREATE SEQUENCE tb_participantes_seq;
 CREATE TABLE IF NOT EXISTS tb_participantes(
     id INTEGER NOT NULL DEFAULT NEXTVAL('tb_participantes_seq'),
@@ -86,3 +87,29 @@ COMMENT ON COLUMN tb_participantes.cargo IS 'Cargo do funcionário na empresa';
 COMMENT ON COLUMN tb_participantes.salario IS 'Salário do funcionário';
 COMMENT ON COLUMN tb_participantes.data_admissao IS 'Data de admissão do funcionário';
 COMMENT ON COLUMN tb_participantes.ctps IS 'Número da Carteira de Trabalho do funcionário';
+
+-- CRIANDO A TABELA DE UNIDADES
+CREATE SEQUENCE tb_unidades_seq;
+CREATE TABLE IF NOT EXISTS tb_unidades (
+    id INTEGER NOT NULL DEFAULT NEXTVAL('tb_unidades_seq'),
+    sigla VARCHAR(7),
+    descricao VARCHAR(50),
+    CONSTRAINT tb_unidades_pk PRIMARY KEY (id),
+);
+
+-- CRIANDO A TABELA DE PRODUTOS
+CREATE TABLE IF NOT EXISTS tb_produtos (
+    codigo VARCHAR(4) NOT NULL,
+    marca VARCHAR(50),
+    fabricante VARCHAR(50),
+    cean VARCHAR(14),
+    descricao VARCHAR(50),
+    ncm VARCAR(8),
+    extipi VARCHAR(3),
+    unidade_id INTEGER NOT NULL,
+    pc_compra NUMERIC,
+    pc_custo NUMERIC,
+    pc_venda NUMERIC,
+    CONSTRAINT tb_produtos_pk PRIMARY KEY (codigo),
+    CONSTRAINT tb_unidade_fk FOREIGN KEY (unidade_id) REFERENCES tb_unidades(id)
+);
