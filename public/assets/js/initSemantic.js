@@ -1,4 +1,5 @@
 $('.ui.sidebar').sidebar({
+    transition: 'overlay',
     context: $('.bottom.segment')
 }).sidebar('attach events', '.menu .item#sidebar-trigger');
 
@@ -8,3 +9,4 @@ $('.message .close').on('click', function () {
 });
 
 $('.ui.checkbox').checkbox();
+$('.ui.dropdown.item').dropdown();
