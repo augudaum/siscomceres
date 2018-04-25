@@ -167,3 +167,14 @@ CREATE TABLE IF NOT EXISTS tb_item_pedido_compra (
     quantidade INTEGER NOT NULL,
     preco_produto NUMERIC(9,2)
 );
+
+-- CRIANDO A TABELA DE ITENS DE PEDIDO DE COMPRA
+CREATE TABLE IF NOT EXISTS tb_cfop (
+    codigo VARCHAR(4) NOT NULL,
+    descricao VARCHAR(200),
+    indnfe CHAR(1),
+    indcomunica CHAR(1),
+    indtransp CHAR(1),
+    inddevol CHAR(1)
+    CONSTRAINT tb_cfop_pk PRIMARY KEY (codigo)
+);
