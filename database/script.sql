@@ -113,3 +113,57 @@ CREATE TABLE IF NOT EXISTS tb_produtos (
     CONSTRAINT tb_produtos_pk PRIMARY KEY (codigo),
     CONSTRAINT tb_unidade_fk FOREIGN KEY (unidade_id) REFERENCES tb_unidades(id)
 );
+
+-- CRIANDO A TABELA DE SIMULAÇÕES (LEIÕES/PREGÕES/LICITAÇÕES)
+CREATE TABLE IF NOT EXISTS tb_simulacoes (
+    numero INTEGER NOT NULL DEFAULT NEXTVAL(),
+    data_simulacao DATE NOT NULL,
+    data_cadastro TIMESTAMP WITH TIME ZONE NOT NULL,
+    cadastrado_por INTEGER NOT NULL,
+    data_confirmacao TIMESTAMP WITH TIME ZONE,
+    confirmado_por INTEGER,
+    data_modificacao TIMESTAMP WITH TIME ZONE,
+    modificado_por INTEGER,
+    CONSTRAINT tb_simulacoes_pk PRIMARY KEY (numero),
+    CONSTRAINT tb_simulacoes_cadastro_fk FOREIGN KEY (cadastrado_por) REFERENCES tb_participantes (id),
+    CONSTRAINT tb_simulacoes_confirmacao_fk FOREIGN KEY (confirmado_por) REFERENCES tb_participantes (id),
+    CONSTRAINT tb_simulacoes_modificacao_fk FOREIGN KEY (modificado_por) REFERENCES tb_participantes (id)
+);
+
+-- CRIANDO A TABELA DE ITENS DE SIMULAÇÃO
+CREATE TABLE IF NOT EXISTS tb_item_simulacao (
+    numero_simulacao INTEGER NOT NULL,
+    codigo_produto INTEGER NOT NULL,
+    quantidade INTEGER NOT NULL,
+    CONSTRAINT tb_item_simulacao_numero_fk FOREIGN KEY (numero_simulacao) REFERENCES tb_simulacoes (id),
+    CONSTRAINT tb_item_simulacao_produto_fk FOREIGN KEY (codigo_produto) REFERENCES tb_produtos (id)
+);
+
+-- CRIANDO A TABELA DE PEDIDO DE COMPRA
+CREATE TABLE IF NOT EXISTS tb_pedido_compra (
+    numero INTEGER NOT NULL,
+    data_pedido TIMESTAMP WITH TIME ZONE NOT NULL,
+    codigo_fornecedor INTEGER NOT NULL,
+    numero_simulacao INTEGER NOT NULL,
+    data_cadastro TIMESTAMP WITH TIME ZONE NOT NULL,
+    cadastrado_por INTEGER NOT NULL,
+    data_confirmacao TIMESTAMP WITH TIME ZONE,
+    confirmado_por INTEGER,
+    data_modificacao TIMESTAMP WITH TIME ZONE,
+    modificado_por INTEGER,
+    data_previsao_entrega DATE,
+    codigo_politica_venda INTEGER,
+    total_pedido_compra NUMERIC(9,2),
+    CONSTRAINT tb_pedido_compra_pk PRIMARY KEY (numero),
+    CONSTRAINT tb_pedido_compra_cadastro_fk FOREIGN KEY (cadastrado_por) REFERENCES tb_participantes (id),
+    CONSTRAINT tb_pedido_compra_confirmacao_fk FOREIGN KEY (confirmado_por) REFERENCES tb_participantes (id),
+    CONSTRAINT tb_pedido_compra_modificacao_fk FOREIGN KEY (modificado_por) REFERENCES tb_participantes (id)
+);
+
+-- CRIANDO A TABELA DE ITENS DE PEDIDO DE COMPRA
+CREATE TABLE IF NOT EXISTS tb_item_pedido_compra (
+    numero_pedido INTEGER NOT NULL,
+    codigo_produto INTEGER NOT NULL,
+    quantidade INTEGER NOT NULL,
+    preco_produto NUMERIC(9,2)
+);
