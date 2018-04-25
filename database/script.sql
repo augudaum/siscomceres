@@ -175,6 +175,6 @@ CREATE TABLE IF NOT EXISTS tb_cfop (
     indnfe CHAR(1),
     indcomunica CHAR(1),
     indtransp CHAR(1),
-    inddevol CHAR(1)
+    inddevol CHAR(1),
     CONSTRAINT tb_cfop_pk PRIMARY KEY (codigo)
 );
