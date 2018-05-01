@@ -94,7 +94,7 @@ CREATE TABLE IF NOT EXISTS tb_unidades (
     id INTEGER NOT NULL DEFAULT NEXTVAL('tb_unidades_seq'),
     sigla VARCHAR(7),
     descricao VARCHAR(50),
-    CONSTRAINT tb_unidades_pk PRIMARY KEY (id),
+    CONSTRAINT tb_unidades_pk PRIMARY KEY (id)
 );
 
 -- CRIANDO A TABELA DE PRODUTOS
@@ -104,7 +104,7 @@ CREATE TABLE IF NOT EXISTS tb_produtos (
     fabricante VARCHAR(50),
     cean VARCHAR(14),
     descricao VARCHAR(50),
-    ncm VARCAR(8),
+    ncm VARCHAR(8),
     extipi VARCHAR(3),
     unidade_id INTEGER NOT NULL,
     pc_compra NUMERIC,
@@ -115,28 +115,29 @@ CREATE TABLE IF NOT EXISTS tb_produtos (
 );
 
 -- CRIANDO A TABELA DE SIMULAÇÕES (LEIÕES/PREGÕES/LICITAÇÕES)
-CREATE TABLE IF NOT EXISTS tb_simulacoes (
-    numero INTEGER NOT NULL DEFAULT NEXTVAL(),
-    data_simulacao DATE NOT NULL,
+CREATE SEQUENCE tb_requisicoes_compra_seq;
+CREATE TABLE IF NOT EXISTS tb_requisicoes_compra (
+    numero INTEGER NOT NULL DEFAULT NEXTVAL('tb_requisicoes_compra_seq'),
+    data_requisicao DATE NOT NULL,
     data_cadastro TIMESTAMP WITH TIME ZONE NOT NULL,
     cadastrado_por INTEGER NOT NULL,
     data_confirmacao TIMESTAMP WITH TIME ZONE,
     confirmado_por INTEGER,
     data_modificacao TIMESTAMP WITH TIME ZONE,
     modificado_por INTEGER,
-    CONSTRAINT tb_simulacoes_pk PRIMARY KEY (numero),
-    CONSTRAINT tb_simulacoes_cadastro_fk FOREIGN KEY (cadastrado_por) REFERENCES tb_participantes (id),
-    CONSTRAINT tb_simulacoes_confirmacao_fk FOREIGN KEY (confirmado_por) REFERENCES tb_participantes (id),
-    CONSTRAINT tb_simulacoes_modificacao_fk FOREIGN KEY (modificado_por) REFERENCES tb_participantes (id)
+    CONSTRAINT tb_requisicoes_compra_pk PRIMARY KEY (numero),
+    CONSTRAINT tb_requisicoes_compra_cadastro_fk FOREIGN KEY (cadastrado_por) REFERENCES tb_participantes (id),
+    CONSTRAINT tb_requisicoes_compra_confirmacao_fk FOREIGN KEY (confirmado_por) REFERENCES tb_participantes (id),
+    CONSTRAINT tb_requisicoes_compra_modificacao_fk FOREIGN KEY (modificado_por) REFERENCES tb_participantes (id)
 );
 
 -- CRIANDO A TABELA DE ITENS DE SIMULAÇÃO
-CREATE TABLE IF NOT EXISTS tb_item_simulacao (
-    numero_simulacao INTEGER NOT NULL,
+CREATE TABLE IF NOT EXISTS tb_item_requisicao_compra (
+    numero_requisicao INTEGER NOT NULL,
     codigo_produto INTEGER NOT NULL,
     quantidade INTEGER NOT NULL,
-    CONSTRAINT tb_item_simulacao_numero_fk FOREIGN KEY (numero_simulacao) REFERENCES tb_simulacoes (id),
-    CONSTRAINT tb_item_simulacao_produto_fk FOREIGN KEY (codigo_produto) REFERENCES tb_produtos (id)
+    CONSTRAINT tb_item_requisicao_compra_numero_fk FOREIGN KEY (numero_requisicao) REFERENCES tb_requisicoes_compra (id),
+    CONSTRAINT tb_item_requisicao_compra_produto_fk FOREIGN KEY (codigo_produto) REFERENCES tb_produtos (id)
 );
 
 -- CRIANDO A TABELA DE PEDIDO DE COMPRA
@@ -144,7 +145,7 @@ CREATE TABLE IF NOT EXISTS tb_pedido_compra (
     numero INTEGER NOT NULL,
     data_pedido TIMESTAMP WITH TIME ZONE NOT NULL,
     codigo_fornecedor INTEGER NOT NULL,
-    numero_simulacao INTEGER NOT NULL,
+    numero_requisicao INTEGER NOT NULL,
     data_cadastro TIMESTAMP WITH TIME ZONE NOT NULL,
     cadastrado_por INTEGER NOT NULL,
     data_confirmacao TIMESTAMP WITH TIME ZONE,
