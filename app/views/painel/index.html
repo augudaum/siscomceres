@@ -13,23 +13,34 @@
 <div class="ui bottom attached segment" style="margin-bottom: 0;">
     <div class="ui inverted labeled icon left inline vertical sidebar menu">
         <a class="item {{class_home_selected}}" href="/painel">
-            <i class="home icon"></i> Home
+            <i class="home icon"></i> Início
         </a>
+        <div class="ui dropdown item">
+            <i class="plus icon"></i> Cadastros
+            <div class="menu">
+                <a class="item {{class_participantes_selected}}" href="/participantes">
+                    <i class="id card icon"></i> Participantes
+                </a>
+                <a class="item {{class_produtos_selected}}" href="/produtos">
+                    <i class="archive icon"></i> Produtos
+                </a>
+            </div>
+        </div>
         <div class="ui dropdown item">
             <i class="book icon"></i> Operações
             <div class="menu">
                 <a class="item">
-                    <i class="gavel icon"></i> Simulação
+                    <i class="gavel icon"></i> Vendas
                 </a>
                 <a class="item">
-                    <i class="book icon"></i> Simulação Resumida
+                    <i class="book icon"></i> Compras
                 </a>
                 <a class="item">
-                    <i class="mail icon"></i> Montar Pedido de Compra
+                    <i class="money bill alternate outline icon"></i> Finanças
                 </a>
             </div>
         </div>
-        <a class="item {{class_produtos_selected}}" href="/produtos">
+        <!-- <a class="item {{class_produtos_selected}}" href="/produtos">
             <i class="archive icon"></i> Produtos
         </a>
         <a class="item {{class_usuarios_selected}}" href="/usuarios">
@@ -37,6 +48,12 @@
         </a>
         <a class="item {{class_participantes_selected}}" href="/participantes">
             <i class="id card icon"></i> Participantes
+        </a> -->
+        <a class="item">
+            <i class="list alternate outline icon"></i> Relatórios
+        </a>
+        <a class="item">
+            <i class="wrench icon"></i> Utilitários
         </a>
         <a class="item">
             <i class="cog icon"></i> Configurações
