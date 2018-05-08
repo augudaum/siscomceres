@@ -3,6 +3,7 @@
     namespace app\controllers;
 
     use app\controllers\ContainerController;
+    use app\models\produtos\Produto;
 
     class ProdutosController extends ContainerController {
 
@@ -12,17 +13,44 @@
                 return redirect("/");
             }
 
-            $this->view([
-                'title' => 'Painel Administrativo :: Produtos',
-                'class_produtos_selected' => 'active'
-            ], 'produtos.index');
-        }
+            $produtos = (new Produto())->getAll();
 
-        public function create() {
             $this->view([
                 'title' => 'Painel Administrativo :: Produtos',
                 'class_produtos_selected' => 'active',
-            ], 'produtos.cadastro');
+                'produtos' => $produtos
+            ], 'produtos.index');
+        }
+        
+        public function store() {
+            // Remove os campos que foram enviados em branco
+            $_POST = array_filter($_POST);
+            $produtoCodigo = (new Produto())->create((array) request()->get());
+            // Retorna o id do participante inserido
+            return toJson($produtoCodigo);
+        }
+
+        public function update() {
+            if (!isset($_SESSION['usuario_logado']) && !isset($_POST['action'])) {
+                return back();
+            }
+            return toJson((new Produto())->update(request()->get()->codigo, (array) request()->get()));
+        }
+
+        public function show() {
+            if (!isset($_SESSION['usuario_logado']) && !isset($_POST['id'])) {
+                return redirect("/");
+            }
+            return toJson(array(
+                "produto" => (new Produto())->findBy('codigo', request()->get()->codigo) 
+            ));
+        }    
+
+        public function destroy() {
+            if (!isset($_SESSION['usuario_logado']) && !isset($_POST['action'])) {
+                return back();
+            }
+            return toJson((new Produto())->delete('codigo', request()->get()->codigo));
         }
     }
 ?>

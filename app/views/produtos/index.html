@@ -1,24 +1,27 @@
 {% extends 'painel/index.html' %} {% block content_active %}
 
-<table class="ui selectable single line table">
+<table class="ui selectable single line table" id="table-produtos">
     <thead>
         <tr>
             <th>
-                <div class="ui ribbon label">ID</div>
+                <div class="ui ribbon label">CODIGO</div>
             </th>
             <th>Produto</th>
+            <th>Descrição</th>
+            <th>Preço de Custo</th>
         </tr>
     </thead>
     <tbody>
-        <tr>
-            <td></td>
+        {% for produto in produtos %}
+        <tr style="cursor: pointer;" data-id="{{produto.getCodigo()}}">
+            <td>{{produto.getCodigo()}}</td>
             <td></td>
         </tr>
+        {% endfor %}
     </tbody>
     <tfoot class="full-width">
         <tr>
-            <th></th>
-            <th colspan="2">
+            <th colspan="4">
                 <button id="button-addproduto" class="ui right floated small primary labeled icon button">
                     <i class="archive icon"></i> Novo produto
                 </button>

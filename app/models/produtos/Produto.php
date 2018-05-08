@@ -21,6 +21,29 @@
         private $pcCompra;
         private $pcCusto;
         private $pcVenda;
+        protected $table = "tb_produtos";
+        const SEQUENCE = "tb_produtos_seq";
+
+        public function getAll() {
+            $produtos = $this->all();
+            $arrayProdutos = [];
+            foreach ($produtos as $p) {
+                $produto = new Produto();
+                $produto->setCodigo($p->codigo);
+                $produto->setMarca($p->marca);
+                $produto->setFabricante($p->fabricante);
+                $produto->setCean($p->cean);
+                $produto->setdescricao($p->descricao);
+                $produto->setNcm($p->ncm);
+                $produto->setExtipi($p->extipi);
+                $produto->setUnidade($p->unidade_id);
+                $produto->setPcCompra($p->pc_compra);
+                $produto->setPcCusto($p->pc_custo);
+                $produto->setPcVenda($p->pc_venda);                
+                $arrayProdutos[] = $produto;
+            }
+            return $arrayProdutos;
+        }
 
         /**
          * GET and SET methods
