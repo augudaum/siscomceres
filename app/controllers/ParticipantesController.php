@@ -82,5 +82,10 @@
             }
             return toJson((new Participante())->delete('id', request()->get()->id));
         }
+
+        public function participantes() {
+            $participantes = (new Participante())->all();
+            return toJson($participantes);
+        }
     }
 ?>
