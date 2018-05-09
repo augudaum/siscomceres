@@ -54,5 +54,12 @@
             }
             return toJson((new Produto())->delete('codigo', request()->get()->codigo));
         }
+
+        public function produtos() {
+            if (!isset($_SESSION['usuario_logado']) && !isset($_POST['action'])) {
+                return back();
+            }
+            return toJson((new Produto())->all());
+        }
     }
 ?>
