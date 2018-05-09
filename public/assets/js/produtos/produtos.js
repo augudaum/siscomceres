@@ -5,7 +5,7 @@ $(document).ready(function () {
     var form_addproduto = $('#addProdutoform');
 
     // Seta a validação dos campos do formulário
-    setFormValidation();
+    setFormProdutosValidation();
 
     // Inicializa os dropdowns
     initDropdownsProdutos();
@@ -38,6 +38,7 @@ $(document).ready(function () {
                 $('input[name=descricao]').val(response.produto.descricao);
                 $('input[name=ncm]').val(response.produto.ncm);
                 $('#dropdown-unidades').dropdown('set selected', response.produto.unidade_id);
+                $('input[name=estoque_minimo]').val(response.produto.estoque_minimo);
                 $('input[name=pc_compra]').val(response.produto.pc_compra);
                 $('input[name=pc_custo]').val(response.produto.pc_custo);
                 $('input[name=pc_venda]').val(response.produto.pc_venda);
@@ -54,6 +55,7 @@ $(document).ready(function () {
     });
 
     button_saveproduto.on('click', function (event) {
+        event.preventDefault();
         if (form_addproduto.form('is valid')) {
             if ($(this).attr('data-action') == 'create') {
                 $.ajax({
@@ -144,5 +146,27 @@ function initDropdownsProdutos() {
                 context: '[data-tab=dados-produtos]'
             });
         }
+    });
+}
+
+$.fn.form.settings.rules.greaterThan = function (inputValue, validationValue) {
+    return inputValue > validationValue;
+}
+
+function setFormProdutosValidation() {
+    $('#addProdutoForm').form({
+        fields: {
+            estoque_minimo: {
+                identifier: 'estoque_minimo',
+                rules: [
+
+                    {
+                        type: 'empty',
+                        prompt: 'Este campo não pode ficar vazio'
+                    }
+                ]
+            }
+        },
+        inline: true
     });
 }
