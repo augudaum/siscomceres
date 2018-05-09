@@ -13,6 +13,21 @@
         private $id;
         private $descricao;
         private $sigla;
+        protected $table = 'tb_unidades';
+        const SEQUENCE = 'tb_unidades_seq';
+
+        public function getAll() {
+            $unidades = $this->all();
+            $arrayUnidades = [];
+            foreach ($unidades as $u) {
+                $unidade = new UnidadeComercial();
+                $unidade->setId($u->id);
+                $unidade->setDescricao($u->descricao);
+                $unidade->setSigla($u->sigla);
+                $arrayUnidades[] = $unidade;
+            }
+            return $arrayUnidades;
+        }
 
         /**
          * GET and SET methods
