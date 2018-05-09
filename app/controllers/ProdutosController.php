@@ -34,11 +34,11 @@
             if (!isset($_SESSION['usuario_logado']) && !isset($_POST['action'])) {
                 return back();
             }
-            return toJson((new Produto())->update(request()->get()->codigo, (array) request()->get()));
+            return toJson((new Produto())->update(request()->get()->codigo, (array) request()->get(), 'codigo'));
         }
 
         public function show() {
-            if (!isset($_SESSION['usuario_logado']) && !isset($_POST['id'])) {
+            if (!isset($_SESSION['usuario_logado']) && !isset($_POST['codigo'])) {
                 return redirect("/");
             }
             return toJson(array(
