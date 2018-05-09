@@ -22,7 +22,7 @@
         private $pcCusto;
         private $pcVenda;
         protected $table = "tb_produtos";
-        const SEQUENCE = "tb_produtos_seq";
+        //const SEQUENCE = "tb_produtos_seq";
 
         public function getAll() {
             $produtos = $this->all();
