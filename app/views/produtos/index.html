@@ -3,19 +3,21 @@
 <table class="ui selectable single line table" id="table-produtos">
     <thead>
         <tr>
-            <th>
+            <th class="two wide">
                 <div class="ui ribbon label">CODIGO</div>
             </th>
-            <th>Produto</th>
-            <th>Descrição</th>
-            <th>Preço de Custo</th>
+            <th class="eight wide">Produto</th>
+            <th class="three wide">Fabricante</th>
+            <th class="three wide">Preço de Custo</th>
         </tr>
     </thead>
     <tbody>
         {% for produto in produtos %}
         <tr style="cursor: pointer;" data-id="{{produto.getCodigo()}}">
             <td>{{produto.getCodigo()}}</td>
-            <td></td>
+            <td>{{produto.getDescricao()}}</td>
+            <td>{{produto.getFabricante()}}</td>
+            <td>R$ {{produto.getPcCusto()|number_format(2,',','.')}}</td>
         </tr>
         {% endfor %}
     </tbody>
