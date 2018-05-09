@@ -12,9 +12,15 @@
             <!--Dados do produto-->
             <div class="ui bottom attached tab segment active" data-tab="dados-produtos">
                 <div style="padding: 10px">
-                    <div class="field">
-                        <label>cEAN:</label>
-                        <input type="text" placeholder="Informe o cEAN" name="cean">
+                    <div class="two fields">
+                        <div class="field">
+                            <label for="">Código interno:</label>
+                            <input type="text" placeholder="Informe o código utilizado internamente" name="codigo">
+                        </div>
+                        <div class="field">
+                            <label>cEAN:</label>
+                            <input type="text" placeholder="Informe o cEAN" name="cean">
+                        </div>
                     </div>
                     <div class="two fields">
                         <div class="field">
@@ -37,7 +43,15 @@
                         </div>
                         <div class="field">
                             <label>Unidade:</label>
-                            <input type="text" placeholder="Informe o unidade" name="unidade">
+                            <div class="ui search selection dropdown" id="dropdown-unidades">
+                                <input type="hidden" name="unidade_id">
+                                <div class="default text">Selecione a unidade</div>
+                                <i class="dropdown icon"></i>
+                                <div class="menu">
+                                    <!-- As unidades de medida serão listadas aqui através do JS -->
+                                </div>
+                            </div>
+                            <!-- <input type="text" placeholder="Informe o unidade" name="unidade"> -->
                         </div>
                     </div>
                     <div class="three fields">
@@ -68,7 +82,7 @@
                 <div class="ui buttons">
                     <button type="button" class="ui cancel button">Cancelar</button>
                     <div class="or" data-text="ou"></div>
-                    <button id="button-saveparticipante" type="button" class="ui primary button">Salvar</button>
+                    <button id="button-saveproduto" type="button" class="ui primary button">Salvar</button>
                 </div>
             </div>
         </form>
