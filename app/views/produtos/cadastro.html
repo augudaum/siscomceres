@@ -12,17 +12,49 @@
             <!--Dados do produto-->
             <div class="ui bottom attached tab segment active" data-tab="dados-produtos">
                 <div class="p-10">
-                    <div class="two fields">
-                        <div class="field">
-                            <label for="">Código interno:</label>
-                            <input type="text" placeholder="Informe o código utilizado internamente" name="codigo">
-                        </div>
-                        <div class="field">
-                            <label>cEAN:</label>
-                            <input type="text" placeholder="Informe o cEAN" name="cean">
+                    <div class="field">
+                        <div class="fields">
+                            <div class="four wide field">
+                                <label for="">Código interno:</label>
+                                <input type="text" placeholder="Informe o código utilizado internamente" name="codigo">
+                            </div>
+                            <div class="four wide field">
+                                <label>cEAN:</label>
+                                <input type="text" placeholder="Informe o cEAN" name="cean">
+                            </div>
+                            <div class="eight wide field">
+                                <label>Descrição fiscal:</label>
+                                <input type="text" placeholder="Informe a descrição fiscal" name="descricao_fiscal">
+                            </div>
                         </div>
                     </div>
-                    <div class="two fields">
+                    <div class="field">
+                        <label>Descrição:</label>
+                        <input type="text" placeholder="Informe o descrição" name="descricao">
+                    </div>
+                    <div class="four fields">
+                        <div class="field">
+                            <label>Tipo do item:</label>
+                            <div class="ui search selection dropdown" id="dropdown-tipo-itens">
+                                <input type="hidden" name="tipo_item_id">
+                                <div class="default text">Selecione o tipo de item</div>
+                                <i class="dropdown icon"></i>
+                                <div class="menu">
+                                    <!-- As unidades de medida serão listadas aqui através do JS -->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label>Gênero:</label>
+                            <div class="ui search selection dropdown" id="dropdown-generos">
+                                <input type="hidden" name="genero">
+                                <div class="default text">Selecione o gênero</div>
+                                <i class="dropdown icon"></i>
+                                <div class="menu">
+                                    <!-- As unidades de medida serão listadas aqui através do JS -->
+                                </div>
+                            </div>
+                        </div>
                         <div class="field">
                             <label>Marca:</label>
                             <input type="text" placeholder="Informe a marca" name="marca">
@@ -31,10 +63,6 @@
                             <label>Fabricante:</label>
                             <input type="text" placeholder="Informe o fabricante" name="fabricante">
                         </div>
-                    </div>
-                    <div class="field">
-                        <label>Descrição:</label>
-                        <input type="text" placeholder="Informe o descrição" name="descricao">
                     </div>
                     <div class="three fields">
                         <div class="field">
@@ -54,7 +82,7 @@
                             <!-- <input type="text" placeholder="Informe o unidade" name="unidade"> -->
                         </div>
                         <div class="field">
-                            <label>Estoque Mínimo:</label>
+                            <label>Estoque mínimo:</label>
                             <input type="number" placeholder="Estoque mínimo para o produto" name="estoque_minimo">
                         </div>
                     </div>
