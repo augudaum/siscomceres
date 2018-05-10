@@ -14,6 +14,7 @@
         private $marca;
         private $fabricante;
         private $cEAN;
+        private $descricaoFiscal;
         private $descricao;
         private $ncm;
         private $extipi;
@@ -63,6 +64,10 @@
     
         public function getCEAN(){
             return $this->cEAN;
+        }
+
+        public function getDescricaoFiscal() {
+            return $this->descricaoFiscal;
         }
     
         public function getDescricao(){
