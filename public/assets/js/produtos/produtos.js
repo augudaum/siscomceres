@@ -2,7 +2,7 @@ $(document).ready(function () {
     var button_addproduto = $('#button-addproduto');
     var button_saveproduto = $('#button-saveproduto');
     var button_deleteproduto = $('#button-deleteproduto');
-    var form_addproduto = $('#addProdutoform');
+    var form_addproduto = $('#addProdutoForm');
 
     // Seta a validação dos campos do formulário
     setFormProdutosValidation();
@@ -35,9 +35,12 @@ $(document).ready(function () {
                 $('input[name=cean]').val(response.produto.cean);
                 $('input[name=marca]').val(response.produto.marca);
                 $('input[name=fabricante]').val(response.produto.fabricante);
+                $('input[name=descricao_fiscal]').val(response.produto.descricao_fiscal);
                 $('input[name=descricao]').val(response.produto.descricao);
                 $('input[name=ncm]').val(response.produto.ncm);
                 $('#dropdown-unidades').dropdown('set selected', response.produto.unidade_id);
+                $('#dropdown-tipo-itens').dropdown('set selected', response.produto.tipo_item_codigo);
+                $('#dropdown-generos').dropdown('set selected', response.produto.genero_codigo);
                 $('input[name=estoque_minimo]').val(response.produto.estoque_minimo);
                 $('input[name=pc_compra]').val(response.produto.pc_compra);
                 $('input[name=pc_custo]').val(response.produto.pc_custo);
@@ -115,7 +118,6 @@ $(document).ready(function () {
         } else {
             form_addproduto.form('validate form');
         }
-
     });
 
     $('#dropdown_rg').dropdown();
@@ -147,6 +149,38 @@ function initDropdownsProdutos() {
             });
         }
     });
+
+    $.ajax({
+        url: '/Produtos/generos',
+        type: 'POST',
+        dataType: 'json',
+        success: function (response, status, request) {
+            for (var i = 0; i < response.length; i++) {
+                $('#dropdown-generos .menu').append(
+                    $('<div>').addClass('item').attr('data-value', response[i].codigo).html(response[i].descricao)
+                );
+            }
+            $('#dropdown-generos').dropdown({
+                context: '[data-tab=dados-produtos]'
+            });
+        }
+    });
+
+    $.ajax({
+        url: '/Produtos/tipoItens',
+        type: 'POST',
+        dataType: 'json',
+        success: function (response, status, request) {
+            for (var i = 0; i < response.length; i++) {
+                $('#dropdown-tipo-itens .menu').append(
+                    $('<div>').addClass('item').attr('data-value', response[i].codigo).html(response[i].descricao)
+                );
+            }
+            $('#dropdown-tipo-itens').dropdown({
+                context: '[data-tab=dados-produtos]'
+            });
+        }
+    });
 }
 
 $.fn.form.settings.rules.greaterThan = function (inputValue, validationValue) {
@@ -159,10 +193,31 @@ function setFormProdutosValidation() {
             estoque_minimo: {
                 identifier: 'estoque_minimo',
                 rules: [
-
                     {
                         type: 'empty',
                         prompt: 'Este campo não pode ficar vazio'
+                    },
+                    {
+                        type: 'greaterThan[0]',
+                        prompt: 'Insira valores maiores do que 0'
+                    }
+                ]
+            },
+            descricao_fiscal: {
+                identifier: 'descricao_fiscal',
+                rules: [
+                    {
+                        type: 'maxLength[40]',
+                        prompt: 'Inisira, no máximo, 40 caracteres'
+                    }
+                ]
+            },
+            descricao: {
+                identifier: 'descricao',
+                rules: [
+                    {
+                        type: 'maxLength[120]',
+                        prompt: 'Inisira, no máximo, 120 caracteres'
                     }
                 ]
             }
