@@ -119,8 +119,6 @@ $(document).ready(function () {
             form_addproduto.form('validate form');
         }
     });
-
-    $('#dropdown_rg').dropdown();
 });
 
 // Muda a interface do botão para atualização
@@ -161,7 +159,10 @@ function initDropdownsProdutos() {
                 );
             }
             $('#dropdown-generos').dropdown({
-                context: '[data-tab=dados-produtos]'
+                context: '[data-tab=dados-produtos]',
+                action: function (text, value) {
+                    $('#dropdown-generos').dropdown('set text', text.substring(0, 19) + '...');
+                }
             });
         }
     });
