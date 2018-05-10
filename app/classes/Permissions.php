@@ -44,7 +44,7 @@
 
 			$permission = new Permission();
 			$permissionsEncontradas = $permission->userPermissions($this->user->id);
-
+			
 			$controllersAndNames = [];
 
 			foreach ($permissionsEncontradas as $permission) {

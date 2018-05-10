@@ -37,6 +37,7 @@
             if (!isset($_SESSION['usuario_logado']) && !isset($_POST['action'])) {
                 return back();
             }
+            $_POST['modificado_por'] = $_SESSION['usuario_id'];
             return toJson((new Produto())->update(request()->get()->codigo, (array) request()->get(), 'codigo'));
         }
 
