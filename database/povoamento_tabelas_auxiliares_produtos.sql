@@ -1,4 +1,4 @@
-INSERT INTO tb_tipo_item VALUES (codigo, descricao)
+INSERT INTO tb_tipo_item (codigo, descricao) VALUES
 (0,'Mercadoria para Revenda'),
 (1,'Matéria-Prima'),
 (2,'Embalagem'),
@@ -12,7 +12,7 @@ INSERT INTO tb_tipo_item VALUES (codigo, descricao)
 (10,'Outros insumos'),
 (99,'Outras');
 
-INSERT INTO tb_genero_produto VALUES (codigo, descricao, data_inicial)
+INSERT INTO tb_genero_produto (codigo, descricao, data_inicial) VALUES
 (0,'Serviço','1012009'),
 (1,'Animais vivos','1012009'),
 (2,'Carnes e miudezas, comestíveis','1012009'),

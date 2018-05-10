@@ -103,15 +103,40 @@ CREATE TABLE IF NOT EXISTS tb_produtos (
     marca VARCHAR(50),
     fabricante VARCHAR(50),
     cean VARCHAR(14),
-    descricao VARCHAR(50),
+    descricao_fiscal VARCHAR(40),
+    descricao VARCHAR(120),
     ncm VARCHAR(8),
     extipi VARCHAR(3),
     unidade_id INTEGER NOT NULL,
+    tipo_item_codigo INTEGER,
+    genero_codigo INTEGER,
+    estoque_minimo INTEGER,
     pc_compra NUMERIC,
     pc_custo NUMERIC,
     pc_venda NUMERIC,
+    data_cadastro TIMESTAMP DEFAULT NOW(),
+    cadastrado_por INTEGER NOT NULL,
+    data_modificado TIMESTAMP,
+    modificado_por INTEGER,
     CONSTRAINT tb_produtos_pk PRIMARY KEY (codigo),
-    CONSTRAINT tb_unidade_fk FOREIGN KEY (unidade_id) REFERENCES tb_unidades(id)
+    CONSTRAINT tb_participante_cadastro_pk FOREIGN KEY (cadastrado_por) REFERENCES tb_usuarios (id),
+    CONSTRAINT tb_participante_modificacao_pk FOREIGN KEY (modificado_por) REFERENCES tb_usuarios (id),
+    CONSTRAINT tb_unidade_fk FOREIGN KEY (unidade_id) REFERENCES tb_unidades(id),
+    CONSTRAINT tb_tipo_item_fk FOREIGN KEY (tipo_item_codigo) REFERENCES tb_tipo_item(codigo),
+    CONSTRAINT tb_genero_fk FOREIGN KEY (genero_codigo) REFERENCES tb_genero_produto(codigo)
+);
+
+-- CRIANDO A TABELA DE GÊNEROS DE PRODUTOS
+CREATE TABLE tb_genero_produto (
+    codigo INTEGER NOT NULL PRIMARY KEY,
+    descricao VARCHAR(300) NOT NULL,
+    data_inicial VARCHAR(20)
+);
+
+-- CRIANDO A TABELA DE TIPOS DE ITEM
+CREATE TABLE tb_tipo_item (
+    codigo INTEGER NOT NULL PRIMARY KEY,
+    descricao VARCHAR(25)
 );
 
 -- CRIANDO A TABELA DE SIMULAÇÕES (LEIÕES/PREGÕES/LICITAÇÕES)
