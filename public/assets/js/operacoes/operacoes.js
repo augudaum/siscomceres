@@ -52,7 +52,7 @@ $(document).ready(() => {
                 source: participantes,
                 fields: { id: 'id' },
                 searchFields: [
-                    'title', 'cpf_cnpj'
+                    'title', 'cpf_cnpj', 'description'
                 ],
                 error: {
                     noResults: 'Nenhuma transportadora dentre as cadastradas foi encontrada'
