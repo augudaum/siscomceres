@@ -4,7 +4,7 @@
         <i class="archive icon"></i> Cadastrar produto
     </div>
     <div class="content">
-        <form id="addProdutoform" class="ui large form">
+        <form id="addProdutoForm" class="ui large form">
             <div class="ui top attached tabular menu" id="menu-tabs-produtos">
                 <a class="item active" data-tab="dados-produtos">Dados do produto</a>
                 <a class="item" data-tab="pagamentos">Formas de Pagamento</a>
@@ -36,7 +36,7 @@
                         <div class="field">
                             <label>Tipo do item:</label>
                             <div class="ui search selection dropdown" id="dropdown-tipo-itens">
-                                <input type="hidden" name="tipo_item_id">
+                                <input type="hidden" name="tipo_item_codigo">
                                 <div class="default text">Selecione o tipo de item</div>
                                 <i class="dropdown icon"></i>
                                 <div class="menu">
@@ -47,7 +47,7 @@
                         <div class="field">
                             <label>Gênero:</label>
                             <div class="ui search selection dropdown" id="dropdown-generos">
-                                <input type="hidden" name="genero">
+                                <input type="hidden" name="genero_codigo">
                                 <div class="default text">Selecione o gênero</div>
                                 <i class="dropdown icon"></i>
                                 <div class="menu">
