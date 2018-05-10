@@ -4,6 +4,8 @@
 
     use app\controllers\ContainerController;
     use app\models\produtos\Produto;
+    use app\models\produtos\GeneroProduto;
+    use app\models\produtos\TipoItem;
 
     class ProdutosController extends ContainerController {
 
@@ -25,6 +27,7 @@
         public function store() {
             // Remove os campos que foram enviados em branco
             $_POST = array_filter($_POST);
+            $_POST['cadastrado_por'] = $_SESSION['usuario_id'];
             $produtoCodigo = (new Produto())->create((array) request()->get());
             // Retorna o id do participante inserido
             return toJson($produtoCodigo);
@@ -51,6 +54,20 @@
                 return back();
             }
             return toJson((new Produto())->delete('codigo', request()->get()->codigo));
+        }
+
+        public function generos() {
+            if (!isset($_SESSION['usuario_logado']) && !isset($_POST['action'])) {
+                return back();
+            }
+            return toJson((new GeneroProduto())->all());
+        }
+
+        public function tipoItens() {
+            if (!isset($_SESSION['usuario_logado']) && !isset($_POST['action'])) {
+                return back();
+            }
+            return toJson((new TipoItem())->all());
         }
     }
 ?>
