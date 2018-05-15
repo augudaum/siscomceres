@@ -149,7 +149,7 @@ function initDropdownsProdutos() {
     });
 
     $.ajax({
-        url: '/Produtos/generos',
+        url: '/Generos/show',
         type: 'POST',
         dataType: 'json',
         success: function (response, status, request) {
@@ -160,9 +160,6 @@ function initDropdownsProdutos() {
                     id: response[i].codigo,
                     description: response[i].descricao
                 });
-                // $('#dropdown-generos .menu').append(
-                //     $('<div>').addClass('item').attr('data-value', response[i].codigo).html(response[i].descricao)
-                // );
             }
             $('#select-generos').search({
                 source: generos,
@@ -184,7 +181,7 @@ function initDropdownsProdutos() {
     });
 
     $.ajax({
-        url: '/Produtos/tipoItens',
+        url: '/TipoItens/show',
         type: 'POST',
         dataType: 'json',
         success: function (response, status, request) {
@@ -206,14 +203,6 @@ function initDropdownsProdutos() {
                     noResults: 'Nenhum tipo de item encontrado'
                 },
             });
-            // for (var i = 0; i < response.length; i++) {
-            //     $('#dropdown-tipo-itens .menu').append(
-            //         $('<div>').addClass('item').attr('data-value', response[i].codigo).html(response[i].descricao)
-            //     );
-            // }
-            // $('#dropdown-tipo-itens').dropdown({
-            //     context: '[data-tab=dados-produtos]'
-            // });
         }
     });
 }
