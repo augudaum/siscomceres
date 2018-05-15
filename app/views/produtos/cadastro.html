@@ -19,7 +19,7 @@
                                 <input type="text" placeholder="Informe o código utilizado internamente" name="codigo">
                             </div>
                             <div class="four wide field">
-                                <label>cEAN:</label>
+                                <label>Cód. de Barras (cEAN):</label>
                                 <input type="text" placeholder="Informe o cEAN" name="cean">
                             </div>
                             <div class="eight wide field">
@@ -35,24 +35,30 @@
                     <div class="four fields">
                         <div class="field">
                             <label>Tipo do item:</label>
-                            <div class="ui search selection dropdown" id="dropdown-tipo-itens">
+                            <div class="ui search" id="select-tipo-itens">
+                                <div class="ui right icon input">
+                                    <input type="text" class="prompt" name="tipo_item_codigo">
+                                    <i class="search icon"></i>
+                                </div>
+                                <div class="results"></div>
+                            </div>
+                            <!-- <div class="ui search selection dropdown" id="dropdown-tipo-itens">
                                 <input type="hidden" name="tipo_item_codigo">
                                 <div class="default text">Selecione o tipo de item</div>
                                 <i class="dropdown icon"></i>
                                 <div class="menu">
-                                    <!-- As unidades de medida serão listadas aqui através do JS -->
+                                    
                                 </div>
-                            </div>
+                            </div> -->
                         </div>
                         <div class="field">
                             <label>Gênero:</label>
-                            <div class="ui search selection dropdown" id="dropdown-generos">
-                                <input type="hidden" name="genero_codigo">
-                                <div class="default text">Selecione o gênero</div>
-                                <i class="dropdown icon"></i>
-                                <div class="menu">
-                                    <!-- As unidades de medida serão listadas aqui através do JS -->
+                            <div class="ui search" id="select-generos">
+                                <div class="ui right icon input">
+                                    <input type="text" class="prompt" name="genero_codigo">
+                                    <i class="search icon"></i>
                                 </div>
+                                <div class="results"></div>
                             </div>
                         </div>
                         <div class="field">

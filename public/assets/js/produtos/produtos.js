@@ -39,8 +39,8 @@ $(document).ready(function () {
                 $('input[name=descricao]').val(response.produto.descricao);
                 $('input[name=ncm]').val(response.produto.ncm);
                 $('#dropdown-unidades').dropdown('set selected', response.produto.unidade_id);
-                $('#dropdown-tipo-itens').dropdown('set selected', response.produto.tipo_item_codigo);
-                $('#dropdown-generos').dropdown('set selected', response.produto.genero_codigo);
+                $('#select-tipo-itens').search('set value', response.produto.tipo_item_codigo);
+                $('#select-generos').search('set value', response.produto.genero_codigo);
                 $('input[name=estoque_minimo]').val(response.produto.estoque_minimo);
                 $('input[name=pc_compra]').val(response.produto.pc_compra);
                 $('input[name=pc_custo]').val(response.produto.pc_custo);
@@ -153,17 +153,33 @@ function initDropdownsProdutos() {
         type: 'POST',
         dataType: 'json',
         success: function (response, status, request) {
+            var generos = [];
             for (var i = 0; i < response.length; i++) {
-                $('#dropdown-generos .menu').append(
-                    $('<div>').addClass('item').attr('data-value', response[i].codigo).html(response[i].descricao)
-                );
+                generos.push({
+                    title: String(response[i].codigo),
+                    id: response[i].codigo,
+                    description: response[i].descricao
+                });
+                // $('#dropdown-generos .menu').append(
+                //     $('<div>').addClass('item').attr('data-value', response[i].codigo).html(response[i].descricao)
+                // );
             }
-            $('#dropdown-generos').dropdown({
-                context: '[data-tab=dados-produtos]',
-                action: function (text, value) {
-                    $('#dropdown-generos').dropdown('set text', text.substring(0, 19) + '...');
+            $('#select-generos').search({
+                source: generos,
+                fields: { id: 'id' },
+                searchFields: [
+                    'title', 'description', 'id'
+                ],
+                error: {
+                    noResults: 'Nenhum gênero encontrado'
                 }
             });
+            // $('#dropdown-generos').dropdown({
+            //     context: '[data-tab=dados-produtos]',
+            //     action: function (text, value) {
+            //         $('#dropdown-generos').dropdown('set text', text.substring(0, 19) + '...');
+            //     }
+            // });
         }
     });
 
@@ -172,14 +188,32 @@ function initDropdownsProdutos() {
         type: 'POST',
         dataType: 'json',
         success: function (response, status, request) {
+            var tipoItens = [];
             for (var i = 0; i < response.length; i++) {
-                $('#dropdown-tipo-itens .menu').append(
-                    $('<div>').addClass('item').attr('data-value', response[i].codigo).html(response[i].descricao)
-                );
+                tipoItens.push({
+                    title: String(response[i].codigo),
+                    id: response[i].codigo,
+                    description: response[i].descricao
+                })
             }
-            $('#dropdown-tipo-itens').dropdown({
-                context: '[data-tab=dados-produtos]'
+            $('#select-tipo-itens').search({
+                source: tipoItens,
+                fields: { id: 'id' },
+                searchFields: [
+                    'title', 'description', 'id'
+                ],
+                error: {
+                    noResults: 'Nenhum tipo de item encontrado'
+                },
             });
+            // for (var i = 0; i < response.length; i++) {
+            //     $('#dropdown-tipo-itens .menu').append(
+            //         $('<div>').addClass('item').attr('data-value', response[i].codigo).html(response[i].descricao)
+            //     );
+            // }
+            // $('#dropdown-tipo-itens').dropdown({
+            //     context: '[data-tab=dados-produtos]'
+            // });
         }
     });
 }
