@@ -4,8 +4,6 @@
 
     use app\controllers\ContainerController;
     use app\models\produtos\Produto;
-    use app\models\produtos\GeneroProduto;
-    use app\models\produtos\TipoItem;
 
     class ProdutosController extends ContainerController {
 
@@ -55,20 +53,6 @@
                 return back();
             }
             return toJson((new Produto())->delete('codigo', request()->get()->codigo));
-        }
-
-        public function generos() {
-            if (!isset($_SESSION['usuario_logado']) && !isset($_POST['action'])) {
-                return back();
-            }
-            return toJson((new GeneroProduto())->all());
-        }
-
-        public function tipoItens() {
-            if (!isset($_SESSION['usuario_logado']) && !isset($_POST['action'])) {
-                return back();
-            }
-            return toJson((new TipoItem())->all());
         }
     }
 ?>
