@@ -16,7 +16,7 @@
 
 		// Contém os Controllers que não devem ser considerados nas permissões. São comuns a todos os usuários.
 		private $exclude = [
-			'HomeController.php', 'LoginController.php', 'ContainerController.php'
+			'HomeController.php', 'LoginController.php', 'ContainerController.php', 'GenerosController.php', 'TipoItensController.php', 'UnidadesController.php', 'CidadesController.php', 'EstadosController.php'
 		];
 
 		// Contém os controllers cujas permissões deverão ser checadas

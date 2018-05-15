@@ -14,7 +14,7 @@
 			'store', 'update', 'destroy'
 		];
 		private $exclude = [
-			'ContainerController', 'HomeController', 'LoginController'
+			'ContainerController', 'HomeController', 'LoginController', 'GenerosController', 'TipoItensController', 'EstadosController', 'UnidadesController', 'CidadesController'
 		];
 
 		public function __construct($controller, $method) {
