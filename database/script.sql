@@ -25,6 +25,20 @@ CREATE TABLE IF NOT EXISTS tb_cidades (
     CONSTRAINT estado_fk FOREIGN KEY (estado_codigo) REFERENCES tb_estados (codigo)
 );
 
+-- CRIANDO A TABELA DE CATEGORIA CONTATOS
+
+CREATE TABLE tb_categorias_contato
+(
+    categoria character varying(20) NOT NULL,
+    CONSTRAINT tb_categorias_contato_pk PRIMARY KEY (categoria)
+)
+
+CREATE TABLE tb_tipo_contato
+(
+    tipo character varying(20) NOT NULL,
+    CONSTRAINT tb_tipo_contato_pk PRIMARY KEY (tipo)
+)
+
 -- CRIANDO A TABELA DE CONTATOS
 CREATE TABLE tb_contatos
 (
@@ -159,10 +173,10 @@ CREATE TABLE IF NOT EXISTS tb_requisicoes_compra (
 -- CRIANDO A TABELA DE ITENS DE SIMULAÇÃO
 CREATE TABLE IF NOT EXISTS tb_item_requisicao_compra (
     numero_requisicao INTEGER NOT NULL,
-    codigo_produto INTEGER NOT NULL,
+    codigo_produto character varying (50) NOT NULL,
     quantidade INTEGER NOT NULL,
-    CONSTRAINT tb_item_requisicao_compra_numero_fk FOREIGN KEY (numero_requisicao) REFERENCES tb_requisicoes_compra (id),
-    CONSTRAINT tb_item_requisicao_compra_produto_fk FOREIGN KEY (codigo_produto) REFERENCES tb_produtos (id)
+    CONSTRAINT tb_item_requisicao_compra_numero_fk FOREIGN KEY (numero_requisicao) REFERENCES tb_requisicoes_compra (numero),
+    CONSTRAINT tb_item_requisicao_compra_produto_fk FOREIGN KEY (codigo_produto) REFERENCES tb_produtos (codigo)
 );
 
 -- CRIANDO A TABELA DE PEDIDO DE COMPRA
