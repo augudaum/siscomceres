@@ -1,14 +1,26 @@
 $(document).ready(() => {
-    var button_addrequisicao = $('#button-addrequisicao');
+    var button_requisicaoresumida = $('#button-requisicaoresumida');
+    var button_saveRequisicaoResumida = $('#button-saveRequisicaoResumida');
+    var button_requisicaodetalhada = $('#button-requisicaodetalhada');
     var button_addpedido = $('#button-addpedido');
     var button_addtotable = $('#button-addprodutototable');
-    var form_addrequisicao = $('#addRequisicaoForm');
+    var form_adddRequisicaoResumida = $('#addRequisicaoResumidaForm');
 
-    setFormRequisicaoValidate();
+    setFormRequisicaoResumidaValidate();
 
-    // Abre o modal para cadastrar uma requisição
-    button_addrequisicao.on('click', (event) => {
-        $('#addRequisicaoModal').modal('show');
+    // Salva uma requisição de compra
+    button_saveRequisicaoResumida.on('click', (event) => {
+        console.log(getTableProdutos());
+    });
+
+    // Abre o modal para cadastrar uma requisição resumida
+    button_requisicaoresumida.on('click', (event) => {
+        $('#addRequisicaoResumidaModal').modal('show');
+    });
+
+    // Abre o modal para cadastrar uma requisição detalhada
+    button_requisicaodetalhada.on('click', (event) => {
+        $('#addRequisicaoDetalhadaModal').modal('show');
     });
 
     // Abre o modal para montar um pedido de compra
@@ -18,18 +30,13 @@ $(document).ready(() => {
 
     // Adiciona o produto e a quantidade à tabela de requisições
     button_addtotable.on('click', (event) => {
-        if (form_addrequisicao.form('is valid')) {
+        if (form_adddRequisicaoResumida.form('is valid')) {
             var codigo = $('input[name=codigo_produto]').val();
             var quantidade = $('input[name=quantidade]').val();
             var descricao = $('#dropdown-produtos').dropdown('get text');
-            $('table#table-produtos-requisicao tbody').append(
-                $('<tr>').attr('data-id', codigo).append(
-                    $('<td>').html(descricao),
-                    $('<td>').html(quantidade)
-                )
-            );
+            addProdutoInTable(codigo, descricao, quantidade);
         } else {
-            form_addrequisicao.form('validate form');
+            form_adddRequisicaoResumida.form('validate form');
         }
     });
 
@@ -75,14 +82,59 @@ function initDropdowns() {
                 );
             }
             $('#dropdown-produtos').dropdown({
-                context: '#addRequisicaoModal'
+                context: '#addRequisicaoResumidaModal'
             });
         }
     });
 }
 
-function setFormRequisicaoValidate() {
-    $('#addRequisicaoForm').form({
+// Adiciona um produto à tabela
+function addProdutoInTable(codigo, produto, quantidade) {
+    var table = document.getElementById('table-produtos-requisicao');
+    var existe = false;
+    if (table.rows.length > 1) {
+        for (var r = 1, n = table.rows.length; r < n; r++) {
+            if (produto == table.rows[r].cells[0].innerHTML) {
+                table.rows[r].cells[1].innerHTML = parseInt(table.rows[r].cells[1].innerHTML, 10) + parseInt(quantidade, 10);
+                existe = true;
+                break;
+            }
+        }
+        if (!existe) {
+            $('table#table-produtos-requisicao tbody').append(
+                $('<tr>').attr('data-id', codigo).append(
+                    $('<td>').html(produto),
+                    $('<td>').html(quantidade)
+                )
+            );
+        }
+    } else {
+        $('table#table-produtos-requisicao tbody').append(
+            $('<tr>').attr('data-id', codigo).append(
+                $('<td>').html(produto),
+                $('<td>').html(quantidade)
+            )
+        );
+    }
+}
+
+// Percorre a tabela e retorna os produtos selecionados pelo usuário
+function getTableProdutos() {
+    var table = document.getElementById('table-produtos-requisicao');
+    var produtos = [];
+    for (var r = 1, n = table.rows.length; r < n; r++) {
+        var produto = {
+            codigo_produto: table.rows[r].getAttribute('data-id'),
+            descricao: table.rows[r].cells[0].innerHTML,
+            quantidade: table.rows[r].cells[1].innerHTML
+        }
+        produtos.push(produto);
+    }
+    return produtos;
+}
+
+function setFormRequisicaoResumidaValidate() {
+    $('#addRequisicaoResumidaForm').form({
         fields: {
             quantidade: {
                 identifier: 'quantidade',
