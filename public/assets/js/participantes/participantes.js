@@ -9,7 +9,7 @@ $(document).ready(function () {
     setFormValidation();
 
     // Inicializa os dropdowns
-    initDropdowns();
+    initDropdownsParticipantes();
 
     // Inicialização das tabs
     $('.tabular.menu .item').tab();
@@ -166,7 +166,7 @@ $(document).ready(function () {
 
     // Abre o modal para cadastrar o participante
     button_addparticipante.on('click', function (event) {
-        buttonNewInterface();
+        buttonNewInterfaceParticipante();
         $('#addParticipanteModal .header')[0].innerHTML = "Cadastrar participante";
         $('#addParticipanteModal').modal('show');
     });
@@ -204,7 +204,7 @@ $(document).ready(function () {
 
     // Evento de clique sobre uma linha da tabela
     $('#table-participantes tbody tr td').on('click', function (event) {
-        buttonUpdateInterface();
+        buttonUpdateInterfaceParticipante();
         var id = $(this).parent().attr('data-id');
         $.ajax({
             url: '/Participantes/show',
@@ -337,7 +337,7 @@ function getTableValues() {
     return contatos;
 }
 
-function initDropdowns() {
+function initDropdownsParticipantes() {
     // Preenche os dropdowns que utilizam estados
     $.ajax({
         url: '/Estados/estados',
@@ -470,13 +470,13 @@ function initDropdowns() {
 }
 
 // Muda a interface do botão para atualização
-function buttonUpdateInterface() {
+function buttonUpdateInterfaceParticipante() {
     $('#button-saveparticipante').removeClass('primary').addClass('green').html("Atualizar").attr('data-action', 'update');
     $('#button-deleteparticipante').removeClass('disabled');
 }
 
 // Muda a interface do botão para adição
-function buttonNewInterface() {
+function buttonNewInterfaceParticipante() {
     $('#button-saveparticipante').removeClass('green').addClass('primary').html("Salvar").attr('data-action', 'create');
     $('#button-deleteparticipante').addClass('disabled');
 }
