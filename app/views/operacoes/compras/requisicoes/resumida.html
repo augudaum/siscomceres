@@ -1,0 +1,57 @@
+<div id="addRequisicaoResumidaModal" class="ui modal">
+    <i class="close icon"></i>
+    <div class="header">
+        <i class="clipboard list icon"></i> Criar Requisição Resumida
+    </div>
+    <div class="content">
+        <form id="addRequisicaoResumidaForm" class="ui form">
+            <div class="two fields">
+                <div class="field">
+                    <label>Número:</label>
+                    <input type="number" placeholder="Número do orçamento" name="numero">
+                </div>
+                <div class="field">
+                    <label>Data da requisição:</label>
+                    <input type="date" name="data_requisicao">
+                </div>
+            </div>
+            <div class="field">
+                <div class="fields">
+                    <div class="ten wide field">
+                        <!-- Produtos -->
+                        <label>Lista de produtos:</label>
+                        <div class="ui search selection dropdown" id="dropdown-produtos">
+                            <input type="hidden" name="codigo_produto">
+                            <div class="default text">Selecione um produto</div>
+                            <i class="dropdown icon"></i>
+                            <div class="menu">
+                                <!-- Os produtos serão listados aqui através do JS -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="six wide field">
+                        <!-- Quantidade de produtos -->
+                        <label>Quantidade:</label>
+                        <input type="number" placeholder="Informe a quantidade" name="quantidade">
+                    </div>
+                </div>
+            </div>
+            <button class="ui yellow left floated button mb-10" type="button">
+                <i class="exclamation triangle icon"></i> Adicionar produtos com estoque mínimo
+            </button>
+            <button id="button-addprodutototable" class="ui right floated button mb-10" type="button">Adicionar</button>
+        </form>
+        <table class="ui fixed selectable single line table small compact" id="table-produtos-requisicao">
+            <thead>
+                <tr>
+                    <th class="thirteen wide">Descrição</th>
+                    <th class="three wide">Quantidade</th>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+        <button class="ui green right floated button mb-10" type="button" id="button-saveRequisicaoResumida">Salvar</button>
+    </div>
+</div>

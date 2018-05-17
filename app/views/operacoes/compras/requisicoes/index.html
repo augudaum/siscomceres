@@ -1,0 +1,29 @@
+{% extends 'painel/index.html' %} {% block content_active %}
+
+<table class="ui selectable single line table" id="table-requisicoes">
+    <thead>
+        <tr>
+            <th colspan="2">Número</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for requisicao in requisicoes %}
+        <tr style="cursor: pointer;" data-id="{{requisicao.getNumero()}}">
+            <td>{{requisicao.getNumero()}}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+    <tfoot class="full-width">
+        <tr>
+            <th>
+                <div class="ui buttons">
+                    <button class="ui small primary button" id="button-requisicaodetalhada"> Detalhada</button>
+                    <div class="or" data-text="ou"></div>
+                    <button class="ui small primary button" id="button-requisicaoresumida"> Resumida</button>
+                </div>
+            </th>
+        </tr>
+    </tfoot>
+</table>
+{% include 'operacoes/compras/requisicoes/resumida.html' %} {% include 'operacoes/compras/requisicoes/detalhada.html' %}
+{% endblock %}

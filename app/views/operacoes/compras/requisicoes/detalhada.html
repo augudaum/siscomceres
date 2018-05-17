@@ -1,0 +1,42 @@
+<div id="addRequisicaoDetalhadaModal" class="ui modal">
+    <i class="close icon"></i>
+    <div class="header">
+        <i class="clipboard list icon"></i> Criar Requisição Detalhada
+    </div>
+    <div class="content">
+        <form id="addRequisicaoDetalhadaForm" class="ui form">
+            <div class="two fields">
+                <div class="field">
+                    <label>Número:</label>
+                    <input type="number" placeholder="Número da Requisição" name="numero">
+                </div>
+                <div class="field">
+                    <label>Data da Requisição:</label>
+                    <input type="date" name="data_requisicao">
+                </div>
+            </div>
+        </form>
+        <table class="ui fixed selectable single line table small compact" id="table-produtos-estoque">
+            <thead>
+                <th class="thirteen wide">Produto</th>
+                <th class="three wide">Estoque</th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Produto A</td>
+                    <td>50</td>
+                </tr>
+                <tr class="warning">
+                    <td>Produto B</td>
+                    <td>
+                        <i class="attention icon"></i> 50 </td>
+                </tr>
+                <tr class="error">
+                    <td>Produto C</td>
+                    <td>
+                        <i class="attention icon"></i> 50</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
