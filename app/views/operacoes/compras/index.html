@@ -1,9 +1,9 @@
 {% extends 'painel/index.html' %} {% block content_active %}
 <div class="ui stackable grid">
     <div class="four wide column">
-        <button class="massive fluid ui button" id="button-addrequisicao">
+        <a class="massive fluid ui button" href="/requisicoes">
             <i class="clipboard list icon"></i> Requisições
-        </button>
+        </a>
     </div>
     <div class="four wide column">
         <button class="massive fluid ui button" id="button-addpedido">
@@ -20,4 +20,4 @@
     </div>
 </div>
 <!-- GRÁFICOS DE VENDA AQUI -->
-{% include 'operacoes/orcamentos/cadastro.html' %} {% include 'operacoes/pedidos/cadastro.html' %} {% endblock %}
+{% include 'operacoes/pedidos/cadastro.html' %} {% endblock %}
