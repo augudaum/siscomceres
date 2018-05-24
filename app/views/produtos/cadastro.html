@@ -5,12 +5,14 @@
     </div>
     <div class="content">
         <form id="addProdutoForm" class="ui large form">
+            <!-- Difinição das Guias -->
             <div class="ui top attached tabular menu" id="menu-tabs-produtos">
-                <a class="item active" data-tab="dados-produtos">Dados do produto</a>
-                <a class="item" data-tab="pagamentos">Formas de Pagamento</a>
+                <a class="item active" data-tab="dados-produtos">Dados do Produto</a>
+                <a class="item" data-tab="informacoes-fiscais">Informações Fiscais</a>
+                <a class="item" data-tab="preco">Composição de Preço</a>
             </div>
-            <!--Dados do produto-->
-            <div class="ui bottom attached tab segment active" data-tab="dados-produtos">
+            <!--Conteúdo da Guia Dados dos produto-->
+            <div class="ui bottom attached tab segment active" data-tab="dados-produtos" style="min-height: 410px;">
                 <div class="p-10">
                     <div class="field">
                         <div class="fields">
@@ -108,11 +110,19 @@
                     </div>
                 </div>
             </div>
-            <!--Dados do pagamento-->
-            <div class="ui bottom attached tab segment" data-tab="pagamentos">
+            <!--Conteúdo da Guia Informações fiscais-->
+            <div class="ui bottom attached tab segment" data-tab="informacoes-fiscais" style="min-height: 410px;">
                 <div class="p-10">
+                    <!-- Colocar o conteúdo aqui dentro -->
                 </div>
             </div>
+            <!-- Conteúdo da Guia Composição de preço -->
+            <div class="ui bottom attached tab segment" data-tab="preco" style="min-height: 410px;">
+                <div class="p-10">
+                    <!-- Colocar o conteúdo aqui dentro -->
+                </div>
+            </div>
+            <!-- Linha Botões -->
             <div class="actions">
                 <!-- <button id="button-deletefuncionario" type="button" class="ui negative button right floated disabled">
                     <i class="trash alternate icon"></i> Remover
