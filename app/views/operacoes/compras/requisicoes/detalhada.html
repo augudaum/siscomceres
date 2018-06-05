@@ -12,31 +12,57 @@
                 </div>
                 <div class="field">
                     <label>Data da Requisição:</label>
-                    <input type="date" name="data_requisicao">
+                    <input type="date" name="data_requisicao_detalhada">
                 </div>
             </div>
         </form>
         <table class="ui fixed selectable single line table small compact" id="table-produtos-estoque">
             <thead>
                 <th class="thirteen wide">Produto</th>
-                <th class="three wide">Estoque</th>
+                <th class="two wide">Estoque</th>
+                <th class="one wide"></th>
             </thead>
             <tbody>
-                <tr>
+                <tr data-id="A">
                     <td>Produto A</td>
-                    <td>50</td>
+                    <td>
+                        <i class="thumbs up outline icon"></i> 50</td>
+                    <td>
+                        <i class="plus green icon" style="cursor: pointer;" id="buttonAddProdutoToTableResumida"></i>
+                    </td>
                 </tr>
                 <tr class="warning">
                     <td>Produto B</td>
                     <td>
-                        <i class="attention icon"></i> 50 </td>
+                        <i class="attention icon"></i> 50
+                    </td>
+                    <td>
+                        <i class="plus green icon"></i>
+                    </td>
                 </tr>
                 <tr class="error">
                     <td>Produto C</td>
                     <td>
-                        <i class="attention icon"></i> 50</td>
+                        <i class="attention icon"></i> 50
+                    </td>
+                    <td>
+                        <i class="plus green icon"></i>
+                    </td>
                 </tr>
             </tbody>
+        </table>
+        <!-- <button id="buttonAddProdutoToTableResumida" class="ui right floated button mb-10" type="button">Adicionar</button> -->
+        <button class="ui yellow right floated button mb-10" type="button">
+            <i class="exclamation triangle icon"></i> Adicionar produtos com estoque mínimo
+        </button>
+        <table class="ui fixed selectable single line table small compact" id="table-produtos-solicitacao">
+            <thead>
+                <thead>
+                    <th class="thirteen wide">Produto</th>
+                    <th class="three wide">Quantidade</th>
+                </thead>
+            </thead>
+            <tbody></tbody>
         </table>
     </div>
 </div>
