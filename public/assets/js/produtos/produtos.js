@@ -47,7 +47,7 @@ $(document).ready(function () {
                 $('input[name=pc_venda]').val(response.produto.pc_venda);
             }
         });
-        $('#addProdutoModal .header')[0].innerHTML = '<i class="archive icon"></i> Atualizar participante';
+        $('#addProdutoModal .header')[0].innerHTML = '<i class="archive icon"></i> Atualizar produto';
         $('#addProdutoModal').modal('show');
     });
 
