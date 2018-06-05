@@ -41,7 +41,29 @@
                 $produto->setPcCompra($p->pc_compra);
                 $produto->setPcCusto($p->pc_custo);
                 $produto->setPcVenda($p->pc_venda);                
+                // $arrayProdutos[] = get_object_vars($produto); Transforma o objeto em array
                 $arrayProdutos[] = $produto;
+            }
+            return $arrayProdutos;
+        }
+
+        public function getAllInArray() {
+            $produtos = $this->all();
+            $arrayProdutos = [];
+            foreach ($produtos as $p) {
+                $produto = new Produto();
+                $produto->setCodigo($p->codigo);
+                $produto->setMarca($p->marca);
+                $produto->setFabricante($p->fabricante);
+                $produto->setCean($p->cean);
+                $produto->setdescricao($p->descricao);
+                $produto->setNcm($p->ncm);
+                $produto->setExtipi($p->extipi);
+                $produto->setUnidade($p->unidade_id);
+                $produto->setPcCompra($p->pc_compra);
+                $produto->setPcCusto($p->pc_custo);
+                $produto->setPcVenda($p->pc_venda);                
+                $arrayProdutos[] = get_object_vars($produto);
             }
             return $arrayProdutos;
         }
