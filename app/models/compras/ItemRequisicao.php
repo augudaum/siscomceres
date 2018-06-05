@@ -8,6 +8,7 @@
     namespace app\models\compras;
 
     use app\models\database\DefaultModel;
+    use app\models\produtos\Produto;
 
     class ItemRequisicao extends DefaultModel {
         private $numeroRequisicao;
@@ -24,6 +25,19 @@
                 $itemRequisicao->setProduto($i->codigo_produto);
                 $itemRequisicao->setQuantidade($i->quantidade);
                 $arrayItemRequisicoes[] = $itemRequisicao;
+            }
+            return $arrayItemRequisicoes;
+        }
+
+        public function findByInArray($column, $value) {
+            $itemRequisicoes = $this->findBy($column, $value);
+            $arrayItemRequisicoes = [];
+            foreach ($itemRequisicoes as $i) {
+                $itemRequisicao = new ItemRequisicao();
+                $itemRequisicao->setNumeroRequisicao($i->numero_requisicao);
+                $itemRequisicao->setProduto((new Produto())->findBy('codigo', $i->codigo_produto));
+                $itemRequisicao->setQuantidade($i->quantidade);
+                $arrayItemRequisicoes[] = get_object_vars($itemRequisicao);
             }
             return $arrayItemRequisicoes;
         }
