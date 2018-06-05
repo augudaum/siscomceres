@@ -1,10 +1,10 @@
-<div id="addPedidoModal" class="ui modal">
+<div id="addPedidoCompraModal" class="ui large modal">
     <i class="close icon"></i>
     <div class="header">
         <i class="box icon"></i> Montar Pedido de Compra
     </div>
     <div class="content">
-        <form id="addPedidoForm" class="ui form">
+        <form id="addPedidoCompraForm" class="ui form">
             <div class="field">
                 <div class="fields">
                     <div class="three wide field">
@@ -31,37 +31,30 @@
             <div class="field">
                 <div class="fields">
                     <div class="seven wide field">
-                        <table class="ui blue selectable single line table small compact" id="table-produtos-requisicao">
+                        <table class="ui blue selectable fixed single line table small compact" id="table-produtos-requisicao">
                             <thead>
                                 <tr>
-                                    <th class="eleven wide">Produto</th>
-                                    <th class="five wide">Quantidade</th>
+                                    <th class="twelve wide">Produto</th>
+                                    <th class="four wide">Quantidade</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>Produto A</td>
-                                    <td>15</td>
-                                </tr>
-                                <tr>
-                                    <td>Produto B</td>
-                                    <td>20</td>
-                                </tr>
+
                             </tbody>
                         </table>
                     </div>
                     <div class="two wide field">
                         <div class="ui two vertical icon buttons">
-                            <button class="ui green button">
+                            <button class="ui green button" type="button" id="buttonAddProdutoToTablePreco">
                                 <i class="angle double right icon"></i>
                             </button>
-                            <button class="ui red button">
+                            <button class="ui red button" type="button" id="buttonRemoveProdutoToTablePreco">
                                 <i class="angle double left icon"></i>
                             </button>
                         </div>
                     </div>
                     <div class="seven wide field">
-                        <table class="ui blue selectable single line table small compact" id="table-produtos-requisicao">
+                        <table class="ui blue selectable fixed single line table small compact" id="table-produtos-requisicao-preco">
                             <thead>
                                 <tr>
                                     <th class="ten wide">Descrição</th>
@@ -70,23 +63,21 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>Produto A</td>
-                                    <td>15</td>
-                                    <td contenteditable>R$ 2.500,00</td>
-                                </tr>
-                                <tr>
-                                    <td>Produto B</td>
-                                    <td>20</td>
-                                    <td contenteditable>R$ 10.000,00</td>
-                                </tr>
+
                             </tbody>
+                            <tfoot class="full-width">
+                                <tr>
+                                    <th></th>
+                                    <th>Total</th>
+                                    <th id="total">R$ 0,00</th>
+                                </tr>
+                            </tfoot>
                         </table>
                     </div>
                 </div>
             </div>
             <div class="actions d-flex justify-content-end">
-                <button id="button-savepedido" type="button" class="ui green button m-0">Salvar</button>
+                <button id="buttonSavePedido" type="button" class="ui green button m-0">Salvar</button>
             </div>
         </form>
     </div>
