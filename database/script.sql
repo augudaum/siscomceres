@@ -199,13 +199,37 @@ CREATE TABLE IF NOT EXISTS tb_pedido_compra (
     CONSTRAINT tb_pedido_compra_confirmacao_fk FOREIGN KEY (confirmado_por) REFERENCES tb_participantes (id),
     CONSTRAINT tb_pedido_compra_modificacao_fk FOREIGN KEY (modificado_por) REFERENCES tb_participantes (id)
 );
+-- TABELA COM CHAVES ESTRANGEIRAS REFERENCIANDO USUÁRIOS E NÃO PARTICIPANTES
+-- CREATE TABLE IF NOT EXISTS tb_pedido_compra (
+--     numero INTEGER NOT NULL,
+--     data_pedido TIMESTAMP WITH TIME ZONE NOT NULL,
+--     codigo_fornecedor INTEGER NOT NULL,
+--     numero_requisicao INTEGER NOT NULL,
+--     data_cadastro TIMESTAMP WITH TIME ZONE NOT NULL,
+--     cadastrado_por INTEGER NOT NULL,
+--     data_confirmacao TIMESTAMP WITH TIME ZONE,
+--     confirmado_por INTEGER,
+--     data_modificacao TIMESTAMP WITH TIME ZONE,
+--     modificado_por INTEGER,
+--     data_previsao_entrega DATE,
+--     codigo_politica_venda INTEGER,
+--     total_pedido_compra NUMERIC(9,2),
+--     CONSTRAINT tb_pedido_compra_pk PRIMARY KEY (numero),
+--     CONSTRAINT tb_pedido_compra_fornecedor_fk FOREIGN KEY (codigo_fornecedor) REFERENCES tb_participantes (id),
+--     CONSTRAINT tb_pedido_compra_requisicao_fk FOREIGN KEY (numero_requisicao) REFERENCES tb_requisicoes_compra (numero),
+--     CONSTRAINT tb_pedido_compra_cadastro_fk FOREIGN KEY (cadastrado_por) REFERENCES tb_usuarios (id),
+--     CONSTRAINT tb_pedido_compra_confirmacao_fk FOREIGN KEY (confirmado_por) REFERENCES tb_usuarios (id),
+--     CONSTRAINT tb_pedido_compra_modificacao_fk FOREIGN KEY (modificado_por) REFERENCES tb_usuarios (id)
+-- );
 
 -- CRIANDO A TABELA DE ITENS DE PEDIDO DE COMPRA
 CREATE TABLE IF NOT EXISTS tb_item_pedido_compra (
     numero_pedido INTEGER NOT NULL,
-    codigo_produto INTEGER NOT NULL,
+    codigo_produto VARCHAR(50) NOT NULL,
     quantidade INTEGER NOT NULL,
-    preco_produto NUMERIC(9,2)
+    preco_produto NUMERIC(9,2),
+    CONSTRAINT tb_item_pedido_compra_numero_fk FOREIGN KEY (numero_pedido) REFERENCES tb_pedido_compra (numero),
+    CONSTRAINT tb_item_pedido_compra_produto_fk FOREIGN KEY  (codigo_produto) REFERENCES tb_produtos (codigo)
 );
 
 -- CRIANDO A TABELA DE ITENS DE PEDIDO DE COMPRA
