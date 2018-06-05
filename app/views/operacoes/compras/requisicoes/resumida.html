@@ -12,7 +12,7 @@
                 </div>
                 <div class="field">
                     <label>Data da requisição:</label>
-                    <input type="date" name="data_requisicao">
+                    <input type="date" name="data_requisicao_resumida">
                 </div>
             </div>
             <div class="field">
@@ -29,10 +29,21 @@
                             </div>
                         </div>
                     </div>
-                    <div class="six wide field">
+                    <div class="three wide field">
+                        <label>Unidade:</label>
+                        <div class="ui disabled compact search selection dropdown" id="dropdown-unidades-disabled">
+                            <input type="hidden" name="unidade_id">
+                            <div class="default text">Und. de Medida</div>
+                            <i class="dropdown icon"></i>
+                            <div class="menu">
+                                <!-- As unidades de medida serão listadas aqui através do JS -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="three wide field">
                         <!-- Quantidade de produtos -->
                         <label>Quantidade:</label>
-                        <input type="number" placeholder="Informe a quantidade" name="quantidade">
+                        <input type="number" placeholder="Informe a quantidade" name="quantidade" autocomplete="off">
                     </div>
                 </div>
             </div>
@@ -44,7 +55,8 @@
         <table class="ui fixed selectable single line table small compact" id="table-produtos-requisicao">
             <thead>
                 <tr>
-                    <th class="thirteen wide">Descrição</th>
+                    <th class="ten wide">Descrição</th>
+                    <th class="three wide">Und. Medida</th>
                     <th class="three wide">Quantidade</th>
                 </tr>
             </thead>
