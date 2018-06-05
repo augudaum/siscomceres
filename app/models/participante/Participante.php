@@ -24,37 +24,37 @@
         ********** GET and SET methods **********
         ****************************************/
 
-        // public function get($id) {
-        //     $p = $this->findBy('id', $id);
-        //     $participante = new Participante();
-        //     $participante->id = $p->id;
-        //     if (strlen($p->cpf_cnpj) > 11) {
-        //         $pessoa = (new Pessoa())->instantiateTipoPessoa('j');
-        //         $pessoa->setTipo('j');
-        //         $pessoa->setRazaoSocial($p->razao_social);
-        //         $pessoa->setNomeFantasia($p->nome_fantasia);
-        //         $pessoa->setCNPJ($p->cpf_cnpj);
-        //         $ie = new IE($p->ie, $p->uf_ie);
-        //         $pessoa->setIE($ie);
-        //         $pessoa->setIM($p->im);
-        //         $pessoa->setCNAE($p->cnae);
-        //         $pessoa->setCRT($p->crt);
-        //         $pessoa->setDataFundacao($p->data_fundacao);
-        //     } else {
-        //         $pessoa = (new Pessoa())->instantiateTipoPessoa('f');
-        //         $pessoa->setTipo('f');
-        //         $pessoa->setNome($p->nome_pessoa);
-        //         $pessoa->setApelido($p->apelido);
-        //         $pessoa->setCPF($p->cpf_cnpj);
-        //         $pessoa->setDataNascimento($p->data_nascimento);
-        //         $rg = new RG($p->numero_rg, $p->orgao_rg, $p->uf_rg, $p->data_expedicao_rg);
-        //         $pessoa->setRG($rg);
-        //     }
-        //     $participante->setPessoa($pessoa);
-        //     $endereco = new Endereco($p->numero_casa, (new Logradouro($p->nome_rua, $p->nome_bairro, $p->cep)), $p->complemento, $p->referencia);
-        //     $participante->setEndereco($endereco);
-        //     return $participante;
-        // }
+        public function get($id) {
+            $p = $this->findBy('id', $id);
+            $participante = new Participante();
+            $participante->id = $p->id;
+            if (strlen($p->cpf_cnpj) > 11) {
+                $pessoa = (new Pessoa())->instantiateTipoPessoa('j');
+                $pessoa->setTipo('j');
+                $pessoa->setRazaoSocial($p->razao_social);
+                $pessoa->setNomeFantasia($p->nome_fantasia);
+                $pessoa->setCNPJ($p->cpf_cnpj);
+                $ie = new IE($p->ie, $p->uf_ie);
+                $pessoa->setIE($ie);
+                $pessoa->setIM($p->im);
+                $pessoa->setCNAE($p->cnae);
+                $pessoa->setCRT($p->crt);
+                $pessoa->setDataFundacao($p->data_fundacao);
+            } else {
+                $pessoa = (new Pessoa())->instantiateTipoPessoa('f');
+                $pessoa->setTipo('f');
+                $pessoa->setNome($p->nome_pessoa);
+                $pessoa->setApelido($p->apelido);
+                $pessoa->setCPF($p->cpf_cnpj);
+                $pessoa->setDataNascimento($p->data_nascimento);
+                $rg = new RG($p->numero_rg, $p->orgao_rg, $p->uf_rg, $p->data_expedicao_rg);
+                $pessoa->setRG($rg);
+            }
+            $participante->setPessoa($pessoa);
+            $endereco = new Endereco($p->numero_casa, (new Logradouro($p->nome_rua, $p->nome_bairro, $p->cep)), $p->complemento, $p->referencia);
+            $participante->setEndereco($endereco);
+            return $participante;
+        }
 
         public function getAll() {
             $participantes = $this->all();
