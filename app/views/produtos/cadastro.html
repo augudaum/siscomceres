@@ -9,7 +9,6 @@
             <div class="ui top attached tabular menu" id="menu-tabs-produtos">
                 <a class="item active" data-tab="dados-produtos">Dados do Produto</a>
                 <a class="item" data-tab="informacoes-fiscais">Informações Fiscais</a>
-                <a class="item" data-tab="preco">Composição de Preço</a>
             </div>
             <!--Conteúdo da Guia Dados dos produto-->
             <div class="ui bottom attached tab segment active" data-tab="dados-produtos" style="min-height: 410px;">
@@ -114,14 +113,81 @@
             <div class="ui bottom attached tab segment" data-tab="informacoes-fiscais" style="min-height: 410px;">
                 <div class="p-10">
                     <!-- Colocar o conteúdo aqui dentro -->
+                    <fieldset id="fieldset-fisica" class="custom-fieldset">
+                        <legend>Consumidor final</legend>
+                        <div class="three fields">
+                            <div class="field">
+                                <label>Situação tributária:</label>
+                                <input type="text" placeholder="Situação tributária" name="sit_tribut">
+                            </div>
+                            <div class="field">
+                                <label>ìndice de ICMS:</label>
+                                <input type="text" placeholder="índice de ICMS" name="indice_icms">
+                            </div>
+                            <div class="field">
+                                <label>% ICMS normal:</label>
+                                <input type="text" placeholder="ICMS normal" name="icms_normal">
+                            </div>
+                        </div>
+                    </fieldset>
+                    <fieldset id="fieldset-fisica" class="custom-fieldset">
+                        <legend>Revenda</legend>
+                        <div class="four fields">
+                            <div class="field">
+                                <label>Situação tributária:</label>
+                                <input type="text" placeholder="Situação tributária" name="sit_tribut">
+                            </div>
+                            <div class="field">
+                                <label>% ICMS normal:</label>
+                                <input type="text" placeholder="ICMS normal" name="icms_normal">
+                            </div>
+                            <div class="field">
+                                <label>ìndice de ICMS:</label>
+                                <input type="text" placeholder="índice de ICMS" name="indice_icms">
+                            </div>
+                            <div class="field">
+                                <label>% Substituição:</label>
+                                <input type="text" placeholder="% Substituição" name="subst_icms">
+                            </div>
+                        </div>
+                    </fieldset>
+                    <div class="pt-10">
+                    <div class="three fields">
+                        <div class="field">
+                            <label>IPI:</label>
+                            <input type="text" placeholder="IPI" name="ipi">
+                        </div>
+                        <div class="field">
+                            <label>CFOP:</label>
+                            <input type="text" placeholder="CFOP" name="cfop">
+                        </div>
+                        <div class="field">
+                            <label>Redução Base ICMS compra:</label>
+                            <input type="text" placeholder="Redução Base ICMS compra" name="reduz_icms">
+                        </div>
+                    </div>
+                    <div class="four fields">
+                            <div class="field">
+                                <label>CST entrada:</label>
+                                <input type="text" placeholder="CST entrada" name="cst_entrada">
+                            </div>
+                            <div class="field">
+                                <label>CST venda:</label>
+                                <input type="text" placeholder="CST venda" name="cst_venda">
+                            </div>
+                            <div class="field">
+                                <label>CST PIS COFINS:</label>
+                                <input type="text" placeholder="CST PIS COFINS" name="cst_pis_cofins">
+                            </div>
+                            <div class="field">
+                                <label>CST PIS COFINS Entrada:</label>
+                                <input type="text" placeholder="CST PIS COFINS Entrada" name="cst_pis_cofins_entrada">
+                            </div>
+                        </div>
+                </div>
                 </div>
             </div>
-            <!-- Conteúdo da Guia Composição de preço -->
-            <div class="ui bottom attached tab segment" data-tab="preco" style="min-height: 410px;">
-                <div class="p-10">
-                    <!-- Colocar o conteúdo aqui dentro -->
-                </div>
-            </div>
+
             <!-- Linha Botões -->
             <div class="actions">
                 <!-- <button id="button-deletefuncionario" type="button" class="ui negative button right floated disabled">
